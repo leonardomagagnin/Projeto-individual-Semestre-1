@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
+    <title>Acampamento Meio Sangue | Login</title>
+</head>
+
+<body>
+    <div class="container-all">
+
+        <div class="lado-esquerdo">
+            <div class="formulario-login">
+
+                <h1>Entre</h1>
+                <p>Não possui cadastro? <span>crie um agora!</span></p>
+
+                <div class="campo">
+                    <label for="input_email">Email</label>
+                    <input type="text" id="input_email" placeholder="Insira seu email aqui">
+                </div>
+
+                <div class="campo">
+                    <label for="input_senha">Senha</label>
+                    <input type="text" id="input_senha" placeholder="Insira sua senha aqui">
+                    <div class="campo-mensagem" id="div_senha"></div>
+                </div>
+
+                <div class="campo-login">
+                    <input type="checkbox" id="input_lembre">
+                     <label for="input_lembre">Lembre-se</label>
+                </div>
+
+                <p id="p_esqueceusenha">Esqueceu a senha?</p>
+
+                <button onclick="login()">Entrar</button>
+                <div id="div_login"></div>
+            </div>
+        </div>
+
+        <div class="lado-direito">
+            <img src="../assets/img/camp-draw.jpeg" alt="camp-draw">
+        </div>
+    </div>
+</body>
+
+</html>
