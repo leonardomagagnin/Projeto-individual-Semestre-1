@@ -94,6 +94,6 @@ body {
 }
 
 .formulario-login button:hover {
-    transform: scale(1.05);
+    transform: scale(1.01);
     background-color: #d09c43;
 }
