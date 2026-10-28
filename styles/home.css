@@ -1,0 +1,414 @@
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background-color: #002752;
+}
+
+header {
+    padding: 12px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #002752;
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+}
+
+header img {
+    width: 100%;
+    height: 50px;
+    object-fit: contain;
+    padding: 10px 10px;
+}
+
+.container-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1440px;
+    align-items: center;
+}
+
+a {
+    font-family: 'Caesar Dressing', cursive;
+    text-decoration: none;
+    font-style: none;
+    color: white;
+}
+
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1.5rem;
+    color: white;
+}
+
+nav ul li {
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.nav-cadastro {
+    background-color: #fcbe56;
+    color: #002752;
+    padding-top: 2px;
+}
+
+.nav-login {
+    border: solid 1px #fcbe56;
+    padding-top: 2px;
+}
+
+nav ul a {
+    transition: 0.2s;
+}
+
+
+nav ul li:hover {
+    transform: translateY(-2px);
+}
+
+nav ul a:hover{
+    transform: translateY(-2px);
+    color: #fcbe56;
+}
+
+main {
+    background-image: url(../assets/img/entrada-acampamento.jpeg);
+    background-size: cover;
+    height: 600px;
+    color: white;
+    position: relative;
+    justify-content: center;
+    display: flex;
+
+    
+}
+
+.container-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px 15px;
+    margin-top: 30px;
+
+    width: 500px;
+}
+
+.container-main p {
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: -4px;
+}
+
+.container-main span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.container-main h1 {
+    font-family: 'Caesar Dressing', cursive;
+    font-size: 75px;
+    font-weight: bold;
+    margin: -5px;
+
+    color: #FCBE56;
+}
+
+.container-sobre {
+    display: flex;
+    flex-direction: column;
+
+    color: white;
+}
+
+.sobre-titulo {
+    
+}
+.sobre-conteudo {
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    padding: 10px 15px;
+
+    object-fit: contain;
+}
+
+.sobre-conteudo h2 {
+    font-family: 'Caesar Dressing', cursive;
+    color: #FCBE56;
+    font-size: 50px;
+}
+
+.sobre-conteudo p {
+    font-size: 20px;
+}
+
+.sobre-img {
+    width: 30%;
+    
+}
+
+.sobre-texto {
+    width: 70%;
+}
+.container-origem{
+    display: flex;
+    flex-direction: row;
+
+    color: white;
+}
+
+.origem-texto {
+    width: 60%;
+    padding: 10px 15px;
+}
+
+.origem-titulo p {
+    font-weight: bold;
+    font-size: 45px;
+    margin-bottom: -5px;
+}
+
+.origem-conteudo p {
+   font-size: 23px; 
+}
+
+.origem-img {
+    width: 40%;
+    height: 600px;
+    
+    background-image: url("../assets/img/reclamado.jpeg");
+    border-radius: 16px;
+    border-bottom: solid 3px #FCBE56;
+    border-right: solid 3px #FCBE56;
+}
+.container-plataforma {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 745px;
+    padding: 10px 15px;
+}
+
+.container-plataforma h1 {
+    font-size: 50px;
+    color: #fcbe56;
+    margin: -5px;
+}
+
+.container-plataforma p {
+    font-size: 23px;
+    color: white;
+}
+
+.container-plataforma button {
+    font-family: 'Caesar Dressing', cursive;
+    color: #FCBE56;
+    background-color: #002752;
+
+    font-size: 26px;
+
+    border: solid 3px #FCBE56;
+    border-radius: 15px;
+    padding: 10px 15px;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.container-plataforma button:hover {
+    transform: scale(1.02);
+    background-color: #c6a45c;
+}
+
+.container-chale {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 50px;
+}
+
+
+.container-chale h1 {
+    display: flex;
+    align-self: flex-start;
+
+    font-size: 40px;
+    color: #fcbe56;
+
+    padding: 10px 15px;
+}
+
+.card-linha {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+    width: 300px;
+    height: 400px;
+    padding: 10px 15px;
+    box-sizing: border-box;
+
+    margin: 10px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 20px;
+    border-bottom: solid 7px #fcbe56;
+    border-right: solid 7px #fcbe56;
+}
+
+.card .image {
+    transition: 0.3s;
+}
+
+.card .background-image:hover {
+    transform: scale(1.02);
+    box-shadow:0px 0px 10px rgba(1, 1, 1, 0.4) ;
+}
+
+
+.card .background-image{
+    border-radius: 45px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(65%);
+    transition: 0.4s ease-in-out;
+}
+
+.card .image:hover .background-image {
+    filter: brightness(80%);
+}
+
+
+.card h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: -9px;
+
+    
+    color: #f8f0df;
+    -webkit-text-stroke: 1px #c6a45c;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.card p {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.card#card-zeus {
+    background-image: url(../assets/img/Zeus.jpeg);
+}
+
+.card#card-hera {
+    background-image: url(../assets/img/hera.jpeg);
+}
+
+.card#card-poseidon {
+    background-image: url(../assets/img/poseidon.jpeg);
+}
+
+.card#card-demeter {
+    background-image: url(../assets/img/persefone.jpeg);
+}
+
+.card#card-ares {
+    background-image: url(../assets/img/ares.jpeg);
+}
+
+.card#card-atena {
+    background-image: url(../assets/img/Athena.jpeg);
+}
+
+.card#card-apollo {
+    background-image: url(../assets/img/Apollo.jpeg);
+}
+
+.card#card-artemis {
+    background-image: url(../assets/img/artemis.jpeg);
+}
+
+.card#card-hefesto {
+    background-image: url(../assets/img/hefesto.jpeg);
+}
+
+.card#card-afrodite {
+    background-image: url(../assets/img/aphrodite.jpeg);
+}
+              
+.card#card-dionisio {
+    background-image: url(../assets/img/Dionysus.jpeg);                
+}
+
+.card#card-hades {
+    background-image: url(../assets/img/hades.jpeg);
+}
+
+.footer {
+    background-color: #002752;
+    height: 200px;
+    border-top: solid 1px #FCBE56;
+
+}
+
+.footer-conteudo {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width: 100%;
+    max-width: 1440px;
+
+    margin: 0 auto;
+    padding: 40px 80px;
+
+    gap: 120px;
+    box-sizing: border-box;
+}
+
+.footer-conteudo img {
+    width: 180px;
+    height: auto;
+}
+
+.footer-conteudo nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
