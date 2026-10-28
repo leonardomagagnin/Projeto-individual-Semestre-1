@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    font-family: 'Poppins';
 }
 
 
@@ -87,33 +88,48 @@ nav ul li:hover {
     transform: translateY(-2px);
 }
 
-nav ul a:hover{
+nav ul a:hover {
     transform: translateY(-2px);
     color: #fcbe56;
 }
 
 main {
-    background-image: url(../assets/img/entrada-acampamento.jpeg);
-    background-size: cover;
-    height: 600px;
+    display: flex;
+    justify-content: center;
+
+
+    background-image: linear-gradient(to right, transparent 35%, #002752 75%, #002752 100%),
+        url(../assets/img/entrada-acampamento.jpeg);
+
+    background-size: 75% 100%;
+    background-position:flex-start;
+    background-repeat: no-repeat;
+
+    height: 700px;
     color: white;
     position: relative;
-    justify-content: center;
-    display: flex;
-
     
+
+}
+
+.main-conteudo {
+    width: 45%;
+    margin-left: auto;
+    padding: 40px;
+    box-sizing: border-box;
+    z-index: 1;
 }
 
 .container-main {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    padding: 10px 15px;
-    margin-top: 30px;
+    align-items: center;
 
-    width: 500px;
+    width: 75%;
+    height: fit-content;
+    align-self: center;
+    
 }
-
 .container-main p {
     font-weight: bold;
     font-size: 30px;
@@ -122,12 +138,13 @@ main {
 
 .container-main span {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 16px;
+    margin-top: 10px;
 }
 
 .container-main h1 {
     font-family: 'Caesar Dressing', cursive;
-    font-size: 75px;
+    font-size: 65px;
     font-weight: bold;
     margin: -5px;
 
@@ -142,8 +159,10 @@ main {
 }
 
 .sobre-titulo {
-    
+    font-weight: bold;
+    font-size: 30px;
 }
+
 .sobre-conteudo {
     display: flex;
     flex-direction: row;
@@ -166,13 +185,15 @@ main {
 
 .sobre-img {
     width: 30%;
-    
+    height: 40px;
+    box-sizing: border-box;
 }
 
 .sobre-texto {
     width: 70%;
 }
-.container-origem{
+
+.container-origem {
     display: flex;
     flex-direction: row;
 
@@ -191,18 +212,19 @@ main {
 }
 
 .origem-conteudo p {
-   font-size: 23px; 
+    font-size: 23px;
 }
 
 .origem-img {
     width: 40%;
     height: 600px;
-    
+
     background-image: url("../assets/img/reclamado.jpeg");
     border-radius: 16px;
     border-bottom: solid 3px #FCBE56;
     border-right: solid 3px #FCBE56;
 }
+
 .container-plataforma {
     display: flex;
     flex-direction: column;
@@ -287,38 +309,26 @@ main {
     border-radius: 20px;
     border-bottom: solid 7px #fcbe56;
     border-right: solid 7px #fcbe56;
-}
 
-.card .image {
     transition: 0.3s;
-}
 
-.card .background-image:hover {
-    transform: scale(1.02);
-    box-shadow:0px 0px 10px rgba(1, 1, 1, 0.4) ;
-}
-
-
-.card .background-image{
-    border-radius: 45px;
-    width: 100%;
-    height: 100%;
     object-fit: cover;
     filter: brightness(65%);
     transition: 0.4s ease-in-out;
+    cursor: pointer;
 }
 
-.card .image:hover .background-image {
-    filter: brightness(80%);
+.card:hover {
+    transform: scale(1.02);
+    filter: brightness(90%);
 }
-
 
 .card h2 {
     font-size: 30px;
     font-weight: bold;
-    margin: -9px;
+    margin: -5px;
 
-    
+
     color: #f8f0df;
     -webkit-text-stroke: 1px #c6a45c;
     text-shadow: 2px 2px 4px #000;
@@ -369,9 +379,13 @@ main {
 .card#card-afrodite {
     background-image: url(../assets/img/aphrodite.jpeg);
 }
-              
+
+.card#card-hermes {
+    background-image: url(../assets/img/hermes.jpeg);
+}
+
 .card#card-dionisio {
-    background-image: url(../assets/img/Dionysus.jpeg);                
+    background-image: url(../assets/img/Dionysus.jpeg);
 }
 
 .card#card-hades {
@@ -411,4 +425,3 @@ main {
     flex-direction: row;
     justify-content: flex-end;
 }
-
