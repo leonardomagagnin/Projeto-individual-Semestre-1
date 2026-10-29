@@ -137,7 +137,6 @@ main {
 }
 
 .container-main span {
-    font-weight: bold;
     font-size: 16px;
     margin-top: 10px;
 }
@@ -151,6 +150,11 @@ main {
     color: #FCBE56;
 }
 
+.container-transicao {
+    height: 100px;
+    background-color: linear-gradient(to top, transparent 35%, #002752 75%, #002752 100%);
+}
+
 .container-sobre {
     display: flex;
     flex-direction: column;
@@ -159,6 +163,7 @@ main {
 }
 
 .sobre-titulo {
+    margin-top: 30px;
     font-weight: bold;
     font-size: 30px;
 }
@@ -177,21 +182,27 @@ main {
     font-family: 'Caesar Dressing', cursive;
     color: #FCBE56;
     font-size: 50px;
+    
+    display: flex;
+    align-self: center;
+    padding: 10px 15px;
 }
 
 .sobre-conteudo p {
     font-size: 20px;
+    width: 784px;
 }
 
-.sobre-img {
-    width: 30%;
-    height: 40px;
+.sobre-conteudo img {
+    width: 100%;
+    height: 700px;
     box-sizing: border-box;
 }
 
 .sobre-texto {
     width: 70%;
 }
+
 
 .container-origem {
     display: flex;
@@ -216,7 +227,7 @@ main {
 }
 
 .origem-img {
-    width: 40%;
+    width: 30%;
     height: 600px;
 
     background-image: url("../assets/img/reclamado.jpeg");
