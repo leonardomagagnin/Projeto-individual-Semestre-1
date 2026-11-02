@@ -17,7 +17,7 @@
         <div class="lado-direito">
             <div class="formulario-cadastro">
                 <h1>Cadastro</h1>
-                <p>Já possui uma conta? <span>faça login</span></p>
+                <p>Já possui uma conta? <a href="login.html">faça login</a></p>
 
                 <div class="campo">
                     <label for="input_nome">Nome</label>
@@ -91,7 +91,7 @@
                 if (criterios == 3) {
 
                     if (confirmarSenha == senha) {
-                        div_result.innerHTML = `<span class="cadastro-realizado">Cadastro Realizado com Sucesso!</span>`;
+                        div_result.innerHTML = `<span style="color: green;">Cadastro Realizado com Sucesso!</span>`;
 
                         input_nome.value = '';
                         input_email.value = '';
@@ -103,16 +103,16 @@
                             window.location.href='login.html'}, 2000
                         )
                     } else {
-                        div_result.innerHTML = `<span class="cadastro-negado">As senhas não são iguais!</span>`;
+                        div_result.innerHTML = `<span style="color: red;">As senhas não são iguais!</span>`;
                     }
                 } else {
-                    div_result.innerHTML = `<span class="cadastro-negado">A senha precisa ser forte!</span>`;
+                    div_result.innerHTML = `<span style="color: red;">A senha precisa ser forte!</span>`;
                 }
             } else {
-                div_result.innerHTML = `<span class="cadastro-negado">Insira um e-mail válido!</span>`;
+                div_result.innerHTML = `<span style="color: red;">Insira um e-mail válido!</span>`;
             }
         } else {
-            div_result.innerHTML = `<span class="cadastro-negado">Insira um nome de usuário!</span>`;
+            div_result.innerHTML = `<span style="color: red;">Insira um nome de usuário!</span>`;
         }
     }
 </script>

@@ -43,12 +43,16 @@ body {
     background-color: var(--cor-primaria);
 }
 
+a {
+    font-family: 'Caesar Dressing', cursive;
+    text-decoration: none;
+    font-style: none;
+    color: var(--cor-secundaria);
+}
+
 .formulario-cadastro h1 {
     color: var(--cor-secundaria);
     font-size: 50px;
-}
-.formulario-cadastro span {
-    color: var(--cor-secundaria);
 }
 
 .formulario-cadastro p {
@@ -106,4 +110,8 @@ body {
 .formulario-cadastro button:hover {
     transform: scale(1.03);
     background-color: #d09c43;
+}
+
+.mensagem-cadastro {
+    align-self: center;
 }

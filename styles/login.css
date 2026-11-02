@@ -30,7 +30,7 @@ body {
     justify-content: center;
     width: 45%;
 
-    background-color: #002752;
+    background-color: var(--cor-primaria);
 }
 
 .lado-direito {
@@ -42,23 +42,25 @@ body {
     background-size: cover;
 }
 
+a {
+    font-family: 'Caesar Dressing', cursive;
+    text-decoration: none;
+    font-style: none;
+    color: var(--cor-secundaria);
+}
+
 .formulario-login {
     display: flex;
     flex-direction: column;
 }
 
 .formulario-login h1 {
-    color: #FCBE56;
+    color: var(--cor-secundaria);
     font-size: 40px;
-    margin-bottom: -10px;
 }
 
 .formulario-login p {
     color: white;
-}
-
-.formulario-login span {
-    color: #FCBE56;
 }
 
 .campo {
@@ -68,10 +70,9 @@ body {
 
 .campo label {
     font-size: 14px;
-    font-weight: bold;
     text-align: left;
 
-    margin: 15px;
+    margin: 10px;
 
     color: white;
 }
@@ -80,7 +81,7 @@ body {
     width: 350px;
     height: 35px;
     padding: 5px 10px;
-    border: 3px solid #FCBE56;
+    border: 3px solid var(--cor-secundaria);
     border-radius: 20px;
 
     background-color: transparent;
@@ -104,9 +105,10 @@ body {
 .formulario-login button {
     font-family: 'Caesar Dressing', cursive;
     color: black;
-    background-color: #FCBE56;
+    background-color: var(--cor-secundaria);
 
     font-size: 20px;
+    width: 350px;
 
     border-radius: 20px;
     padding: 10px 15px;
@@ -116,6 +118,6 @@ body {
 }
 
 .formulario-login button:hover {
-    transform: scale(1.01);
+    transform: scale(1.03  );
     background-color: #d09c43;
 }
