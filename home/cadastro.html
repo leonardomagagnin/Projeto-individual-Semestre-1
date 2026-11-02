@@ -17,7 +17,6 @@
         <div class="lado-direito">
             <div class="formulario-cadastro">
                 <h1>Cadastro</h1>
-
                 <p>Já possui uma conta? <span>faça login</span></p>
 
                 <div class="campo">
@@ -26,26 +25,94 @@
                 </div>
 
                 <div class="campo">
-                    <label for="input_email">Email</label>
+                    <label for="input_email">E-mail</label>
                     <input type="text" id="input_email">
                 </div>
 
                 <div class="campo">
                     <label for="input_senha">Senha</label>
-                    <input type="text" id="input_senha">
+                    <input type="password" onkeyup="verificar()" id="input_senha">
+                    <div class="mensagem-senha" id="div_senha"></div>
                 </div>
 
                 <div class="campo">
-                    <label for="input_confirmarsenha">Confirmação da Senha</label>
+                    <label for="input_confirmarsenha">Confirmar Senha</label>
                     <input type="text" id="input_confirmarsenha">
                 </div>
-                <div id="div_senha"></div>
 
-                <button onclick="Cadastrar()">Cadastrar</button>
-                <div id="div_result"></div>
+                <button onclick="cadastrar()">Cadastrar</button>
+                <div class="mensagem-cadastro" id="div_result"></div>
             </div>
         </div>
     </div>
 </body>
 
 </html>
+<script>
+    let criterios = 0;
+    function verificar() {
+        let senha = input_senha.value;
+        let tamanhoMinimo = senha.length >= 8;
+        let temMaiusculas = senha != senha.toLowerCase();
+        let temMinusculas = senha != senha.toUpperCase();
+
+        criterios = 0
+        if (tamanhoMinimo) {
+            criterios++
+        }
+        if (temMaiusculas) {
+            criterios++
+        }
+        if (temMinusculas) {
+            criterios++
+        }
+
+        if (criterios == 3) {
+            div_senha.innerHTML = `Senha Forte!`;
+        } else if (criterios == 2) {
+            div_senha.innerHTML = `Senha Média! <br> Utilize letras maiúsculas e minúsculas`;
+        } else if (criterios == 1) {
+            div_senha.innerHTML = `Senha Fraca! <br> Utilize letras maiúsculas e minúsculas`;
+        } else {
+            div_senha.innerHTML = `Senha Insegura! <br> Utilize letras maiúsculas e minúsculas`;
+        }
+    }
+
+    function cadastrar() {
+        let nome = input_nome.value;
+        let email = input_email.value;
+        let senha = input_senha.value;
+        let confirmarSenha = input_confirmarsenha.value;
+
+        if (nome != '') {
+
+            if (email.includes('@') && email.endsWith('.com')) {
+
+                if (criterios == 3) {
+
+                    if (confirmarSenha == senha) {
+                        div_result.innerHTML = `<span class="cadastro-realizado">Cadastro Realizado com Sucesso!</span>`;
+
+                        input_nome.value = '';
+                        input_email.value = '';
+                        input_senha.value = '';
+                        input_confirmarsenha.value = '';
+                        div_senha.innerHTML = '';
+
+                        setTimeout (function() {
+                            window.location.href='login.html'}, 2000
+                        )
+                    } else {
+                        div_result.innerHTML = `<span class="cadastro-negado">As senhas não são iguais!</span>`;
+                    }
+                } else {
+                    div_result.innerHTML = `<span class="cadastro-negado">A senha precisa ser forte!</span>`;
+                }
+            } else {
+                div_result.innerHTML = `<span class="cadastro-negado">Insira um e-mail válido!</span>`;
+            }
+        } else {
+            div_result.innerHTML = `<span class="cadastro-negado">Insira um nome de usuário!</span>`;
+        }
+    }
+</script>
