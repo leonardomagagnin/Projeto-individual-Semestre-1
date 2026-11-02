@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/cadastro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
     <title>Acampamento Meio-Sangue | Cadastro</title>
 </head>
+
 <body>
     <div class="container-all">
         <div class="lado-esquerdo"></div>
@@ -12,25 +18,34 @@
             <div class="formulario-cadastro">
                 <h1>Cadastro</h1>
 
-                <p>Já possui uma conta?<span>faça login</span></p>
+                <p>Já possui uma conta? <span>faça login</span></p>
 
-                <label for="input_nome">Nome</label>
-                <input type="text" id="input_nome">
+                <div class="campo">
+                    <label for="input_nome">Nome</label>
+                    <input type="text" id="input_nome">
+                </div>
 
-                <label for="input_email">Email</label>
-                <input type="text" id="input_email">
+                <div class="campo">
+                    <label for="input_email">Email</label>
+                    <input type="text" id="input_email">
+                </div>
 
-                <label for="input_senha">Senha</label>
-                <input type="text" id="input_senha">
+                <div class="campo">
+                    <label for="input_senha">Senha</label>
+                    <input type="text" id="input_senha">
+                </div>
 
-                <label for="input_confirmarsenha">Confirmação da Senha</label>
-                <input type="text" id="input_confirmarsenha">
+                <div class="campo">
+                    <label for="input_confirmarsenha">Confirmação da Senha</label>
+                    <input type="text" id="input_confirmarsenha">
+                </div>
                 <div id="div_senha"></div>
 
-                <button>Cadastrar</button>
+                <button onclick="Cadastrar()">Cadastrar</button>
                 <div id="div_result"></div>
             </div>
         </div>
     </div>
 </body>
+
 </html>

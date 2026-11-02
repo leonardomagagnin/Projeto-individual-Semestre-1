@@ -1,29 +1,45 @@
 * {
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
+    box-sizing: border-box;
+    --cor-primaria: #002752;
+    --cor-secundaria: #FCBE56;
+
 }
 
 body {
-        font-family: 'Caesar Dressing', cursive;
+    font-family: 'Caesar Dressing', cursive;
+    background-color: var(--cor-primaria);
+
+    width: 100%;
+    height: 100vh;
 }
 
 .container-all {
     display: flex;
     flex-direction: row;
+
+    width: 100%;
+    height: 100%;
 }
 
 .lado-esquerdo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 40%;
+    justify-content: center;
+    width: 45%;
 
     background-color: #002752;
 }
 
 .lado-direito {
-    width: 60%;
+    width: 55%;
+
+    background-image: url(../assets/img/camp-draw.jpeg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .formulario-login {
