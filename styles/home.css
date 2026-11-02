@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     scroll-behavior: smooth;
     font-family: 'Poppins';
 }
@@ -138,7 +139,7 @@ main {
 
 .container-main span {
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .container-main h1 {
@@ -163,7 +164,7 @@ main {
 }
 
 .sobre-titulo {
-    margin-top: 30px;
+    margin: 30px;
     font-weight: bold;
     font-size: 30px;
 }
@@ -171,14 +172,13 @@ main {
 .sobre-conteudo {
     display: flex;
     flex-direction: row;
+    align-items: center;
 
     width: 100%;
     padding: 10px 15px;
-
-    object-fit: contain;
 }
 
-.sobre-conteudo h2 {
+.sobre-descricao h2 {
     font-family: 'Caesar Dressing', cursive;
     color: #FCBE56;
     font-size: 50px;
@@ -188,7 +188,7 @@ main {
     padding: 10px 15px;
 }
 
-.sobre-conteudo p {
+.sobre-texto p {
     font-size: 20px;
     width: 784px;
 }
@@ -201,6 +201,33 @@ main {
 
 .sobre-texto {
     width: 70%;
+}
+
+
+.card-sobre {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card-missao, .card-alvo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 500px;
+    height: 200px;
+    margin: 20px;
+
+    padding: 10px 15px;
+    background-color: #013369;
+    box-sizing: border-box;
+
+    border: none;
+    border-bottom:solid 3px #FCBE56;
+    border-right: solid 3px #FCBE56;
+    border-radius: 16px;
+    color: #f8f0df;
 }
 
 
@@ -247,12 +274,13 @@ main {
 .container-plataforma h1 {
     font-size: 50px;
     color: #fcbe56;
-    margin: -5px;
+    margin: 1px;
 }
 
 .container-plataforma p {
     font-size: 23px;
     color: white;
+    margin-bottom: 30px;
 }
 
 .container-plataforma button {
