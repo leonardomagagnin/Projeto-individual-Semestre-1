@@ -37,7 +37,7 @@
 
                 <div class="campo">
                     <label for="input_confirmarsenha">Confirmar Senha</label>
-                    <input type="text" id="input_confirmarsenha">
+                    <input type="password" id="input_confirmarsenha">
                 </div>
 
                 <button onclick="cadastrar()">Cadastrar</button>
@@ -49,6 +49,7 @@
 
 </html>
 <script>
+    let campos = [];
     let criterios = 0;
     function verificar() {
         let senha = input_senha.value;
@@ -70,11 +71,11 @@
         if (criterios == 3) {
             div_senha.innerHTML = `Senha Forte!`;
         } else if (criterios == 2) {
-            div_senha.innerHTML = `Senha Média! <br> Utilize letras maiúsculas e minúsculas`;
+            div_senha.innerHTML = `Senha Média!`;
         } else if (criterios == 1) {
-            div_senha.innerHTML = `Senha Fraca! <br> Utilize letras maiúsculas e minúsculas`;
+            div_senha.innerHTML = `Senha Fraca!`;
         } else {
-            div_senha.innerHTML = `Senha Insegura! <br> Utilize letras maiúsculas e minúsculas`;
+            div_senha.innerHTML = `Senha Insegura!`;
         }
     }
 
@@ -83,6 +84,7 @@
         let email = input_email.value;
         let senha = input_senha.value;
         let confirmarSenha = input_confirmarsenha.value;
+
 
         if (nome != '') {
 

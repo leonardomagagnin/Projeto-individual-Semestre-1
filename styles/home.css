@@ -159,7 +159,7 @@ main {
 .container-sobre {
     display: flex;
     flex-direction: column;
-
+    padding: 15px 20px;
     color: white;
 }
 
@@ -234,6 +234,7 @@ main {
 .container-origem {
     display: flex;
     flex-direction: row;
+    padding: 15px 20px;
 
     color: white;
 }

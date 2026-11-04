@@ -113,5 +113,6 @@ a {
 }
 
 .mensagem-cadastro {
+    display: flex;
     align-self: center;
 }

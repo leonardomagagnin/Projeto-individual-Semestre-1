@@ -96,7 +96,13 @@ a {
     color: white;
 
     margin-top: 10px;
+    padding: 10px;
 }
+
+.campo-login label {
+    margin-left: 5pxs;
+}
+
 
 #p_esqueceusenha {
     text-align: right;
