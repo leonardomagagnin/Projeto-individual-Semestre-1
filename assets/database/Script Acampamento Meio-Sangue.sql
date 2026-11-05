@@ -26,10 +26,10 @@ INSERT INTO chale VALUES
 CREATE TABLE usuario (
 id INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(45),
-email VARCHAR(45) NOT NULL,
+email VARCHAR(45) NOT NULL UNIQUE,
 senha VARCHAR(45) NOT NULL,
 reclamado TINYINT,
 CONSTRAINT chReclamado CHECK(reclamado IN(1, 0)),
-fk_chale INT DEFAULT 1,
+fk_chale INT DEFAULT 11,
 FOREIGN KEY (fk_chale) REFERENCES chale(id)
 );
