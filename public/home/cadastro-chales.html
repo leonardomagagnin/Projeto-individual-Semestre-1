@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acampamento Meio-Sangue | Chalés</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/side-bar.css">
+    <link rel="stylesheet" href="../styles/cadastro-chales.css">
+</head>
+
+<body>
+    <div class="container-all">
+        <div class="lado-esquerdo">
+            <div class="sobre-usuario">
+                <h2>Olá Usuário!</h2>
+                <span>Semideus não reclamado</span>
+            </div>
+
+            <div class="areas-section">
+                <div class="areas">
+                    <div class="areas-icon">
+                        <img src="../assets/img/home.svg" alt="">
+                    </div>
+                    <div class="area-tipo">Home</div>
+                </div>
+                <div class="areas">
+                    <div class="areas-icon">
+                        <img src="../assets/img/users-alt.svg" alt="">
+                    </div>
+                    <div class="area-tipo">Pavilhão</div>
+                </div>
+                <div class="areas">
+                    <div class="areas-icon">
+                        <img src="../assets/img/bank.svg" alt="">
+                    </div>
+                    <div class="area-tipo">Chalés</div>
+                </div>
+                <div class="areas">
+                    <div class="areas-icon">
+                        <img src="../assets/img/chart-histogram.svg" alt="">
+                    </div>
+                    <div class="area-tipo">Casa Grande</div>
+                </div>
+            </div>
+
+            <div class="direcionadores">
+                <div class="perfil-usuario">Perfil</div>
+                <div class="divisor"></div>
+                <div class="logout">Sair</div>
+            </div>
+        </div>
+
+        <div class="lado-direito">
+            <div class="formulario-chale">
+                <h2>Novo Chalé</h2>
+
+                <div class="campo">
+                    <label for="input_nome">Divindade</label>
+                    <input type="text" id="input_nome" placeholder="Ex. Zeus">
+                </div>
+
+                <div class="campo">
+                    <label for="input_dominio">Domínio</label>
+                    <input type="text" id="input_dominio" placeholder="Ex. Céus">
+                </div>
+
+                <label>Vírtudes</label>
+                <div class="opcoes">
+                    <div class="opcoes-esquerda">
+                        <div class="virtudes">
+                            <input type="checkbox" name="virtudes" value="Sabedoria" id="input_sabedoria">
+                            <label for="input_sabedoria">Sabedoria</label>
+                        </div>
+
+                        <div class="virtudes">
+                            <input type="checkbox" id="input_coragem" name="virtudes" value="Coragem">
+                            <label for="input_coragem">Coragem</label>
+                        </div>
+
+                        <div class="virtudes">
+                            <input type="checkbox" id="input_astucia" name="virtudes" value="Astúcia">
+                            <label for="input_astucia">Astúcia</label>
+                        </div>
+
+                        <div class="virtudes">
+                            <input type="checkbox" id="input_lealdade" name="virtudes" value="Lealdade">
+                            <label for="input_lealdade">Lealdade</label>
+                        </div>
+
+                        <div class="virtudes">
+                            <input type="checkbox" id="input_criatividade" name="virtudes" value="Criatividade">
+                            <label for="input_criatividade">Criatividade</label>
+                        </div>
+                    </div>
+
+                    <div class="opcoes-direita">
+                        <div class="virtudes">
+                            <input type="checkbox" id="input_compaixao" name="virtudes" value="Compaixão">
+                            <label for="input_compaixao">Compaixão</label>
+                        </div>
+
+                        <div class="virtudes">
+                            <input type="checkbox" id="input_lideranca" name="virtudes" value="Liderança">
+                            <label for="input_lideranca">Liderança</label>
+                        </div>
+
+
+                        <div class="virtudes">
+                            <input type="checkbox" id="input_independencia" name="virtudes" value="Independência">
+                            <label for="input_independencia">Independência</label>
+                        </div>
+
+                        <div class="virtudes">
+                            <input type="checkbox" id="input_justica" name="virtudes" value="Justiça">
+                            <label for="input_justica">Justiça</label>
+                        </div>
+
+                        <div class="virtudes">
+                            <input type="checkbox" id="input_perseveranca" name="virtudes" value="Perseverança">
+                            <label for="input_perseveranca">Perseverança</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn_display">
+                    <button id="btn_cadastrar">Cadastrar Chalé</button>
+                    <button id="btn_cancelar">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

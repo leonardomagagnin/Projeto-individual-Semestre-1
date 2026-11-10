@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --cor-primaria: #002752;
+    --cor-secundaria: #FCBE56;
+}
+
+.lado-direito {
+    margin-left: 260px;
+    width: 75%;
+    color: var(--cor-secundaria);
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario-chale {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    align-self: center;
+
+    background-color: var(--cor-primaria);
+    border-radius: 16px;
+
+    border-bottom: solid 5px var(--cor-secundaria);
+    border-right: solid 5px var(--cor-secundaria);
+
+    height: 700px;
+    width: 680px;
+
+    padding: 20px;
+}
+
+.formulario-chale h2 {
+    font-size: 40px;
+}
+
+
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-size: 14px;
+    text-align: left;
+
+    margin: 10px;
+    color: white;
+}
+
+.campo input {
+    width: 500px;
+    height: 35px;
+    padding: 5px 10px;
+    border: 2px solid var(--cor-secundaria);
+    border-radius: 20px;
+
+    background-color: transparent;
+    font-weight: bold;
+    color: var(--cor-secundaria);
+}
+
+.opcoes {
+    display: flex;
+    flex-direction: row;
+
+    width: 300px;
+    align-items: center;
+    gap: 7px;
+
+    padding: 10px;
+
+    border-radius: 16px;
+    border: solid 2px var(--cor-secundaria);
+}
+
+.opcoes-esquerda {
+    display: flex;
+    flex-direction: column;
+}
+
+.opcoes-direita {
+    display: flex;
+    flex-direction: column;
+}
+
+.virtudes {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.formulario-chale button {
+    padding: 10px 15px;
+    font-family: 'Caesar Dressing', cursive;
+
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.formulario-chale button:hover {
+    transform: scale(1.02);
+}
+
+.btn_display {
+    width: 100%;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#btn_cadastrar {
+    color: black;
+    background-color: var(--cor-secundaria);
+
+    font-size: 15px;
+}
+
