@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acampamento Meio-Sangue</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/side-bar.css">
+    <link rel="stylesheet" href="../styles/dashboard.css">
+</head>
+
+<body>
+    <div class="container-all">
+        <div class="lado-esquerdo">
+            <div class="sobre-usuario">
+                <h2>Olá Usuário!</h2>
+                <span>Semideus não reclamado</span>
+            </div>
+
+            <div class="areas-section">
+                <div class="areas">
+                    <div class="areas-icon">
+                        <img src="../assets/img/home.svg" alt="">
+                    </div>
+                    <div class="area-tipo">Home</div>
+                </div>
+                <div class="areas">
+                    <div class="areas-icon">
+                        <img src="../assets/img/users-alt.svg" alt="">
+                    </div>
+                    <div class="area-tipo">Pavilhão</div>
+                </div>
+                <div class="areas">
+                    <div class="areas-icon">
+                        <img src="../assets/img/bank.svg" alt="">
+                    </div>
+                    <div class="area-tipo">Chalés</div>
+                </div>
+                <div class="areas">
+                    <div class="areas-icon">
+                        <img src="../assets/img/chart-histogram.svg" alt="">
+                    </div>
+                    <div class="area-tipo">Casa Grande</div>
+                </div>
+            </div>
+
+            <div class="direcionadores">
+                <div class="perfil-usuario">Perfil</div>
+                <div class="divisor"></div>
+                <div class="logout">Sair</div>
+            </div>
+        </div>
+        <div class="lado-direito">
+            <div class="kpis-section">
+                <div class="card-kpi">
+                    <h2>Quantidade de Semideuses no Acampamento (Hoje)</h2>
+                    <p>10</p>
+                    <span>+100% em relação à semana passada</span>
+                </div>
+
+                <div class="card-kpi">
+                    <h2>Quantidade de Chalés no Acampamento (Hoje)</h2>
+                    <p>18</p>
+                    <span>+0% em relação à semana passada</span>
+                </div>
+
+                <div class="card-kpi">
+                    <h2>Chalé com Maior Ocupação (Hoje)</h2>
+                    <p>Chalé 11 - Hermes</p>
+                </div>
+            </div>
+            <h1>Gráfico da Variação de Usuários por Chalé</h1>
+
+            <div class="grafico-chales">
+                <canvas id="myChart"></canvas>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Zeus', 'Hera', 'Poseidon', 'Deméter', 'Ares', 'Atena', 'Apollo', 'Ártemis', 'Hefesto', 'Afrodite', 'Hermes', 'Dionísio', 'Hades'],
+            datasets: [{
+                label: '',
+                data: [1, 0, 2, 0, 1, 2, 1, 1, 2, 2, 5, 0, 1],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
