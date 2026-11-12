@@ -25,16 +25,29 @@
 }
 
 .card-kpi {
-    width: 400px;
-    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 300px;
+    height: 120px;
 
     border-bottom: solid 3px var(--cor-secundaria);
+    border-right: solid 3px var(--cor-secundaria);
     border-radius: 16px;
+}
+
+.card-kpi h2 {
+    font-size: 20px;
 }
 
 .card-kpi p {
     color: black;
-    font-size: 40px;
+    font-size: 30px;
+}
+
+.lado-direito h1 {
+    color: var(--cor-primaria);
 }
 
 .grafico-chales {

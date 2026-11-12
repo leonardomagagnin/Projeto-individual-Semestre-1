@@ -2,7 +2,7 @@
 
 ## Visão geral
 
-O projeto será um site que ao cadastrar-se será posspivel eleger um Top 3 músicais favoritos, que poderá ser modificado posteriormente. Além disso, o usuário também terá acesso aos rankings de outros usuários, podendo curtir e seguir as contas uns dos outros. Por fim, o administrador terá acesso aos dados de musicias favoritos em relação aos seus usuários.
+O projeto será um site com o tema Percy Jackson que, ao se cadastrar, o usuário será redirecionado para uma tela onde conseguirá realizar um quiz que o resultado indicará seu chalé de pertencimento. Além disso, também haverá uma tela de cadastro de novos chales com base em virtudes para estes também participarem dos resultados do quiz de semideus. Por fim, dados sobre o site como chalé com mais usuários, número de usuários cadastrados, assim como chalés cadastrados serão exibidos em uma dashboard.
 
 ## Tecnologias
 
@@ -10,6 +10,7 @@ Front-End: HTML, CSS e java Script
 Banco de dados: MySQL
 API com NodeJS para comunicação do Front-End com o Banco de Dados
 Máquina Virtual Linux Lubuntu armazenando o banco de dados: MySQL
+Chart.js para a criação de gŕaficos.
 
 ## Comandos
 
@@ -28,11 +29,15 @@ O projeto estará em um diretório principal nomeado "ProjetoPI", dentro dele ha
 
 - assets/: esse diretório será responsável por armazenar todas as imagens e ícones utilizados durante o projeto;
 
-- css/: esse diretório será responsável por armazenar todos os arquivos de estilização utilizados no projeto;
+- styles/: esse diretório será responsável por armazenar todos os arquivos de estilização utilizados no projeto;
 
-- index/: esse diretório será responsável por armazenar as páginas HTML como home, cadastro e login;
+- home/: esse diretório será responsável por armazenar as páginas HTML como home, cadastro e login;
 
-- dashboard/: esse diretório armazenara as páginas de dashboard e home APÓS efetuado o login;
+- dashboard/: esse diretório armazenará as páginas de dashboard e home APÓS efetuado o login;
+
+- js/: esse diretório armazenará os arquivos JavaScript utilizados no site
+
+- src/: esse diretório armazenará os diretórios controllers, database, models e routs, responsáveis por definir o caminho que a API fará dentro do site.
 
 Dessa forma, você deve levar em conta as funcionaldiades de cada diretŕoio antes de criar um novo arquivo, avaliando se o mesmo se encaixa no lugar em que você está fazendo.
 

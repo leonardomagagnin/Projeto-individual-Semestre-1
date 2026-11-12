@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acampamento Meio-Sangue</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/side-bar.css">
+    <link rel="stylesheet" href="../styles/quiz.css">
+</head>
+
+<body>
+    <div class="container-all">
+        <div class="lado-esquerdo">
+            <div class="sobre-usuario">
+                <h2>Olá Usuário!</h2>
+                <span>Semideus não reclamado</span>
+            </div>
+
+            <div class="areas-section">
+                <div class="areas">
+                    <div class="areas-icon">
+                        <img src="../assets/img/home.svg" alt="">
+                    </div>
+                    <div class="area-tipo">Home</div>
+                </div>
+                <div class="areas">
+                    <div class="areas-icon">
+                        <img src="../assets/img/users-alt.svg" alt="">
+                    </div>
+                    <div class="area-tipo">Pavilhão</div>
+                </div>
+                <div class="areas">
+                    <div class="areas-icon">
+                        <img src="../assets/img/bank.svg" alt="">
+                    </div>
+                    <div class="area-tipo">Chalés</div>
+                </div>
+                <div class="areas">
+                    <div class="areas-icon">
+                        <img src="../assets/img/chart-histogram.svg" alt="">
+                    </div>
+                    <div class="area-tipo">Casa Grande</div>
+                </div>
+            </div>
+
+            <div class="direcionadores">
+                <div class="perfil-usuario">Perfil</div>
+                <div class="divisor"></div>
+                <div class="logout">Sair</div>
+            </div>
+        </div>
+        <div class="lado-direito">
+            <div class="quiz-container">
+                <div id="start-screen" class="quiz-card">
+                    <h2>Oráculo de Delfos</h2>
+                    <p>Escolha aquilo que mais se aproxima de quem você realmente é. Nenhuma resposta é certa ou errada.</p>
+                    <button id="btnIniciarQuiz">Iniciar Quiz</button>
+                </div>
+
+                <div id="quiz-card" class="quiz-card" style="display:none;">
+                    <div id="infoQuestao">Questão <span id="numeroAtual">1</span> / <span id="qtdQuestoes">15</span></div>
+                    <div id="pergunta" class="pergunta"></div>
+
+                    <form id="formOpcoes">
+                        <label><input type="radio" name="opcao" value="A"> <span id="rotuloA"></span></label>
+                        <label><input type="radio" name="opcao" value="B"> <span id="rotuloB"></span></label>
+                        <label><input type="radio" name="opcao" value="C"> <span id="rotuloC"></span></label>
+                    </form>
+
+                    <div class="botoes">
+                        <button id="btnSubmeter">Submeter</button>
+                        <button id="btnProximo" disabled>Próxima</button>
+                    </div>
+                </div>
+
+                <div id="resultado" class="quiz-card" style="display:none;">
+                    <h3>Resultado</h3>
+                    <div id="resultado-conteudo"></div>
+                    <button id="btnRefazer">Refazer Quiz</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+// Quiz data (perguntas e virtudes conforme perguntasquiz.md)
+const perguntas = [
+    {
+        pergunta: "1. Uma profecia é anunciada diante dos campistas. Qual é seu primeiro impulso?",
+        A: { text: "Tentar compreender cada palavra, procurando significados ocultos.", virtudes: ["Sabedoria","Astúcia"] },
+        B: { text: "Aceitar e preparar-se para enfrentar o que vier.", virtudes: ["Coragem","Perseverança"] },
+        C: { text: "Pensar nas pessoas envolvidas e em como cuidar delas.", virtudes: ["Compaixão","Lealdade"] }
+    },
+    {
+        pergunta: "2. O grupo está dividido durante uma missão. Qual sua postura?",
+        A: { text: "Assumir a dianteira e estabelecer direção.", virtudes: ["Liderança","Coragem"] },
+        B: { text: "Encontrar solução que considere todos.", virtudes: ["Justiça","Compaixão"] },
+        C: { text: "Questionar possibilidades e buscar alternativa.", virtudes: ["Criatividade","Astúcia"] }
+    },
+    {
+        pergunta: "3. Frente a uma criatura poderosa, o que prioriza?",
+        A: { text: "Compreendê-la e descobrir suas fraquezas.", virtudes: ["Sabedoria","Perseverança"] },
+        B: { text: "Proteger seus companheiros ainda que se arrisque.", virtudes: ["Lealdade","Coragem"] },
+        C: { text: "Usar o ambiente para surpreender.", virtudes: ["Astúcia","Criatividade"] }
+    },
+    {
+        pergunta: "4. Um deus oferece uma oportunidade com grande responsabilidade. Como age?",
+        A: { text: "Aceitaria o desafio assumindo consequências.", virtudes: ["Liderança","Justiça"] },
+        B: { text: "Refletiria sobre o que precisaria abrir mão.", virtudes: ["Independência","Perseverança"] },
+        C: { text: "Questionaria as intenções por trás da oferta.", virtudes: ["Astúcia","Sabedoria"] }
+    },
+    {
+        pergunta: "5. Diante de um labirinto que muda a cada passo, sua abordagem?",
+        A: { text: "Observar padrões e tentar entender a lógica.", virtudes: ["Sabedoria","Perseverança"] },
+        B: { text: "Experimentar caminhos diferentes.", virtudes: ["Criatividade","Independência"] },
+        C: { text: "Manter o grupo unido e traçar estratégia coletiva.", virtudes: ["Liderança","Lealdade"] }
+    },
+    {
+        pergunta: "6. Alguém em quem confiava escondeu informações. O que pesa em sua decisão?",
+        A: { text: "Tentar compreender as razões antes de julgar.", virtudes: ["Compaixão","Astúcia"] },
+        B: { text: "A verdade precisa vir à tona independentemente.", virtudes: ["Justiça","Coragem"] },
+        C: { text: "Mesmo decepcionado, procurar seguir em frente sem abandonar.", virtudes: ["Lealdade","Perseverança"] }
+    },
+    {
+        pergunta: "7. O Oráculo anuncia que uma jornada exigirá um sacrifício. Como recebe?",
+        A: { text: "Se necessário, enfrenta perdas para cumprir o que precisa.", virtudes: ["Coragem","Perseverança"] },
+        B: { text: "Nenhum destino aceito sem questionamento; entender antes.", virtudes: ["Sabedoria","Justiça"] },
+        C: { text: "Garantir que aqueles ao seu lado não enfrentem tudo sozinhos.", virtudes: ["Lealdade","Compaixão"] }
+    },
+    {
+        pergunta: "8. Rivalidade entre chalés prejudica convivência. O que pensa?",
+        A: { text: "Disputa pode ser saudável com respeito e regras.", virtudes: ["Justiça","Liderança"] },
+        B: { text: "Questionar a divisão e procurar unir os semideuses.", virtudes: ["Independência","Criatividade"] },
+        C: { text: "Força do chalé é a união de seus integrantes.", virtudes: ["Lealdade","Perseverança"] }
+    },
+    {
+        pergunta: "9. Descobre uma habilidade divina. O que considera mais importante?",
+        A: { text: "Aprender a controlar e compreender o poder.", virtudes: ["Sabedoria","Perseverança"] },
+        B: { text: "Usá-lo para proteger os outros.", virtudes: ["Compaixão","Coragem"] },
+        C: { text: "Entender o que significa para sua identidade.", virtudes: ["Independência","Criatividade"] }
+    },
+    {
+        pergunta: "10. Um deus impõe uma tarefa aparentemente impossível. Como reage?",
+        A: { text: "Compreender objetivo e buscar brechas.", virtudes: ["Astúcia","Independência"] },
+        B: { text: "Encarar como oportunidade de provar sua capacidade.", virtudes: ["Coragem","Perseverança"] },
+        C: { text: "Questionar a autoridade divina e refletir antes de aceitar.", virtudes: ["Justiça","Sabedoria"] }
+    },
+    {
+        pergunta: "11. Um companheiro está emocionalmente abalado. Qual sua reação?",
+        A: { text: "Aproximar-se e oferecer apoio.", virtudes: ["Compaixão","Lealdade"] },
+        B: { text: "Assumir responsabilidade pelo grupo naquele momento.", virtudes: ["Liderança","Coragem"] },
+        C: { text: "Tentar compreender a origem do comportamento e ajudar sem pressionar.", virtudes: ["Sabedoria","Astúcia"] }
+    },
+    {
+        pergunta: "12. Encontra um artefato com poder desconhecido. O que desperta mais interesse?",
+        A: { text: "Os mistérios de sua origem e os conhecimentos escondidos.", virtudes: ["Sabedoria","Criatividade"] },
+        B: { text: "As possibilidades e a liberdade de descobrir por conta própria.", virtudes: ["Independência","Astúcia"] },
+        C: { text: "Usá-lo para garantir a segurança de quem depende de você.", virtudes: ["Lealdade","Justiça"] }
+    },
+    {
+        pergunta: "13. Uma tradição antiga prejudica semideuses. O que faria?",
+        A: { text: "Questionaria e defenderia mudanças.", virtudes: ["Justiça","Coragem"] },
+        B: { text: "Transformaria gradualmente encontrando formas de convencer.", virtudes: ["Astúcia","Criatividade"] },
+        C: { text: "Reuniria aliados e construiria algo novo em conjunto.", virtudes: ["Liderança","Lealdade"] }
+    },
+    {
+        pergunta: "14. Uma passagem para o Mundo Inferior se abre. O que o levaria a continuar?",
+        A: { text: "Convicção de que algumas coisas são importantes demais para abandonar.", virtudes: ["Perseverança","Lealdade"] },
+        B: { text: "A certeza de que o medo não pode decidir o que você é capaz.", virtudes: ["Coragem","Justiça"] },
+        C: { text: "Encontrar maneira inteligente de superar obstáculos sem depender só da força.", virtudes: ["Astúcia","Sabedoria"] }
+    },
+    {
+        pergunta: "15. Antes de revelar seu parentesco divino, o que gostaria que vissem em você?",
+        A: { text: "Capacidade de assumir responsabilidades e inspirar outros.", virtudes: ["Liderança","Perseverança"] },
+        B: { text: "Alguém que transforma o mundo e cria novos caminhos.", virtudes: ["Criatividade","Compaixão"] },
+        C: { text: "Alguém definido pelas próprias escolhas, não pela origem.", virtudes: ["Independência","Justiça"] }
+    }
+];
+
+// Mapeamento de virtudes para deuses (ajustável)
+// Mapeamento de virtudes para deuses (uma virtude pode apontar para mais de um deus)
+// Assim, quando uma virtude é pontuada, todos os deuses associados recebem esses pontos.
+const virtudeParaDeuses = {
+    "Sabedoria": ["Athena","Hermes"],
+    "Astúcia": ["Hermes","Hades"],
+    "Coragem": ["Ares","Zeus"],
+    "Perseverança": ["Zeus","Hera"],
+    "Liderança": ["Zeus","Hera"],
+    "Compaixão": ["Aphrodite","Deméter"],
+    "Lealdade": ["Hera","Poseidon"],
+    "Justiça": ["Athena","Zeus"],
+    "Criatividade": ["Apollo","Hefesto","Dionysus"],
+    "Independência": ["Artemis","Apollo"]
+}
+
+// Caminhos das imagens dos deuses (usadas no resultado)
+const imagensDeuses = {
+    "Athena": "../assets/img/Athena.jpeg",
+    "Hermes": "../assets/img/hermes.jpeg",
+    "Ares": "../assets/img/ares.jpeg",
+    "Zeus": "../assets/img/Zeus.jpeg",
+    "Aphrodite": "../assets/img/aphrodite.jpeg",
+    "Hera": "../assets/img/hera.jpeg",
+    "Apollo": "../assets/img/Apollo.jpeg",
+    "Artemis": "../assets/img/artemis.jpeg",
+    "Hades": "../assets/img/hades.jpeg",
+    "Deméter": "../assets/img/persefone.jpeg",
+    "Hefesto": "../assets/img/hefesto.jpeg",
+    "Dionysus": "../assets/img/Dionysus.jpeg",
+    "Poseidon": "../assets/img/poseidon.jpeg"
+}
+
+// Estado do quiz: índice atual e respostas do usuário
+let indiceAtual = 0
+let respostas = []
+
+// Referências aos elementos da página (em português)
+const botaoIniciar = document.getElementById('btnIniciarQuiz')
+const telaInicio = document.getElementById('start-screen')
+const cartaoQuiz = document.getElementById('quiz-card')
+const elPergunta = document.getElementById('pergunta')
+const rotuloA = document.getElementById('rotuloA')
+const rotuloB = document.getElementById('rotuloB')
+const rotuloC = document.getElementById('rotuloC')
+const elNumeroAtual = document.getElementById('numeroAtual')
+const elQtdQuestoes = document.getElementById('qtdQuestoes')
+const botaoSubmeter = document.getElementById('btnSubmeter')
+const botaoProximo = document.getElementById('btnProximo')
+const areaResultado = document.getElementById('resultado')
+const conteudoResultado = document.getElementById('resultado-conteudo')
+const botaoRefazer = document.getElementById('btnRefazer')
+
+// Exibe a quantidade total de questões
+elQtdQuestoes.innerText = perguntas.length
+
+// Evento para iniciar o quiz: esconde a tela inicial e mostra o cartão do quiz
+botaoIniciar.addEventListener('click', () => {
+    telaInicio.style.display = 'none'
+    cartaoQuiz.style.display = 'block'
+    indiceAtual = 0
+    preencherQuestao(indiceAtual)
+})
+
+/**
+ * Preenche o cartão com a questão de índice fornecido
+ * - atualiza pergunta e rótulos das alternativas
+ * - reseta o formulário de opções
+ * - habilita/desabilita botões conforme necessário
+ */
+function preencherQuestao(indice) {
+    const q = perguntas[indice]
+    elPergunta.innerText = q.pergunta
+    rotuloA.innerText = q.A.text
+    rotuloB.innerText = q.B.text
+    rotuloC.innerText = q.C.text
+    elNumeroAtual.innerText = indice+1
+    // reset dos radios (limpa seleção anterior)
+    const formulario = document.getElementById('formOpcoes')
+    formulario.reset()
+    // botão próxima fica desabilitado até o usuário submeter
+    botaoProximo.disabled = true
+    botaoSubmeter.disabled = false
+}
+
+// Ação ao submeter uma resposta
+botaoSubmeter.addEventListener('click', (evento) => {
+    evento.preventDefault()
+    const formulario = document.getElementById('formOpcoes')
+    const escolha = formulario.opcao.value
+    // valida se o usuário selecionou uma alternativa
+    if (!escolha) {
+        alert('Escolha uma opção antes de submeter.')
+        return
+    }
+    // armazena a resposta para a questão atual
+    respostas[indiceAtual] = escolha
+    // desabilita submeter e habilita próxima
+    botaoSubmeter.disabled = true
+    botaoProximo.disabled = false
+})
+
+// Ao clicar em Próxima: avança para a próxima questão ou calcula resultado
+botaoProximo.addEventListener('click', () => {
+    indiceAtual++
+    if (indiceAtual < perguntas.length) {
+        preencherQuestao(indiceAtual)
+    } else {
+        calcularResultado()
+    }
+})
+
+/**
+ * Calcula o resultado do quiz:
+ * 1) Soma pontuação das virtudes (virtude principal recebe peso 2)
+ * 2) Converte pontuação de virtudes para pontuação por deus
+ * 3) Seleciona o deus com maior pontuação e exibe
+ */
+function calcularResultado() {
+    // 1) soma por virtude
+    const pontuacaoVirtudes = {}
+    for (let i=0;i<perguntas.length;i++){
+        const escolha = respostas[i]
+        const q = perguntas[i]
+        if (!escolha) continue
+        const virtudes = q[escolha].virtudes
+        if (!virtudes) continue
+        // primeira virtude tem peso 2 (principal)
+        const principal = virtudes[0]
+        const secundaria = virtudes[1]
+        pontuacaoVirtudes[principal] = (pontuacaoVirtudes[principal]||0) + 2
+        if (secundaria) pontuacaoVirtudes[secundaria] = (pontuacaoVirtudes[secundaria]||0) + 1
+    }
+
+    // 2) converter para pontuação por deus
+    // Para cada virtude, distribuímos a pontuação para todos os deuses associados
+    const pontuacaoDeuses = {}
+    for (const [virtude, pontuacao] of Object.entries(pontuacaoVirtudes)){
+        const deuses = virtudeParaDeuses[virtude] || []
+        for (const deus of deuses) {
+            pontuacaoDeuses[deus] = (pontuacaoDeuses[deus]||0) + pontuacao
+        }
+    }
+
+    // 3) escolher deus com maior pontuação
+    let melhorDeus = null
+    let melhorPontuacao = -1
+    for (const [deus, pontuacao] of Object.entries(pontuacaoDeuses)){
+        if (pontuacao > melhorPontuacao) { melhorPontuacao = pontuacao; melhorDeus = deus }
+    }
+
+    // exibir resultado
+    cartaoQuiz.style.display = 'none'
+    areaResultado.style.display = 'block'
+    if (!melhorDeus) {
+        conteudoResultado.innerHTML = '<p>Não foi possível determinar um resultado.</p>'
+        return
+    }
+    const img = imagensDeuses[melhorDeus] ? `<img src="${imagensDeuses[melhorDeus]}" alt="${melhorDeus}" class="god-img"/>` : ''
+    let virtudesTop = Object.entries(pontuacaoVirtudes).sort((a,b)=>b[1]-a[1]).slice(0,3).map(v=>v[0])
+    conteudoResultado.innerHTML = `
+        <div class="resultado-box">
+            ${img}
+            <div>
+              <h4>${melhorDeus}</h4>
+              <p>Virtudes mais marcantes: ${virtudesTop.join(', ')}</p>
+            </div>
+        </div>
+    `
+}
+
+// Botão para refazer o quiz: reseta estado e retorna à tela inicial
+botaoRefazer.addEventListener('click', ()=>{
+    respostas = []
+    indiceAtual = 0
+    areaResultado.style.display = 'none'
+    telaInicio.style.display = 'block'
+})
+
+</script>
+
+</html>
