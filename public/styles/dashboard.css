@@ -4,6 +4,11 @@
     box-sizing: border-box;
     --cor-primaria: #002752;
     --cor-secundaria: #FCBE56;
+    --cor-tecearia: #F3E4C8;
+}
+
+body {
+    background-color: var(--cor-tecearia);
 }
 
 .lado-direito {
@@ -22,35 +27,54 @@
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    gap: 20px;
+    justify-content: space-between;
 }
 
 .card-kpi {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width: 300px;
-    height: 120px;
+    width: 350px;
+    height: 140px;
 
     border-bottom: solid 3px var(--cor-secundaria);
     border-right: solid 3px var(--cor-secundaria);
     border-radius: 16px;
+    background-color: white;
+
+    padding: 10px 15px;
+}
+
+.card-kpi img {
+    height: 50px;
+    width: 50px;
+
+    color: white;
+}
+
+.kpi-texto {
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-kpi h2 {
-    font-size: 20px;
+    font-size: 50px;
 }
-
 .card-kpi p {
     color: black;
-    font-size: 30px;
-}
-
-.lado-direito h1 {
-    color: var(--cor-primaria);
 }
 
 .grafico-chales {
-    height: auto;
+    height: 400px;
     width: 1000px;
+
+    border-bottom: solid 3px var(--cor-secundaria);
+    border-right: solid 3px var(--cor-secundaria);
+    border-radius: 16px;
+    background-color: white;
+
+    padding: 0px;
 }
