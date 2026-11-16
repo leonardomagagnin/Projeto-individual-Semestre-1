@@ -53,25 +53,22 @@
 
 </html>
 <script>
-  let campos = [];
   let criterios = 0;
   function verificar() {
+    let senhaVerificar = [];
+
     let senha = input_senha.value;
     let tamanhoMinimo = senha.length >= 8;
     let temMaiusculas = senha != senha.toLowerCase();
     let temMinusculas = senha != senha.toUpperCase();
 
+    senhaVerificar.push(tamanhoMinimo, temMaiusculas, temMinusculas);
     criterios = 0
-    if (tamanhoMinimo) {
-      criterios++
+    for (let i = 0; i < senhaVerificar.length; i++) {
+      if (senhaVerificar[i]) {
+        criterios++
+      }
     }
-    if (temMaiusculas) {
-      criterios++
-    }
-    if (temMinusculas) {
-      criterios++
-    }
-
     if (criterios == 3) {
       div_senha.innerHTML = `Senha Forte!`;
     } else if (criterios == 2) {
@@ -88,7 +85,6 @@
     let email = input_email.value;
     let senha = input_senha.value;
     let confirmarSenha = input_confirmarsenha.value;
-
 
     if (nome != '') {
 
