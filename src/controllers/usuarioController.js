@@ -78,7 +78,46 @@ function cadastrar(req, res) {
     }
 }
 
+function contarUsuarios(req, res) {
+    usuarioModel.contarUsuarios()
+    .then(
+        function (resultadoContagem) {
+            res.json(resultadoContagem)
+        }
+    ).catch(
+        function (erro) {
+                console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar a contagem! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+        }
+    )
+}
+
+function usuarioPorChale(req, res) {
+    usuarioModel.usuarioPorChale()
+    .then(
+        function (resultadoPorChale) {
+            res.json(resultadoPorChale)
+        }
+    )
+    .catch(
+        function (erro) {
+                console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar a contagem! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+        }
+    )
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    contarUsuarios,
+    usuarioPorChale
 }

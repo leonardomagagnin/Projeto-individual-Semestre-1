@@ -11,22 +11,28 @@ body {
     background-color: var(--cor-tecearia);
 }
 
+
 .lado-direito {
     margin-left: 260px;
-    width: 75%;
-    color: var(--cor-secundaria);
+    width: calc(100% - 260px);
     min-height: 100vh;
+    padding: 30px 40px;
+    gap: 20px;
 
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+}
+
+.lado-direito h1 {
+    display: flex;
+    align-self: flex-start;
 }
 
 .kpis-section {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
     gap: 20px;
     justify-content: space-between;
 }
@@ -63,18 +69,24 @@ body {
 .card-kpi h2 {
     font-size: 50px;
 }
+
 .card-kpi p {
     color: black;
 }
 
 .grafico-chales {
-    height: 400px;
-    width: 1000px;
+    width: 100%;
+    max-width: 1090px;
+    flex: 1;
+    /* cresce e ocupa o espaço que sobra na página */
+    min-height: 100px;
+    /* em vez de height fixo */
+    position: relative;
 
     border-bottom: solid 3px var(--cor-secundaria);
     border-right: solid 3px var(--cor-secundaria);
     border-radius: 16px;
     background-color: white;
 
-    padding: 0px;
+    padding: 20px;
 }
