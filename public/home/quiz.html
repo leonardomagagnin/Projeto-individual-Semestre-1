@@ -329,16 +329,34 @@
     // Mapeamento de virtudes para deuses (uma virtude pode apontar para mais de um deus)
     // Assim, quando uma virtude é pontuada, todos os deuses associados recebem esses pontos.
     const virtudeParaDeuses = {
-        "Sabedoria": ["Athena", "Hermes"],
-        "Astúcia": ["Hermes", "Hades"],
-        "Coragem": ["Ares", "Zeus"],
-        "Perseverança": ["Zeus", "Hera"],
-        "Liderança": ["Zeus", "Hera"],
-        "Compaixão": ["Aphrodite", "Deméter"],
-        "Lealdade": ["Hera", "Poseidon"],
-        "Justiça": ["Athena", "Zeus"],
+
+        "Adaptabilidade": ["Hermes", "Tyche", "Athena"],
+        "Ambição": ["Zeus", "Ares", "Nike"],
+        "Astúcia": ["Hermes", "Hades", "Athena"],
+        "Carisma": ["Aphrodite", "Apollo", "Dionysus"],
+        "Comunicação": ["Iris", "Hermes", "Apollo"],
+        "Coragem": ["Ares", "Zeus", "Poseidon"],
         "Criatividade": ["Apollo", "Hefesto", "Dionysus"],
-        "Independência": ["Artemis", "Apollo"]
+        "Determinação": ["Hades", "Ares", "Nike"],
+        "Discrição": ["Hades", "Artemis", "Hecate"],
+        "Empatia": ["Aphrodite", "Deméter", "Hebe"],
+        "Espontaneidade": ["Dionysus", "Hermes", "Tyche"],
+        "Generosidade": ["Deméter", "Aphrodite", "Hebe"],
+        "Independência": ["Artemis", "Apollo", "Hecate"],
+        "Inventividade": ["Hefesto", "Athena", "Hermes"],
+        "Intuição": ["Hecate", "Apollo", "Tyche"],
+        "Justiça": ["Athena", "Zeus", "Nemesis"],
+        "Lealdade": ["Poseidon", "Deméter", "Artemis"],
+        "Liderança": ["Zeus", "Athena", "Poseidon"],
+        "Ousadia": ["Ares", "Hermes", "Tyche"],
+        "Perseverança": ["Poseidon", "Hades", "Nike"],
+        "Proteção": ["Zeus", "Ares", "Deméter"],
+        "Responsabilidade": ["Zeus", "Athena", "Deméter"],
+        "Resiliência": ["Poseidon", "Hades", "Artemis"],
+        "Sabedoria": ["Athena", "Hermes", "Hecate"],
+        "Serenidade": ["Hypnos", "Deméter", "Apollo"],
+        "Superação": ["Nike", "Ares", "Zeus"],
+        "Vitalidade": ["Hebe", "Apollo", "Dionysus"]
     }
 
     // Caminhos das imagens dos deuses (usadas no resultado)
@@ -461,8 +479,10 @@
             // primeira virtude tem peso 2 (principal)
             const principal = virtudes[0]
             const secundaria = virtudes[1]
+            const tecearia = virtudes[2]
             pontuacaoVirtudes[principal] = (pontuacaoVirtudes[principal] || 0) + 2
             if (secundaria) pontuacaoVirtudes[secundaria] = (pontuacaoVirtudes[secundaria] || 0) + 1
+            if (tecearia) pontuacaoVirtudes[tecearia] = (pontuacaoVirtudes[tecearia] || 0) + 1
         }
 
         // 2) converter para pontuação por deus
