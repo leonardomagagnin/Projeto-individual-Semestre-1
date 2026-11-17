@@ -24,11 +24,9 @@ body {
     width: 600px;
     padding: 10px 15px;
     margin: 8px;
+    font-family: 'Caesar Dressing', cursive;
 }
 
-.lado-direito p {
-    
-}
 
 .chales-container {
     display: flex;
@@ -61,4 +59,3 @@ body {
 .chale-icon :hover {
     transform: scale(1.02);
 }
-

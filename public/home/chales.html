@@ -63,7 +63,7 @@
             <h2>Conheça os Chalés do Acampamento Meio-Sangue</h2>
             <p>Escolha um Chalé para ver sua descrição</p>
 
-            <input type="text" placeholder="Digite o nome do chalé...">
+            <input id="procurarChale" type="text" placeholder="Digite o nome do chalé...">
             <div class="chales-container">
                 <div class="chales-linha">
                     <div class="chale-icon">
@@ -133,9 +133,87 @@
                         <img src="../assets/img/chale-hecate.jpeg" alt="chale-hecate">
                     </div>
                 </div>
-            </div>
+    </div>
         </div>
     </div>
+    <script>
+        // Filtra os cards de chalés pelo input, agrupa os encontrados enfileirados
+        // e mostra mensagem quando não há resultados.
+        (function () {
+            const input = document.getElementById('procurarChale');
+            const container = document.querySelector('.chales-container');
+            if (!input || !container) return;
+
+            // guarda HTML original para restaurar quando a busca for limpa
+            const originalHTML = container.innerHTML;
+
+            // elemento de mensagem "não encontrado" (centralizado)
+            const noFound = document.createElement('div');
+            noFound.textContent = 'Chalé não encontrado :(';
+            noFound.style.display = 'none';
+            noFound.style.marginTop = '20px';
+            noFound.style.fontSize = '20px';
+            noFound.style.color = '#c0392b';
+            noFound.style.width = '100%';
+            noFound.style.textAlign = 'center';
+            noFound.style.fontFamily = "'Caesar Dressing', cursive";
+            noFound.className = 'chale-nao-encontrado';
+            container.parentNode.insertBefore(noFound, container.nextSibling);
+
+            input.addEventListener('input', function () {
+                const q = input.value.trim().toLowerCase();
+
+                if (q === '') {
+                    // restaura visual original
+                    container.innerHTML = originalHTML;
+                    noFound.style.display = 'none';
+                    return;
+                }
+
+                // usa uma cópia do HTML original para garantir todos os cards
+                const temp = document.createElement('div');
+                temp.innerHTML = originalHTML;
+                const allCards = Array.from(temp.querySelectorAll('.chale-icon'));
+
+                const matched = allCards.filter(card => {
+                    const img = card.querySelector('img');
+                    let raw = '';
+                    if (img) raw = img.alt || (img.src || '').split('/').pop().split('.')[0] || '';
+                    raw = raw.toString();
+                    // limpa para comparação: remove prefixos como 'chale-' e caracteres não alfanuméricos
+                    const clean = raw.toLowerCase().replace(/chale[-_\s]?/i, '').replace(/[^a-z0-9]/gi, '');
+                    return clean.indexOf(q) !== -1;
+                });
+
+                // atualiza container: se houver matches, cria uma única linha enfileirada
+                container.innerHTML = '';
+
+                if (matched.length === 0) {
+                    // nada encontrado
+                    noFound.style.display = '';
+                    return;
+                }
+
+                noFound.style.display = 'none';
+
+                const line = document.createElement('div');
+                line.className = 'chales-linha';
+                // enfileira: alinhado à esquerda, com wrap para responsividade
+                line.style.justifyContent = 'flex-start';
+                line.style.flexWrap = 'wrap';
+                line.style.gap = '10px';
+
+                matched.forEach(card => {
+                    const clone = card.cloneNode(true);
+                    // garante que o card seja exibido (caso original tivesse display:none)
+                    clone.style.display = '';
+                    line.appendChild(clone);
+                });
+
+                container.appendChild(line);
+            });
+        })();
+    </script>
 </body>
 
 </html>
