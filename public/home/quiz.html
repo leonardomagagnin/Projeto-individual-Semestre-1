@@ -15,6 +15,14 @@
 </head>
 
 <body>
+    <header>
+        <div class="container-header">
+            <div class="sobre-usuario">
+                <h2>Olá Usuário!</h2>
+                <span>Semideus não reclamado</span>
+            </div>
+        </div>
+    </header>
     <div class="container-all">
         <div class="lado-esquerdo">
 
@@ -71,10 +79,14 @@
                     <div id="pergunta" class="quiz-pergunta"></div>
 
                     <form id="formOpcoes" class="quiz-opcoes">
-                        <label><input type="radio" name="opcao" value="A"> <span class="letra-opcao">A</span><span id="rotuloA"></span></label>
-                        <label><input type="radio" name="opcao" value="B"> <span class="letra-opcao">B</span><span id="rotuloB"></span></label>
-                        <label><input type="radio" name="opcao" value="C"> <span class="letra-opcao">C</span><span id="rotuloC"></span></label>
-                        <label><input type="radio" name="opcao" value="D"> <span class="letra-opcao">D</span><span id="rotuloD"></span></label>
+                        <label><input type="radio" name="opcao" value="A"> <span class="letra-opcao">A</span><span
+                                id="rotuloA"></span></label>
+                        <label><input type="radio" name="opcao" value="B"> <span class="letra-opcao">B</span><span
+                                id="rotuloB"></span></label>
+                        <label><input type="radio" name="opcao" value="C"> <span class="letra-opcao">C</span><span
+                                id="rotuloC"></span></label>
+                        <label><input type="radio" name="opcao" value="D"> <span class="letra-opcao">D</span><span
+                                id="rotuloD"></span></label>
                     </form>
 
                     <div class="botoes">
@@ -594,6 +606,7 @@
             ? `<img src="${imagensDeuses[melhorDeus]}" alt="${melhorDeus}" class="god-img"/>`
             : ''
 
+        let chale = idChales[melhorDeus];
         let virtudesTop = Object.entries(pontuacaoVirtudes)
             .sort((a, b) => b[1] - a[1])
             .slice(0, 3)
@@ -601,9 +614,13 @@
 
         conteudoResultado.innerHTML = `
         <div class="resultado-box">
-            ${img}
+            <div>
+                ${img}
+            </div>
+            
             <div>
                 <h4>${melhorDeus}</h4>
+                <p>Chalé ${chale}</p>
                 <p>Virtudes mais marcantes: ${virtudesTop.join(', ')}</p>
             </div>
         </div>

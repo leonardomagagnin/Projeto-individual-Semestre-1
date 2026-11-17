@@ -18,6 +18,10 @@ router.get("/contarUsuarios", function(req, res) {
 
 router.get("/usuarioPorChale", function(req,res) {
     usuarioController.usuarioPorChale(req, res);
-})
+});
+
+router.post("/reclamarUsuario", function(req, res) {
+    usuarioController.reclamarUsuario(req, res);
+});
 
 module.exports = router;
