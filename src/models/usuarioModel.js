@@ -31,9 +31,15 @@ function usuarioPorChale() {
     var instrucaoSql = `SELECT * FROM vw_contagem;`;
     return database.executar(instrucaoSql);
 }
+
+function reclamarUsuario(id, fk_chale) {
+    var instrucaoSql = `UPDATE usuario SET fk_chale = '${fk_chale}', reclamado = 1 WHERE id = '${id}';`
+    return database.executar(instrucaoSql);
+}
 module.exports = {
     autenticar,
     cadastrar,
     contarUsuarios,
-    usuarioPorChale
+    usuarioPorChale,
+    reclamarUsuario
 };

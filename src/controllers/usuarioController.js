@@ -115,9 +115,32 @@ function usuarioPorChale(req, res) {
     )
 }
 
+function reclamarUsuario(req, res) {
+    var fk_chale = req.body.fk_chaleServer;
+    var id = req.body.idServer;
+    
+    usuarioModel.reclamarUsuario(id, fk_chale)
+    .then(
+        function (resultadoReclamado) {
+            res.json(resultadoReclamado)
+        }
+    )
+    .catch(
+        function (erro) {
+                console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar a contagem! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+        }
+    )
+}
+
 module.exports = {
     autenticar,
     cadastrar,
     contarUsuarios,
-    usuarioPorChale
+    usuarioPorChale,
+    reclamarUsuario
 }

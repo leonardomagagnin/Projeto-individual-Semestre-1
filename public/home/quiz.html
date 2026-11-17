@@ -61,17 +61,20 @@
                 </div>
 
                 <div id="quiz-card" class="quiz-card" style="display:none;">
-                    <div id="infoQuestao">Questão <span id="numeroAtual">1</span> / <span id="qtdQuestoes">10</span>
+                    <div class="questaoAtual">
+                        <div id="infoQuestao">Questão <span id="numeroAtual">1</span> / <span id="qtdQuestoes">10</span>
+                        </div>
                     </div>
+
                     <h2 id="tituloQuestao"></h2>
                     <p id="contextoQuestao"></p>
-                    <div id="pergunta" class="pergunta"></div>
+                    <div id="pergunta" class="quiz-pergunta"></div>
 
-                    <form id="formOpcoes">
-                        <label><input type="radio" name="opcao" value="A"> <span id="rotuloA"></span></label>
-                        <label><input type="radio" name="opcao" value="B"> <span id="rotuloB"></span></label>
-                        <label><input type="radio" name="opcao" value="C"> <span id="rotuloC"></span></label>
-                        <label><input type="radio" name="opcao" value="D"> <span id="rotuloD"></span></label>
+                    <form id="formOpcoes" class="quiz-opcoes">
+                        <label><input type="radio" name="opcao" value="A"> <span class="letra-opcao">A</span><span id="rotuloA"></span></label>
+                        <label><input type="radio" name="opcao" value="B"> <span class="letra-opcao">B</span><span id="rotuloB"></span></label>
+                        <label><input type="radio" name="opcao" value="C"> <span class="letra-opcao">C</span><span id="rotuloC"></span></label>
+                        <label><input type="radio" name="opcao" value="D"> <span class="letra-opcao">D</span><span id="rotuloD"></span></label>
                     </form>
 
                     <div class="botoes">
@@ -80,7 +83,7 @@
                     </div>
                 </div>
 
-                <div id="resultado" class="quiz-card" style="display:none;">
+                <div id="resultado" class="quiz-resultado" style="display:none;">
                     <h3>Resultado</h3>
                     <div id="resultado-conteudo"></div>
                     <button id="btnRefazer">Refazer Quiz</button>
@@ -330,38 +333,38 @@
     // Assim, quando uma virtude é pontuada, todos os deuses associados recebem esses pontos.
     const virtudeParaDeuses = {
 
-        "Adaptabilidade": ["Hermes", "Tyche", "Athena"],
+        "Adaptabilidade": ["Hermes", "Tyche", "Atena"],
         "Ambição": ["Zeus", "Ares", "Nike"],
-        "Astúcia": ["Hermes", "Hades", "Athena"],
-        "Carisma": ["Aphrodite", "Apollo", "Dionysus"],
+        "Astúcia": ["Hermes", "Hades", "Atena"],
+        "Carisma": ["Afrodite", "Apollo", "Dionísious"],
         "Comunicação": ["Iris", "Hermes", "Apollo"],
         "Coragem": ["Ares", "Zeus", "Poseidon"],
-        "Criatividade": ["Apollo", "Hefesto", "Dionysus"],
+        "Criatividade": ["Apollo", "Hefesto", "Dionísious"],
         "Determinação": ["Hades", "Ares", "Nike"],
         "Discrição": ["Hades", "Artemis", "Hecate"],
-        "Empatia": ["Aphrodite", "Deméter", "Hebe"],
-        "Espontaneidade": ["Dionysus", "Hermes", "Tyche"],
-        "Generosidade": ["Deméter", "Aphrodite", "Hebe"],
+        "Empatia": ["Afrodite", "Deméter", "Hebe"],
+        "Espontaneidade": ["Dionísious", "Hermes", "Tyche"],
+        "Generosidade": ["Deméter", "Afrodite", "Hebe"],
         "Independência": ["Artemis", "Apollo", "Hecate"],
-        "Inventividade": ["Hefesto", "Athena", "Hermes"],
+        "Inventividade": ["Hefesto", "Atena", "Hermes"],
         "Intuição": ["Hecate", "Apollo", "Tyche"],
-        "Justiça": ["Athena", "Zeus", "Nemesis"],
+        "Justiça": ["Atena", "Zeus", "Nemesis"],
         "Lealdade": ["Poseidon", "Deméter", "Artemis"],
-        "Liderança": ["Zeus", "Athena", "Poseidon"],
+        "Liderança": ["Zeus", "Atena", "Poseidon"],
         "Ousadia": ["Ares", "Hermes", "Tyche"],
         "Perseverança": ["Poseidon", "Hades", "Nike"],
         "Proteção": ["Zeus", "Ares", "Deméter"],
-        "Responsabilidade": ["Zeus", "Athena", "Deméter"],
+        "Responsabilidade": ["Zeus", "Atena", "Deméter"],
         "Resiliência": ["Poseidon", "Hades", "Artemis"],
-        "Sabedoria": ["Athena", "Hermes", "Hecate"],
+        "Sabedoria": ["Atena", "Hermes", "Hecate"],
         "Serenidade": ["Hypnos", "Deméter", "Apollo"],
         "Superação": ["Nike", "Ares", "Zeus"],
-        "Vitalidade": ["Hebe", "Apollo", "Dionysus"]
+        "Vitalidade": ["Hebe", "Apollo", "Dionísio"]
     }
 
     // Caminhos das imagens dos deuses (usadas no resultado)
     const imagensDeuses = {
-        
+
         "Zeus": "../assets/img/Zeus.jpeg",
         "Poseidon": "../assets/img/poseidon.jpeg",
         "Deméter": "../assets/img/demeter.jpeg",
@@ -372,16 +375,38 @@
         "Hefesto": "../assets/img/hefesto.jpeg",
         "Afrodite": "../assets/img/aphrodite.jpeg",
         "Hermes": "../assets/img/hermes.jpeg",
-        "Dionisio": "../assets/img/Dionysus.jpeg",
-        "Hades": "../assets/img/hades.jpeg", 
+        "Dionísio": "../assets/img/Dionysus.jpeg",
+        "Hades": "../assets/img/hades.jpeg",
         "Iris": "../assets/img/iris.jpeg",
-        "Hypnos": "../assets/img/hipnos.jpeg", 
+        "Hypnos": "../assets/img/hipnos.jpeg",
         "Nemesis": "../assets/img/nemesis.jpeg",
         "Nike": "../assets/img/nike.jpeg",
         "Hebe": "../assets/img/hebe.jpeg",
         "Tyche": "../assets/img/tique.jpeg",
         "Hecate": "../assets/img/hecate.jpeg"
-    }
+    };
+
+    const idChales = {
+        "Zeus": 1,
+        "Poseidon": 3,
+        "Deméter": 4,
+        "Ares": 5,
+        "Atena": 6,
+        "Apollo": 7,
+        "Artemis": 8,
+        "Hefesto": 9,
+        "Afrodite": 10,
+        "Hermes": 11,
+        "Dionísio": 12,
+        "Hades": 13,
+        "Iris": 14,
+        "Hypnos": 15,
+        "Nemesis": 16,
+        "Nike": 17,
+        "Hebe": 18,
+        "Tyche": 19,
+        "Hecate": 20
+    };
 
     // Estado do quiz: índice atual e respostas do usuário
     let indiceAtual = 0
@@ -477,26 +502,37 @@
     function calcularResultado() {
         // 1) soma por virtude
         const pontuacaoVirtudes = {}
+
         for (let i = 0; i < perguntas.length; i++) {
             const escolha = respostas[i]
             const q = perguntas[i]
+
             if (!escolha) continue
+
             const virtudes = q[escolha].virtudes
             if (!virtudes) continue
-            // primeira virtude tem peso 2 (principal)
+
             const principal = virtudes[0]
             const secundaria = virtudes[1]
             const tecearia = virtudes[2]
+
             pontuacaoVirtudes[principal] = (pontuacaoVirtudes[principal] || 0) + 2
-            if (secundaria) pontuacaoVirtudes[secundaria] = (pontuacaoVirtudes[secundaria] || 0) + 1
-            if (tecearia) pontuacaoVirtudes[tecearia] = (pontuacaoVirtudes[tecearia] || 0) + 1
+
+            if (secundaria) {
+                pontuacaoVirtudes[secundaria] = (pontuacaoVirtudes[secundaria] || 0) + 1
+            }
+
+            if (tecearia) {
+                pontuacaoVirtudes[tecearia] = (pontuacaoVirtudes[tecearia] || 0) + 1
+            }
         }
 
         // 2) converter para pontuação por deus
-        // Para cada virtude, distribuímos a pontuação para todos os deuses associados
         const pontuacaoDeuses = {}
+
         for (const [virtude, pontuacao] of Object.entries(pontuacaoVirtudes)) {
             const deuses = virtudeParaDeuses[virtude] || []
+
             for (const deus of deuses) {
                 pontuacaoDeuses[deus] = (pontuacaoDeuses[deus] || 0) + pontuacao
             }
@@ -505,25 +541,70 @@
         // 3) escolher deus com maior pontuação
         let melhorDeus = null
         let melhorPontuacao = -1
+
         for (const [deus, pontuacao] of Object.entries(pontuacaoDeuses)) {
-            if (pontuacao > melhorPontuacao) {melhorPontuacao = pontuacao; melhorDeus = deus}
+            if (pontuacao > melhorPontuacao) {
+                melhorPontuacao = pontuacao
+                melhorDeus = deus
+            }
         }
 
-        // exibir resultado
+        // 4) exibir resultado
         cartaoQuiz.style.display = 'none'
         areaResultado.style.display = 'block'
+
         if (!melhorDeus) {
             conteudoResultado.innerHTML = '<p>Não foi possível determinar um resultado.</p>'
             return
         }
-        const img = imagensDeuses[melhorDeus] ? `<img src="${imagensDeuses[melhorDeus]}" alt="${melhorDeus}" class="god-img"/>` : ''
-        let virtudesTop = Object.entries(pontuacaoVirtudes).sort((a, b) => b[1] - a[1]).slice(0, 3).map(v => v[0])
+
+        let idUsuario = sessionStorage.getItem("ID_USUARIO")
+        let fk_chale = idChales[melhorDeus]
+
+        // 5) enviar resultado ao banco
+        if (!idUsuario || !fk_chale) {
+            console.error("Não foi possível identificar o usuário ou o chalé.")
+        } else {
+            fetch("/usuarios/reclamarUsuario", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    idServer: idUsuario,
+                    fk_chaleServer: fk_chale
+                })
+            })
+                .then(function (resposta) {
+                    if (resposta.ok) {
+                        console.log("Chalé atualizado com sucesso!")
+                    } else {
+                        resposta.text().then(function (texto) {
+                            console.error("Erro ao atualizar o chalé:", texto)
+                        })
+                    }
+                })
+                .catch(function (erro) {
+                    console.error("Erro na comunicação com o servidor:", erro)
+                })
+        }
+
+        // 6) montar conteúdo da revelação
+        const img = imagensDeuses[melhorDeus]
+            ? `<img src="${imagensDeuses[melhorDeus]}" alt="${melhorDeus}" class="god-img"/>`
+            : ''
+
+        let virtudesTop = Object.entries(pontuacaoVirtudes)
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 3)
+            .map(v => v[0])
+
         conteudoResultado.innerHTML = `
         <div class="resultado-box">
             ${img}
             <div>
-              <h4>${melhorDeus}</h4>
-              <p>Virtudes mais marcantes: ${virtudesTop.join(', ')}</p>
+                <h4>${melhorDeus}</h4>
+                <p>Virtudes mais marcantes: ${virtudesTop.join(', ')}</p>
             </div>
         </div>
     `

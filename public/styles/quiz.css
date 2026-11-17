@@ -1,103 +1,80 @@
 /* Estilos básicos para o quiz */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --cor-primaria: #002752;
+    --cor-secundaria: #FCBE56;
+    --cor-tecearia: #F3E4C8;
+}
+
+body {
+     background-color: var(--cor-tecearia)
+}
 .lado-direito {
     margin-left: 260px;
-    width: 75%;
+    width: calc(100% - 260px);
 }
 
 .quiz-container {
-    max-width: 800px;
-    margin: 24px auto;
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px;
+
+
 }
 
 .quiz-card {
-    background: #fff;
-    border-radius: 8px;
-    padding: 18px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-}
-
-#start-screen h2 {
-    font-family: 'Caesar Dressing', serif;
-    margin: 0 0 8px 0;
-}
-
-#start-screen p {
-    margin: 0 0 12px 0;
-    color: #444
-}
-
-#btnIniciarQuiz,
-#btnSubmeter,
-#btnProximo,
-#btnRefazer {
-    background: #2b6cdf;
-    color: #fff;
-    border: none;
-    padding: 10px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-#btnProximo[disabled],
-#btnSubmeter[disabled] {
-    opacity: 0.6;
-    cursor: default
-}
-
-#formOpcoes {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 12px
-}
 
-#formOpcoes label {
-    background: #f7f7fb;
-    padding: 10px;
-    border-radius: 6px;
-    cursor: pointer;
+    width: 100%;
+    height: 100vh;
+}
+.quiz-opcoes {
     display: flex;
-    gap: 8px;
-    align-items: center
-}
-
-#formOpcoes input[type=radio] {
-    transform: scale(1.1)
-}
-
-.pergunta {
-    font-weight: 600;
-    margin-bottom: 8px
-}
-
-.botoes {
-    margin-top: 14px;
-    display: flex;
-    gap: 8px
-}
-
-.resultado-box {
-    display: flex;
+    flex-direction: column;
     gap: 12px;
-    align-items: center
 }
 
-.god-img {
-    width: 96px;
-    height: 96px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12)
+.quiz-opcoes label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 15px;
+    background-color: #FFF9EF;
+    border-radius: 10px;
+    border-bottom: solid 3px var(--cor-secundaria);
+    border-right: solid 3px var(--cor-secundaria);
+    cursor: pointer;
+    transition: 0.2s;
+    
 }
 
-/* Ajustes responsivos */
-@media (max-width:700px) {
-    .quiz-container {
-        padding: 12px
-    }
+.letra-opcao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    flex-shrink: 0;
+}
 
-    .god-img {
-        width: 72px;
-        height: 72px
-    }
+.quiz-opcoes input[type="radio"] {
+    display: none;
+}
+
+.quiz-opcoes label:hover {
+    background-color: var(--cor-primaria);
+    color: white;
+    transition: 0.3s;
+}
+
+.quiz-opcoes label:has(input:checked) {
+    background-color: var(--cor-primaria);
+    color: white;
 }
