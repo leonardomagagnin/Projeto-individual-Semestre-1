@@ -13,8 +13,8 @@ body {
 
 
 .lado-direito {
-    margin-left: 260px;
-    width: calc(100% - 260px);
+    margin-left: 230px;
+    width: calc(100% - 230px);
     min-height: 100vh;
     padding: 30px 40px;
     gap: 20px;
