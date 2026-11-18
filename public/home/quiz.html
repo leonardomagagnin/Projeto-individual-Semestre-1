@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Alegreya:wght@400;500&family=Cinzel:wght@600&display=swap">
 
     <link rel="stylesheet" href="../styles/side-bar.css">
     <link rel="stylesheet" href="../styles/quiz.css">
@@ -61,11 +62,23 @@
         </div>
         <div class="lado-direito">
             <div class="quiz-container">
-                <div id="start-screen" class="quiz-card">
-                    <h2>Oráculo de Delfos</h2>
-                    <p>Escolha aquilo que mais se aproxima de quem você realmente é. Nenhuma resposta é certa ou errada.
-                    </p>
-                    <button id="btnIniciarQuiz">Iniciar Quiz</button>
+                <div id="start-screen" class="quiz-card-inicio">
+                    <div class="texto-quiz-inicio">
+                        <h2>Oráculo de Delfos</h2>
+                        <p>Existe em você muito mais do que imagina. Cada escolha revela um pouco de sua essência, de
+                            suas virtudes e da força que carrega. Descubra qual divindade do Olimpo reconheceria em você
+                            um verdadeiro descendente.</p>
+
+                        <button id="btnIniciarQuiz">Iniciar Quiz</button>
+                        <div class="quiz-info">
+                            <span>Cerca de 5 minutos</span>
+                            <span>10 perguntas</span>
+                        </div>
+                    </div>
+                    <div class="quiz-img-inicio">
+                        <img src="../assets/img/oraculo.svg" alt="oraculo">
+                    </div>
+
                 </div>
 
                 <div id="quiz-card" class="quiz-card" style="display:none;">
@@ -503,6 +516,7 @@
         } else {
             calcularResultado()
         }
+
     })
 
     /**
@@ -613,12 +627,12 @@
             .map(v => v[0])
 
         conteudoResultado.innerHTML = `
-        <div class="resultado-box">
-            <div>
+        <div class="resultado-container">
+            <div class="resultad-imagem">
                 ${img}
             </div>
             
-            <div>
+            <div class="resultado-texto">
                 <h4>${melhorDeus}</h4>
                 <p>Chalé ${chale}</p>
                 <p>Virtudes mais marcantes: ${virtudesTop.join(', ')}</p>

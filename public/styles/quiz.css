@@ -9,21 +9,86 @@
 }
 
 body {
-     background-color: var(--cor-tecearia)
+    background-color: var(--cor-tecearia)
 }
+
 .lado-direito {
     margin-left: 260px;
     width: calc(100% - 260px);
 }
 
 .quiz-container {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     padding: 40px;
+}
 
+.quiz-card-inicio {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.quiz-card-inicio h2 {
+    font-size: 50px;
+}
+
+.quiz-card-inicio p {
+    max-width: 550px;
+    font-size: 17px;
+    font-weight: lighter;
+
+    font-family: 'Alegreya', serif;
+}
+
+.texto-quiz-inicio {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quiz-card-inicio button {
+    padding: 10px 15px;
+
+    border: none;
+    border-radius: 16px;
+    border-bottom: solid 2px var(--cor-primaria);
+    color: white;
+    background-color: var(--cor-secundaria);
+    font-family: 'Caesar Dressing', cursive;
+    
+    width: 170px;
+    font-size: 20px;
+    margin-top: 15px;
+
+    cursor: pointer;
+    transition: 0.2s;
 
 }
 
+.quiz-card-inicio button:hover {
+    transform: scale(1.02);
+
+}
+
+.quiz-img-inicio img {
+    height: 560px;
+
+    border-bottom: solid 5px var(--cor-secundaria);
+    border-radius: 16px;
+    border-right: solid 5px var(--cor-secundaria);
+}
+
+.quiz-info {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    font-family: 'Alegreya', serif;
+    font-size: 13px;
+}
 .quiz-card {
     display: flex;
     flex-direction: column;
@@ -31,6 +96,7 @@ body {
     width: 100%;
     height: 100vh;
 }
+
 .quiz-opcoes {
     display: flex;
     flex-direction: column;
@@ -48,7 +114,7 @@ body {
     border-right: solid 3px var(--cor-secundaria);
     cursor: pointer;
     transition: 0.2s;
-    
+
 }
 
 .letra-opcao {
@@ -77,6 +143,35 @@ body {
 .quiz-opcoes label:has(input:checked) {
     background-color: var(--cor-primaria);
     color: white;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+} 
+
+#btnProximo {
+    padding: 10px 15px;
+
+    border-radius: 16px;
+    border: none;
+    border-bottom: solid 2px var(--cor-primaria);
+    color: white;
+    background-color: var(--cor-secundaria);
+    font-family: 'Caesar Dressing', cursive;
+    
+    width: 150px;
+    font-size: 15px;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#btnProximo:hover {
+    transform: scale(1.02);
+    background-color: #002752;
+    color: var(--cor-secundaria);
 }
 
 .resultado-container {

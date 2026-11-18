@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --cor-primaria: #002752;
+    --cor-secundaria: #FCBE56;
+    --cor-tecearia: #F3E4C8;
+}
+
+body {
+     background-color: var(--cor-tecearia)
+}
+.lado-direito {
+    margin-left: 230px;
+    width: calc(100% - 230px);
+
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.img-god img {
+    border-radius: 20px;
+    border-bottom: solid 3px var(--cor-primaria);
+
+    width: 400px;
+    height: 600px;
+}
+
+.texto-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.texto-chale h2 {
+    font-size: 50px;
+    margin: 20px;
+}
+
+.texto-chale h4 {
+    font-size: 30px;
+    
+}
+
+.texto-chale p {
+    font-size: 30px;
+}
