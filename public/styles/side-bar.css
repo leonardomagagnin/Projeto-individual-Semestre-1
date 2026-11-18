@@ -27,8 +27,6 @@ header {
 .sobre-usuario {
     display: flex;
     flex-direction: column;
-
-    margin-left: 220px;
     gap: 5px;
 }
 
@@ -98,3 +96,4 @@ header {
     align-items: center;
     justify-content: space-around;
 }
+

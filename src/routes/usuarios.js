@@ -24,4 +24,7 @@ router.post("/reclamarUsuario", function(req, res) {
     usuarioController.reclamarUsuario(req, res);
 });
 
+router.get("/percentReclamados", function(req, res) {
+    usuarioController.percentReclamados(req, res);
+});
 module.exports = router;

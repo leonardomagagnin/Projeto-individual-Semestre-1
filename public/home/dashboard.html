@@ -88,16 +88,29 @@
                         <h2 id="chalePopuloso">Hermes</h2>
                         <p>Chalé Mais Populosado</p>
                     </div>
+                </div>
 
+                <div class="card-kpi">
+                    <img src="../assets/img/home.svg" alt="home">
+                    <div class="kpi-texto">
+                        <h2 id="semideusReclamado">4</h2>
+                        <p>Semideuses não reclamados</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="grafico-chales">
-                <h2>Ocupação de Semideuses por Chalé</h2>
-                <canvas id="myChart"></canvas>
+            <div class="graficos-space">
+                <div class="grafico-chales">
+                    <h2>Ocupação de Semideuses por Chalé</h2>
+                    <p>Número de Semideuses por Chalé</p>
+                    <canvas id="myChart"></canvas>
+                </div>
+                <div class="grafico-chales">
+                    <h2>Reclamado X Não-Reclamado</h2>
+                    <p>Percentual de semideuses reclamados</p>
+                    <canvas id="graficoPercent"></canvas>
+                </div>
             </div>
-
-
         </div>
     </div>
 </body>
@@ -182,4 +195,34 @@
         .catch(function (erro) {
             console.log(erro);
         });
+
+    const ctxPercent = document.getElementById('graficoPercent');
+    fetch('/usuarios/percentReclamados')
+        .then(function (resposta) {
+            return resposta.json();
+        })
+        .then(function (dados) {
+            let reclamados = dados[0].reclamados;
+            let naoReclamados = dados[0].naoReclamados;
+
+            console.log(dados);
+
+            let graficoReclamado = new Chart(ctxPercent, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Reclamados', 'Não Reclamados'],
+                    datasets: [{
+                        data: [reclamados, naoReclamados],
+                        borderWidth: 1,
+                        backgroundColor: ['#1B4D3E', '#FCBE56'],
+                    }]
+                },
+            })
+        })
+
+
+
+
+
+
 </script>

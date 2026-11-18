@@ -36,10 +36,19 @@ function reclamarUsuario(id, fk_chale) {
     var instrucaoSql = `UPDATE usuario SET fk_chale = '${fk_chale}', reclamado = 1 WHERE id = '${id}';`
     return database.executar(instrucaoSql);
 }
+
+function percentReclamados() {
+    var instrucaoSql = `SELECT
+                    SUM(CASE WHEN reclamado = 1 THEN 1 ELSE 0 END) AS reclamados,
+                    SUM(CASE WHEN reclamado = 0 THEN 1 ELSE 0 END) AS naoReclamados
+                    FROM usuario;`;
+    return database.executar(instrucaoSql);
+}
 module.exports = {
     autenticar,
     cadastrar,
     contarUsuarios,
     usuarioPorChale,
-    reclamarUsuario
+    reclamarUsuario,
+    percentReclamados
 };
