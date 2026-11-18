@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Alegreya:wght@400;500&family=Cinzel:wght@600&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Alegreya:wght@400;500&family=Cinzel:wght@600&display=swap">
 
     <link rel="stylesheet" href="../styles/side-bar.css">
     <link rel="stylesheet" href="../styles/quiz.css">
@@ -87,8 +88,10 @@
                         </div>
                     </div>
 
-                    <h2 id="tituloQuestao"></h2>
-                    <p id="contextoQuestao"></p>
+                    <div class="quiz-contexto">
+                        <h2 id="tituloQuestao"></h2>
+                        <p id="contextoQuestao"></p>
+                    </div>
                     <div id="pergunta" class="quiz-pergunta"></div>
 
                     <form id="formOpcoes" class="quiz-opcoes">
@@ -109,9 +112,10 @@
                 </div>
 
                 <div id="resultado" class="quiz-resultado" style="display:none;">
-                    <h3>Resultado</h3>
+                    <h3>    A névoa se dissipa, revelando aquilo que por tanto tempo permaneceu oculto. Seu sangue divino
+                        não pode mais ser ignorado. Só há uma explicação: você descende de...</h3>
                     <div id="resultado-conteudo"></div>
-                    <button id="btnRefazer">Refazer Quiz</button>
+                    <button id="btnConhecer">Conhecer o Chalé</button>
                 </div>
             </div>
         </div>
@@ -361,14 +365,14 @@
         "Adaptabilidade": ["Hermes", "Tyche", "Atena"],
         "Ambição": ["Zeus", "Ares", "Nike"],
         "Astúcia": ["Hermes", "Hades", "Atena"],
-        "Carisma": ["Afrodite", "Apollo", "Dionísious"],
+        "Carisma": ["Afrodite", "Apollo", "Dionísio"],
         "Comunicação": ["Iris", "Hermes", "Apollo"],
         "Coragem": ["Ares", "Zeus", "Poseidon"],
-        "Criatividade": ["Apollo", "Hefesto", "Dionísious"],
+        "Criatividade": ["Apollo", "Hefesto", "Dionísio"],
         "Determinação": ["Hades", "Ares", "Nike"],
         "Discrição": ["Hades", "Artemis", "Hecate"],
         "Empatia": ["Afrodite", "Deméter", "Hebe"],
-        "Espontaneidade": ["Dionísious", "Hermes", "Tyche"],
+        "Espontaneidade": ["Dionísio", "Hermes", "Tyche"],
         "Generosidade": ["Deméter", "Afrodite", "Hebe"],
         "Independência": ["Artemis", "Apollo", "Hecate"],
         "Inventividade": ["Hefesto", "Atena", "Hermes"],
@@ -432,6 +436,29 @@
         "Tyche": 19,
         "Hecate": 20
     };
+
+    const descricoes = {
+  "Zeus": "Deus do céu, do trovão e rei dos deuses. Quem herda o seu sangue costuma ser um líder nato, corajoso e com uma presença que faz os outros quererem segui-lo.",
+  "Hera": "Deusa do casamento, da família e rainha dos deuses. Quem herda o seu sangue costuma ser leal, protetor e determinado a defender quem ama.",
+  "Poseidon": "Deus dos mares, dos terremotos e dos cavalos. Quem herda o seu sangue costuma ser impulsivo, leal e forte como as ondas, com um espírito livre difícil de domar.",
+  "Deméter": "Deusa da agricultura e das colheitas. Quem herda o seu sangue costuma ser paciente, acolhedor e ter uma ligação especial com a natureza.",
+  "Ares": "Deus da guerra e da coragem em combate. Quem herda o seu sangue costuma ser destemido, competitivo e nunca fugir de um desafio.",
+  "Atena": "Deusa da sabedoria, da estratégia e da guerra justa. Quem herda o seu sangue costuma ser inteligente, observador e sempre ter um plano para tudo.",
+  "Apollo": "Deus da luz, da música, da poesia e da cura. Quem herda o seu sangue costuma ser talentoso, criativo e capaz de inspirar quem está por perto.",
+  "Artemis": "Deusa da caça, da lua e da natureza selvagem. Quem herda o seu sangue costuma ser independente, habilidoso e se sentir em casa ao ar livre.",
+  "Hefesto": "Deus do fogo, da forja e dos artesãos. Quem herda o seu sangue costuma ser engenhoso, persistente e capaz de construir ou consertar qualquer coisa.",
+  "Afrodite": "Deusa do amor e da beleza. Quem herda o seu sangue costuma ser carismático, sensível e saber conquistar as pessoas com facilidade.",
+  "Hermes": "Deus dos viajantes, dos mensageiros e dos ladrões. Quem herda o seu sangue costuma ser veloz, esperto e capaz de se virar em qualquer situação.",
+  "Dionísio": "Deus das festas, do teatro e da alegria. Quem herda o seu sangue costuma ser espontâneo, divertido e levar a vida com leveza.",
+  "Hades": "Deus dos mortos e das riquezas escondidas sob a terra. Quem herda o seu sangue costuma ser reservado, determinado e enxergar o que os outros preferem ignorar.",
+  "Iris": "Deusa do arco-íris e mensageira dos deuses. Quem herda o seu sangue costuma ser comunicativo, otimista e capaz de levar cor e boas notícias a qualquer lugar.",
+  "Hypnos": "Deus do sono e dos sonhos. Quem herda o seu sangue costuma ser calmo, tranquilo e ter o dom de acalmar os outros com a sua presença.",
+  "Nemesis": "Deusa da justiça e do equilíbrio. Quem herda o seu sangue costuma ser justo, firme e não deixar nenhuma injustiça passar em branco.",
+  "Nike": "Deusa da vitória. Quem herda o seu sangue costuma ser competitivo, perseverante e nunca se contentar com menos do que o primeiro lugar.",
+  "Hebe": "Deusa da juventude. Quem herda o seu sangue costuma ser enérgico, alegre e capaz de renovar o ânimo de quem está por perto.",
+  "Tyche": "Deusa da sorte e do destino. Quem herda o seu sangue costuma ser otimista, sortudo e se dar bem nos momentos mais inesperados.",
+  "Hecate": "Deusa da magia, da noite e das encruzilhadas. Quem herda o seu sangue costuma ser misterioso, intuitivo e fascinado pelo que está escondido."
+};
 
     // Estado do quiz: índice atual e respostas do usuário
     let indiceAtual = 0
@@ -621,6 +648,7 @@
             : ''
 
         let chale = idChales[melhorDeus];
+        let descricaoChale = descricoes[melhorDeus];
         let virtudesTop = Object.entries(pontuacaoVirtudes)
             .sort((a, b) => b[1] - a[1])
             .slice(0, 3)
@@ -628,14 +656,16 @@
 
         conteudoResultado.innerHTML = `
         <div class="resultado-container">
-            <div class="resultad-imagem">
+            <div class="resultado-imagem">
                 ${img}
             </div>
             
             <div class="resultado-texto">
-                <h4>${melhorDeus}</h4>
+                <h2>${melhorDeus}</h2>
                 <p>Chalé ${chale}</p>
-                <p>Virtudes mais marcantes: ${virtudesTop.join(', ')}</p>
+                <p>${descricaoChale}</p>
+                <h4>Virtudes mais marcantes:</h4>
+                <div class="card-virtude">${virtudesTop.join(', ')}</div>
             </div>
         </div>
     `
