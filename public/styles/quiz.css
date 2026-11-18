@@ -58,7 +58,7 @@ body {
     color: white;
     background-color: var(--cor-secundaria);
     font-family: 'Caesar Dressing', cursive;
-    
+
     width: 170px;
     font-size: 20px;
     margin-top: 15px;
@@ -89,6 +89,7 @@ body {
     font-family: 'Alegreya', serif;
     font-size: 13px;
 }
+
 .quiz-card {
     display: flex;
     flex-direction: column;
@@ -150,7 +151,7 @@ body {
     font-family: 'Alegreya', serif;
     width: 1000px;
 
-    
+
     border-radius: 10px;
     border-bottom: solid 3px var(--cor-secundaria);
     border-right: solid 3px var(--cor-secundaria);
@@ -192,7 +193,7 @@ body {
     flex-direction: row;
     align-items: flex-end;
     margin: 20px;
-} 
+}
 
 #btnProximo {
     padding: 10px 15px;
@@ -203,7 +204,7 @@ body {
     color: white;
     background-color: var(--cor-secundaria);
     font-family: 'Caesar Dressing', cursive;
-    
+
     width: 150px;
     font-size: 15px;
 
@@ -217,23 +218,89 @@ body {
     color: var(--cor-secundaria);
 }
 
+.quiz-resultado h3 {
+    font-weight: normal;
+    max-width: 700px;
+    margin-bottom: 15px;
+}
+
 .resultado-container {
     display: flex;
     flex-direction: row;
-
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1100px;
 }
 
 .resultado-imagem {
-    width: 50%;
+    width: 380px;
+    flex-shrink: 0;
 }
 
 .resultado-imagem img {
-    height: 600px;
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 16px;
+    border-bottom: solid 3px var(--cor-secundaria);
 }
 
 .resultado-texto {
-    width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+}
+
+.resultado-texto h2 {
+    font-size: 60px;
+    font-weight: normal;
+    color: var(--cor-primaria);
+}
+
+.resultado-texto p {
+    font-family: 'Alegreya', serif;
+    font-size: 21px;
+    max-width: 600px;
+}
+
+
+.resultado-texto h4 {
+    font-weight: normal;
+    font-size: 22px;
+
+    margin-top: 10px;
+}
+.card-virtude {
+    font-family: 'Alegreya', serif;
+    border-radius: 18px;
+    border-bottom: solid 2px var(--cor-secundaria);
+    background-color: white;
+    font-size: 20px;
+
+    padding: 10px 15px;
+}
+
+#btnConhecer {
+    padding: 10px 15px;
+    margin-top: 30px;
+
+    border-radius: 16px;
+    border: none;
+    border-bottom: solid 2px var(--cor-primaria);
+    color: white;
+    background-color: var(--cor-secundaria);
+    font-family: 'Caesar Dressing', cursive;
+
+    width: 200px;
+    font-size: 15px;
+
+    cursor: pointer;
+    transition: 0.2s;
+
+}
+
+#btnConhecer:hover {
+    transform: scale(1.02);
 }
