@@ -1,3 +1,4 @@
+/* Estilos básicos para o quiz */
 * {
     margin: 0;
     padding: 0;
@@ -8,85 +9,143 @@
 }
 
 body {
-    background-color: var(--cor-tecearia);
+    background-color: var(--cor-tecearia)
 }
-
 
 .lado-direito {
-    margin-left: 230px;
-    width: calc(100% - 230px);
-    min-height: 100vh;
-    padding: 30px 40px;
-    gap: 20px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    margin-left: 260px;
+    width: calc(100% - 260px);
 }
 
-.lado-direito h1 {
+.titulo-dash {
     display: flex;
-    align-self: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 20px;
+}
+
+.titulo-dash h1 {
+    font-size: 35px;
+    color: var(--cor-primaria);
+    font-weight: normal;
+}
+
+.titulo-dash p {
+    color: black;
+    font-family: 'Alegreya', serif;
 }
 
 .kpis-section {
     display: flex;
     flex-direction: row;
     gap: 20px;
-    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .card-kpi {
+    min-height: 140px;
+    width: 265px;
+    padding: 22px;
+    box-sizing: border-box;
+    
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
     align-items: center;
-    width: 350px;
-    height: 140px;
+    gap: 16px;
+
 
     border-bottom: solid 3px var(--cor-secundaria);
     border-right: solid 3px var(--cor-secundaria);
     border-radius: 16px;
     background-color: white;
 
-    padding: 10px 15px;
 }
 
-.card-kpi img {
-    height: 50px;
-    width: 50px;
 
-    color: white;
+.card-kpi img {
+    width: 44px;
+    height: 44px;
+    flex: none;  
 }
 
 .kpi-texto {
-    margin-left: 5px;
     display: flex;
     flex-direction: column;
 }
 
 .card-kpi h2 {
-    font-size: 50px;
+    font-size: 40px;
+    font-weight: normal;
+    color: var(--cor-primaria);
 }
 
 .card-kpi p {
     color: black;
+    font-size: 16px;
+    font-family: 'Alegreya', serif;
+}
+
+.card-kpi span {
+    font-size: 14px;
+    font-family: 'Alegreya', serif;
+}
+
+#totalChales {
+    font-size: 20px;
+    color: var(--cor-primaria);
+}
+
+#chalesOcupados {
+    font-size: 40px;
+    color: var(--cor-primaria);
+}
+
+#semideusesNovos {
+    color: rgb(60, 154, 60);
+}
+
+.grafico-space {
+    display: flex;
+    flex-direction: row;
+}
+
+.graficos-space {
+    display: grid;
+    grid-template-columns: 2fr 1fr;   /* barras ocupam o dobro da rosquinha */
+    gap: 20px;
+    margin-top: 24px;
 }
 
 .grafico-chales {
-    width: 100%;
-    max-width: 1090px;
-    flex: 1;
-    /* cresce e ocupa o espaço que sobra na página */
-    min-height: 100px;
-    /* em vez de height fixo */
-    position: relative;
-
+    min-width: 0;                     /* sem isso, o canvas pode estourar a grade */
+    padding: 28px;
+    box-sizing: border-box;
+    background-color: white;
     border-bottom: solid 3px var(--cor-secundaria);
     border-right: solid 3px var(--cor-secundaria);
     border-radius: 16px;
-    background-color: white;
+}
 
-    padding: 20px;
+.grafico-chales h2 {
+    margin: 0 0 4px;
+    font-size: 20px;
+    font-weight: normal;
+    color: var(--cor-primaria);
+}
+
+.grafico-chales p {
+    margin: 0 0 20px;
+    font-size: 15px;
+    font-family: 'Alegreya', serif;
+
+}
+
+.area-grafico {
+    position: relative;               /* obrigatório para o Chart.js se ajustar à div */
+}
+
+.grafico-barras .area-grafico { height: 340px; }
+.grafico-rosca  .area-grafico { height: 260px; }
+
+@media (max-width: 900px) {
+    .graficos-space { grid-template-columns: 1fr; }
 }
