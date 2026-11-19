@@ -17,49 +17,68 @@
 </head>
 
 <body>
-    <header>
-        <div class="container-header">
-            <div class="sobre-usuario">
-                <h2>Olá Usuário!</h2>
-                <span>Semideus não reclamado</span>
-            </div>
-        </div>
-    </header>
     <div class="container-all">
         <div class="lado-esquerdo">
 
-            <div class="areas-section">
-                <div class="areas">
-                    <div class="areas-icon">
-                        <img src="../assets/img/home.svg" alt="">
-                    </div>
-                    <div class="area-tipo">Home</div>
+            <div class="container-header">
+                <div class="avatar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <path d="M12 3v18M6 3v6a6 6 0 0 0 12 0V3M9 21h6" />
+                    </svg>
                 </div>
-                <div class="areas">
-                    <div class="areas-icon">
-                        <img src="../assets/img/users-alt.svg" alt="">
-                    </div>
-                    <div class="area-tipo">Pavilhão</div>
-                </div>
-                <div class="areas">
-                    <div class="areas-icon">
-                        <img src="../assets/img/bank.svg" alt="">
-                    </div>
-                    <div class="area-tipo">Chalés</div>
-                </div>
-                <div class="areas">
-                    <div class="areas-icon">
-                        <img src="../assets/img/chart-histogram.svg" alt="">
-                    </div>
-                    <div class="area-tipo">Casa Grande</div>
+                <div class="sobre-usuario">
+                    <h2>Olá, <span id="nomeUsuario">Usuário!</span></h2>
+                    <span id="statusSemideus">SEMIDEUS NÃO RECLAMADO</span>
                 </div>
             </div>
 
-            <div class="direcionadores">
-                <div class="perfil-usuario">Perfil</div>
-                <div class="divisor"></div>
-                <div class="logout">Sair</div>
+            <div class="areas-section">
+                <a href="mural.html" class="areas">
+                    <div class="areas-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6" />
+                        </svg>
+                    </div>
+                    <div class="area-tipo">Home</div>
+                </a>
+
+                <a href="quiz.html" class="areas ativa">
+                    <div class="areas-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                    </div>
+                    <div class="area-tipo">Oráculo de Delfus</div>
+                </a>
+
+                <a href="chales.html" class="areas">
+                    <div class="areas-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-6 9 6M5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 21h18" />
+                        </svg>
+                    </div>
+                    <div class="area-tipo">Chalés</div>
+                </a>
+
+                <a href="dashboard.html" class="areas">
+                    <div class="areas-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 20V10M10 20V4M16 20v-7M22 20H2" />
+                        </svg>
+                    </div>
+                    <div class="area-tipo">Casa Grande</div>
+                </a>
             </div>
+
+            <div class="direcionadores">
+                <div class="logout"><button>Sair</button></div>
+            </div>
+
         </div>
         <div class="lado-direito">
             <div class="quiz-container">
@@ -106,13 +125,12 @@
                     </form>
 
                     <div class="botoes">
-                        <button id="btnSubmeter">Submeter</button>
                         <button id="btnProximo" disabled>Próxima</button>
                     </div>
                 </div>
 
                 <div id="resultado" class="quiz-resultado" style="display:none;">
-                    <h3>    A névoa se dissipa, revelando aquilo que por tanto tempo permaneceu oculto. Seu sangue divino
+                    <h3> A névoa se dissipa, revelando aquilo que por tanto tempo permaneceu oculto. Seu sangue divino
                         não pode mais ser ignorado. Só há uma explicação: você descende de...</h3>
                     <div id="resultado-conteudo"></div>
                 </div>
@@ -122,6 +140,22 @@
 </body>
 
 <script>
+
+    (function () {
+        var nome = sessionStorage.getItem('NOME_USUARIO');
+        var deus = sessionStorage.getItem('DEUS'); // definido ao responder o quiz
+
+        var elNome = document.getElementById('nomeUsuario');
+        var elStatus = document.getElementById('statusSemideus');
+
+        if (nome && elNome) {
+            elNome.innerText = nome;
+        }
+
+        if (deus && elStatus) {
+            elStatus.innerText = 'Filho(a) de ' + deus;
+        }
+    })();
     // Quiz data (perguntas e virtudes conforme perguntasquiz.md)
 
     const perguntas = [
@@ -437,27 +471,27 @@
     };
 
     const descricoes = {
-  "Zeus": "Deus do céu, do trovão e rei dos deuses. Quem herda o seu sangue costuma ser um líder nato, corajoso e com uma presença que faz os outros quererem segui-lo.",
-  "Hera": "Deusa do casamento, da família e rainha dos deuses. Quem herda o seu sangue costuma ser leal, protetor e determinado a defender quem ama.",
-  "Poseidon": "Deus dos mares, dos terremotos e dos cavalos. Quem herda o seu sangue costuma ser impulsivo, leal e forte como as ondas, com um espírito livre difícil de domar.",
-  "Deméter": "Deusa da agricultura e das colheitas. Quem herda o seu sangue costuma ser paciente, acolhedor e ter uma ligação especial com a natureza.",
-  "Ares": "Deus da guerra e da coragem em combate. Quem herda o seu sangue costuma ser destemido, competitivo e nunca fugir de um desafio.",
-  "Atena": "Deusa da sabedoria, da estratégia e da guerra justa. Quem herda o seu sangue costuma ser inteligente, observador e sempre ter um plano para tudo.",
-  "Apollo": "Deus da luz, da música, da poesia e da cura. Quem herda o seu sangue costuma ser talentoso, criativo e capaz de inspirar quem está por perto.",
-  "Artemis": "Deusa da caça, da lua e da natureza selvagem. Quem herda o seu sangue costuma ser independente, habilidoso e se sentir em casa ao ar livre.",
-  "Hefesto": "Deus do fogo, da forja e dos artesãos. Quem herda o seu sangue costuma ser engenhoso, persistente e capaz de construir ou consertar qualquer coisa.",
-  "Afrodite": "Deusa do amor e da beleza. Quem herda o seu sangue costuma ser carismático, sensível e saber conquistar as pessoas com facilidade.",
-  "Hermes": "Deus dos viajantes, dos mensageiros e dos ladrões. Quem herda o seu sangue costuma ser veloz, esperto e capaz de se virar em qualquer situação.",
-  "Dionísio": "Deus das festas, do teatro e da alegria. Quem herda o seu sangue costuma ser espontâneo, divertido e levar a vida com leveza.",
-  "Hades": "Deus dos mortos e das riquezas escondidas sob a terra. Quem herda o seu sangue costuma ser reservado, determinado e enxergar o que os outros preferem ignorar.",
-  "Iris": "Deusa do arco-íris e mensageira dos deuses. Quem herda o seu sangue costuma ser comunicativo, otimista e capaz de levar cor e boas notícias a qualquer lugar.",
-  "Hypnos": "Deus do sono e dos sonhos. Quem herda o seu sangue costuma ser calmo, tranquilo e ter o dom de acalmar os outros com a sua presença.",
-  "Nemesis": "Deusa da justiça e do equilíbrio. Quem herda o seu sangue costuma ser justo, firme e não deixar nenhuma injustiça passar em branco.",
-  "Nike": "Deusa da vitória. Quem herda o seu sangue costuma ser competitivo, perseverante e nunca se contentar com menos do que o primeiro lugar.",
-  "Hebe": "Deusa da juventude. Quem herda o seu sangue costuma ser enérgico, alegre e capaz de renovar o ânimo de quem está por perto.",
-  "Tyche": "Deusa da sorte e do destino. Quem herda o seu sangue costuma ser otimista, sortudo e se dar bem nos momentos mais inesperados.",
-  "Hecate": "Deusa da magia, da noite e das encruzilhadas. Quem herda o seu sangue costuma ser misterioso, intuitivo e fascinado pelo que está escondido."
-};
+        "Zeus": "Deus do céu, do trovão e rei dos deuses. Quem herda o seu sangue costuma ser um líder nato, corajoso e com uma presença que faz os outros quererem segui-lo.",
+        "Hera": "Deusa do casamento, da família e rainha dos deuses. Quem herda o seu sangue costuma ser leal, protetor e determinado a defender quem ama.",
+        "Poseidon": "Deus dos mares, dos terremotos e dos cavalos. Quem herda o seu sangue costuma ser impulsivo, leal e forte como as ondas, com um espírito livre difícil de domar.",
+        "Deméter": "Deusa da agricultura e das colheitas. Quem herda o seu sangue costuma ser paciente, acolhedor e ter uma ligação especial com a natureza.",
+        "Ares": "Deus da guerra e da coragem em combate. Quem herda o seu sangue costuma ser destemido, competitivo e nunca fugir de um desafio.",
+        "Atena": "Deusa da sabedoria, da estratégia e da guerra justa. Quem herda o seu sangue costuma ser inteligente, observador e sempre ter um plano para tudo.",
+        "Apollo": "Deus da luz, da música, da poesia e da cura. Quem herda o seu sangue costuma ser talentoso, criativo e capaz de inspirar quem está por perto.",
+        "Artemis": "Deusa da caça, da lua e da natureza selvagem. Quem herda o seu sangue costuma ser independente, habilidoso e se sentir em casa ao ar livre.",
+        "Hefesto": "Deus do fogo, da forja e dos artesãos. Quem herda o seu sangue costuma ser engenhoso, persistente e capaz de construir ou consertar qualquer coisa.",
+        "Afrodite": "Deusa do amor e da beleza. Quem herda o seu sangue costuma ser carismático, sensível e saber conquistar as pessoas com facilidade.",
+        "Hermes": "Deus dos viajantes, dos mensageiros e dos ladrões. Quem herda o seu sangue costuma ser veloz, esperto e capaz de se virar em qualquer situação.",
+        "Dionísio": "Deus das festas, do teatro e da alegria. Quem herda o seu sangue costuma ser espontâneo, divertido e levar a vida com leveza.",
+        "Hades": "Deus dos mortos e das riquezas escondidas sob a terra. Quem herda o seu sangue costuma ser reservado, determinado e enxergar o que os outros preferem ignorar.",
+        "Iris": "Deusa do arco-íris e mensageira dos deuses. Quem herda o seu sangue costuma ser comunicativo, otimista e capaz de levar cor e boas notícias a qualquer lugar.",
+        "Hypnos": "Deus do sono e dos sonhos. Quem herda o seu sangue costuma ser calmo, tranquilo e ter o dom de acalmar os outros com a sua presença.",
+        "Nemesis": "Deusa da justiça e do equilíbrio. Quem herda o seu sangue costuma ser justo, firme e não deixar nenhuma injustiça passar em branco.",
+        "Nike": "Deusa da vitória. Quem herda o seu sangue costuma ser competitivo, perseverante e nunca se contentar com menos do que o primeiro lugar.",
+        "Hebe": "Deusa da juventude. Quem herda o seu sangue costuma ser enérgico, alegre e capaz de renovar o ânimo de quem está por perto.",
+        "Tyche": "Deusa da sorte e do destino. Quem herda o seu sangue costuma ser otimista, sortudo e se dar bem nos momentos mais inesperados.",
+        "Hecate": "Deusa da magia, da noite e das encruzilhadas. Quem herda o seu sangue costuma ser misterioso, intuitivo e fascinado pelo que está escondido."
+    };
 
     // Estado do quiz: índice atual e respostas do usuário
     let indiceAtual = 0
@@ -476,7 +510,6 @@
     const rotuloD = document.getElementById('rotuloD')
     const elNumeroAtual = document.getElementById('numeroAtual')
     const elQtdQuestoes = document.getElementById('qtdQuestoes')
-    const botaoSubmeter = document.getElementById('btnSubmeter')
     const botaoProximo = document.getElementById('btnProximo')
     const areaResultado = document.getElementById('resultado')
     const conteudoResultado = document.getElementById('resultado-conteudo')
@@ -512,26 +545,36 @@
         // reset dos radios (limpa seleção anterior)
         const formulario = document.getElementById('formOpcoes')
         formulario.reset()
-        // botão próxima fica desabilitado até o usuário submeter
+        // botão próxima fica desabilitado até o usuário submeter (ou selecionar a opção)
         botaoProximo.disabled = true
-        botaoSubmeter.disabled = false
     }
 
-    // Ação ao submeter uma resposta
-    botaoSubmeter.addEventListener('click', (evento) => {
-        evento.preventDefault()
-        const formulario = document.getElementById('formOpcoes')
+    // Submissão automática ao selecionar uma opção (click) — melhora a experiência:
+    const formulario = document.getElementById('formOpcoes')
+    formulario.addEventListener('change', () => {
         const escolha = formulario.opcao.value
-        // valida se o usuário selecionou uma alternativa
-        if (!escolha) {
-            alert('Escolha uma opção antes de submeter.')
-            return
-        }
-        // armazena a resposta para a questão atual
+        if (!escolha) return
         respostas[indiceAtual] = escolha
-        // desabilita submeter e habilita próxima
-        botaoSubmeter.disabled = true
+        // habilita próxima (submissão concluída)
         botaoProximo.disabled = false
+    })
+
+    // Submissão pelo Enter: se o usuário pressionar Enter enquanto estiver no quiz,
+    // considera-se isso um submit (equivalente a clicar em Submeter).
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && cartaoQuiz.style.display !== 'none') {
+            e.preventDefault()
+            const escolha = formulario.opcao.value
+            if (!escolha) {
+                alert('Escolha uma opção antes de submeter.')
+                return
+            }
+            // registra a resposta e avança imediatamente para a próxima questão
+            respostas[indiceAtual] = escolha
+            botaoProximo.disabled = false
+            // usar setTimeout curto para permitir que qualquer event change finalize
+            setTimeout(() => botaoProximo.click(), 10)
+        }
     })
 
     // Ao clicar em Próxima: avança para a próxima questão ou calcula resultado
@@ -669,6 +712,13 @@
             </div>
         </div>
     `
+
+        // salvar o resultado (deus atribuído) na sessão para outras páginas (ex: sidebar)
+        try {
+            sessionStorage.setItem('DEUS', melhorDeus);
+        } catch (e) {
+            console.error('Não foi possível salvar o resultado na sessionStorage:', e);
+        }
     }
 
     // Botão para refazer o quiz: reseta estado e retorna à tela inicial

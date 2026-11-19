@@ -189,10 +189,13 @@ body {
 }
 
 .botoes {
+    /* coloca o botão próxima alinhado à esquerda, logo abaixo das alternativas */
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
-    margin: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 20px 0 40px 20px;
+    width: 1000px; /* mesmo width das alternativas para ficar alinhado */
 }
 
 #btnProximo {

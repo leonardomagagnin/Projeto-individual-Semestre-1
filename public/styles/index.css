@@ -1,0 +1,18 @@
+/* Estilos básicos para o quiz */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --cor-primaria: #002752;
+    --cor-secundaria: #FCBE56;
+    --cor-tecearia: #F3E4C8;
+}
+
+body {
+    background-color: var(--cor-tecearia)
+}
+
+.lado-direito {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+}

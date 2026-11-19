@@ -11,8 +11,8 @@ body {
      background-color: var(--cor-tecearia)
 }
 .lado-direito {
-    margin-left: 230px;
-    width: calc(100% - 230px);
+    margin-left: 260px;
+    width: calc(100% - 260px);
 
     padding: 40px;
 }
@@ -58,4 +58,25 @@ body {
 
 .chale-icon :hover {
     transform: scale(1.02);
+}
+
+.card-chale img {
+    width: 240px;
+    height: 240px;
+
+    border-radius: 20px;
+    border-bottom: solid 3px var(--cor-primaria);
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.card-chale :hover {
+    transform: scale(1.02);
+}
+
+.card-chale {
+    display: block;          /* o link ocupa o espaço do card inteiro */
+    text-decoration: none;   /* tira o sublinhado */
+    color: inherit;          /* mantém a cor do texto que o card já tinha */
 }

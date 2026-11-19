@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acampamento Meio-Sangue</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/side-bar.css">
+    <link rel="stylesheet" href="../styles/chales-info.css">
+</head>
+
+<body>
+    <div class="container-all">
+        <div class="lado-esquerdo">
+
+            <div class="container-header">
+                <div class="avatar">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <path d="M12 3v18M6 3v6a6 6 0 0 0 12 0V3M9 21h6" />
+                    </svg>
+                </div>
+                <div class="sobre-usuario">
+                    <h2>Olá, <span id="nomeUsuario">Usuário!</span></h2>
+                    <span id="statusSemideus">SEMIDEUS NÃO RECLAMADO</span>
+                </div>
+            </div>
+
+            <div class="areas-section">
+                <a href="mural.html" class="areas">
+                    <div class="areas-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6" />
+                        </svg>
+                    </div>
+                    <div class="area-tipo">Home</div>
+                </a>
+
+                <a href="quiz.html" class="areas">
+                    <div class="areas-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z" />
+                            <circle cx="12" cy="12" r="3" />
+                        </svg>
+                    </div>
+                    <div class="area-tipo">Oráculo de Delfus</div>
+                </a>
+
+                <a href="chales.html" class="areas ativa">
+                    <div class="areas-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 9l9-6 9 6M5 9v9M9.5 9v9M14.5 9v9M19 9v9M3 21h18" />
+                        </svg>
+                    </div>
+                    <div class="area-tipo">Chalés</div>
+                </a>
+
+                <a href="dashboard.html" class="areas">
+                    <div class="areas-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 20V10M10 20V4M16 20v-7M22 20H2" />
+                        </svg>
+                    </div>
+                    <div class="area-tipo">Casa Grande</div>
+                </a>
+            </div>
+
+            <div class="direcionadores">
+                <div class="logout"><button>Sair</button></div>
+            </div>
+
+        </div>
+        <div class="lado-direito">
+            <div class="pagina-chale">
+
+                <!-- retrato -->
+                <div class="moldura">
+                    <div class="moldura-arte">
+                        <img src="../assets/img/Athena.jpeg" alt="Atena" id="imagemDeus">
+                    </div>
+                    <span class="moldura-etiqueta" id="numeroChale">Chalé 6</span>
+                </div>
+
+                <!-- informações -->
+                <div class="info-chale">
+                    <a href="chales.html" class="voltar">← VOLTAR AOS CHALÉS</a>
+                    <h1 id="nomeDivindade">Atena</h1>
+                    <p class="lema" id="fraseChale">Glória a Atena</p>
+                    <div class="divisor"></div>
+
+                    <div class="abas" role="tablist" aria-label="Informações do chalé">
+                        <button class="aba" role="tab" id="aba0" aria-controls="painel0" aria-selected="true"
+                            tabindex="0">Sobre</button>
+                        <button class="aba" role="tab" id="aba1" aria-controls="painel1" aria-selected="false"
+                            tabindex="-1">Características</button>
+                        <button class="aba" role="tab" id="aba2" aria-controls="painel2" aria-selected="false"
+                            tabindex="-1">Semideuses</button>
+                    </div>
+
+                    <div class="paineis">
+                        <section class="painel ativo" role="tabpanel" id="painel0" aria-labelledby="aba0">
+                            <p id="descricaoChale">Atena é a deusa da sabedoria, da estratégia e das artes manuais.
+                                Diferentemente de outros deuses, seus filhos nascem de pensamentos compartilhados com
+                                mortais, sendo conhecidos como filhos da mente. Sua influência está presente nas grandes
+                                estratégias de guerra, nas construções e nas decisões tomadas com inteligência. Seus
+                                descendentes são ensinados a compreender que uma batalha pode ser vencida muito antes do
+                                primeiro golpe, desde que exista planejamento.</p>
+                        </section>
+
+                        <section class="painel" role="tabpanel" id="painel1" aria-labelledby="aba1">
+                            <p id="caracteristicasChale">Os filhos de Atena são reconhecidos pela inteligência, pela
+                                curiosidade e pela capacidade de encontrar soluções para problemas complexos. Costumam
+                                ser observadores, estratégicos e exigentes consigo mesmos. Valorizam o conhecimento e
+                                acreditam que a preparação é tão importante quanto a coragem. Entretanto, precisam
+                                aprender que nem tudo pode ser resolvido por meio da razão e que confiar nos outros
+                                também é uma forma de sabedoria.</p>
+                        </section>
+
+                        <section class="painel" role="tabpanel" id="painel2" aria-labelledby="aba2">
+                            <ul class="lista-semideuses" id="semideusChale"></ul>
+                        </section>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    (function () {
+        var nome = sessionStorage.getItem('NOME_USUARIO');
+        var deus = sessionStorage.getItem('DEUS'); // definido ao responder o quiz
+
+        var elNome = document.getElementById('nomeUsuario');
+        var elStatus = document.getElementById('statusSemideus');
+
+        if (nome && elNome) {
+            elNome.innerText = nome;
+        }
+
+        if (deus && elStatus) {
+            elStatus.innerText = 'Filho(a) de ' + deus;
+        }
+    })();
+
+
+    // Caminhos das imagens dos deuses (usadas no resultado)
+    const imagensDeuses = {
+
+        "Zeus": "../assets/img/Zeus.jpeg",
+        "Poseidon": "../assets/img/poseidon.jpeg",
+        "Deméter": "../assets/img/demeter.jpeg",
+        "Ares": "../assets/img/ares.jpeg",
+        "Atena": "../assets/img/Athena.jpeg",
+        "Apollo": "../assets/img/Apollo.jpeg",
+        "Artemis": "../assets/img/artemis.jpeg",
+        "Hefesto": "../assets/img/hefesto.jpeg",
+        "Afrodite": "../assets/img/aphrodite.jpeg",
+        "Hermes": "../assets/img/hermes.jpeg",
+        "Dionísio": "../assets/img/Dionysus.jpeg",
+        "Hades": "../assets/img/hades.jpeg",
+        "Iris": "../assets/img/iris.jpeg",
+        "Hypnos": "../assets/img/hipnos.jpeg",
+        "Nemesis": "../assets/img/nemesis.jpeg",
+        "Nike": "../assets/img/nike.jpeg",
+        "Hebe": "../assets/img/hebe.jpeg",
+        "Tyche": "../assets/img/tique.jpeg",
+        "Hecate": "../assets/img/hecate.jpeg"
+    };
+
+
+    // Dados dos 20 chalés. Cada chalé tem os campos separados:
+    // nome, titulo, chalé, frase, imagem, descricao, caracteristicas e semideuses (lista de { nome, texto }).
+    const chales = {
+        1: {
+            nome: "Zeus",
+            titulo: "Senhor dos Céus",
+            chalé: "Chalé 1",
+            frase: "Poder a Zeus",
+            imagem: "../assets/img/Zeus.jpeg",
+            descricao: "Zeus é o soberano do Olimpo, senhor dos céus, dos raios e dos trovões. Ao lado de seus irmãos Poseidon e Hades, governa uma das três grandes partes do mundo. Após a Segunda Guerra Mundial, os três irmãos fizeram um juramento pelo Rio Estige: não teriam mais filhos com mortais. Seus descendentes eram poderosos demais e haviam influenciado os acontecimentos daquela guerra. Além disso, uma antiga profecia anunciava que um filho dos Três Grandes, ao completar dezesseis anos, poderia salvar ou destruir o Olimpo. Entretanto, o próprio Zeus quebrou o acordo ao ter Thalia Grace, demonstrando que nem mesmo os deuses estão livres de suas contradições.",
+            caracteristicas: "Os filhos de Zeus carregam consigo uma presença naturalmente imponente. São frequentemente associados à liderança, à coragem e à determinação, embora precisem aprender que autoridade não significa estar sempre certo. Espera-se deles responsabilidade, capacidade de tomar decisões difíceis e disposição para proteger aqueles que estão sob sua liderança. Sua força não está apenas no poder, mas também na capacidade de inspirar respeito.",
+            semideuses: [
+                {nome: "Thalia Grace", texto: "Filha de Zeus e uma das personagens centrais da primeira grande profecia. Após sua transformação em pinheiro, tornou-se uma das Caçadoras de Ártemis e teve participação importante na defesa do Olimpo."},
+                {nome: "Jason Grace", texto: "Filho de Júpiter, contraparte romana de Zeus. Foi um dos sete semideuses da Grande Profecia de HDO, liderou a Quinta Coorte romana e teve papel decisivo na união entre os acampamentos grego e romano."}
+            ]
+        },
+
+        2: {
+            nome: "Hera",
+            titulo: "Rainha do Olimpo",
+            chalé: "Chalé 2",
+            frase: "Lealdade a Hera",
+            imagem: "../assets/img/hera.jpeg",
+            descricao: "Hera é a rainha do Olimpo, esposa de Zeus e deusa do casamento, da família e da maternidade. Diferentemente de outras divindades, não possui filhos semideuses, pois permanece fiel ao seu casamento. Por essa razão, seu chalé não abriga descendentes, sendo uma homenagem à sua posição entre os deuses. Embora seja conhecida por seu temperamento e por suas disputas com Zeus, Hera também demonstra grande preocupação com a preservação do Olimpo e com o destino dos deuses.",
+            caracteristicas: "O chalé representa a nobreza, a união e a tradição. Seus valores estão associados à lealdade, ao compromisso e à preservação dos laços familiares. Hera também nos ensina que a força de uma família depende da responsabilidade de seus integrantes, ainda que a própria deusa nem sempre consiga seguir seus ensinamentos.",
+            semideuses: [
+                {nome: "Jason Grace", texto: "Embora seja filho de Júpiter, Jason foi escolhido por Hera para participar de seus planos de aproximação entre os acampamentos grego e romano. Sua trajetória demonstra a influência da deusa sobre os acontecimentos de HDO."},
+                {nome: "", texto: "Não existem filhos semideuses conhecidos de Hera. O chalé permanece como uma homenagem à rainha do Olimpo."}
+            ]
+        },
+
+        3: {
+            nome: "Poseidon",
+            titulo: "Senhor dos Mares",
+            chalé: "Chalé 3",
+            frase: "Orgulho a Poseidon",
+            imagem: "../assets/img/poseidon.jpeg",
+            descricao: "Poseidon é o deus dos mares, dos terremotos e dos cavalos, além de um dos três grandes soberanos do mundo. Assim como Zeus, quebrou o juramento feito após a Segunda Guerra Mundial ao ter Percy Jackson com uma mortal. O nascimento de Percy trouxe novamente à tona o temor da antiga profecia, pois o garoto seria responsável por uma decisão capaz de determinar o destino do Olimpo. Apesar das desconfianças iniciais dos deuses, Poseidon sempre demonstrou orgulho de seu filho, mesmo quando não podia estar ao seu lado.",
+            caracteristicas: "Os filhos de Poseidon costumam ser associados à lealdade, à coragem e à independência. Assim como o mar, podem demonstrar grande tranquilidade em determinados momentos e uma força difícil de conter em outros. São conhecidos por proteger aqueles que amam e por permanecerem firmes mesmo diante de adversidades. A lealdade, sobretudo, é uma das virtudes mais marcantes de Percy e um dos motivos pelos quais ele conquistou tantos aliados.",
+            semideuses: [
+                {nome: "Percy Jackson", texto: "Protagonista de PJO e um dos sete semideuses da Grande Profecia de HDO. Foi fundamental nas duas grandes guerras, derrotou Cronos e, ao final da primeira saga, exigiu que os deuses reconhecessem seus filhos e construíssem chalés para as divindades menores."},
+                {nome: "Tyson", texto: "Irmão de Percy e ciclope, também filho de Poseidon. Tornou-se um importante aliado dos semideuses, participando de batalhas contra os exércitos de Cronos e Gaia."}
+            ]
+        },
+
+        4: {
+            nome: "Deméter",
+            titulo: "Senhora das Colheitas",
+            chalé: "Chalé 4",
+            frase: "Abundância a Deméter",
+            imagem: "../assets/img/demeter.jpeg",
+            descricao: "Deméter é a deusa da agricultura, das colheitas e da fertilidade da terra. Sua influência está presente em tudo aquilo que cresce e floresce, sendo responsável pela abundância dos alimentos que sustentam mortais e imortais. Sua história está profundamente ligada à filha, Perséfone, cujo desaparecimento deu origem à explicação mitológica para as estações do ano. Seus filhos carregam essa ligação com a natureza e compreendem que toda colheita exige paciência, dedicação e cuidado.",
+            caracteristicas: "Os filhos de Deméter costumam ser pacientes, generosos e cuidadosos. Valorizam a preservação da natureza e compreendem a importância de cultivar aquilo que desejam colher. São associados à perseverança, à sensibilidade e à capacidade de fazer coisas crescerem, não apenas na terra, mas também nas relações que constroem. Não se deixem enganar por sua aparência tranquila: a natureza também sabe se defender.",
+            semideuses: [
+                {nome: "Katie Gardner", texto: "Antiga conselheira do chalé, participou da defesa do acampamento e demonstrou grande dedicação aos irmãos."},
+                {nome: "Miranda Gardiner", texto: "Filha de Deméter e uma das campistas que permaneceram no acampamento durante os acontecimentos de HDO."}
+            ]
+        },
+
+        5: {
+            nome: "Ares",
+            titulo: "Senhor da Guerra",
+            chalé: "Chalé 5",
+            frase: "Vitória a Ares",
+            imagem: "../assets/img/ares.jpeg",
+            descricao: "Ares é o deus da guerra e representa a violência, o conflito e a força dos guerreiros. Embora seja frequentemente desprezado pelos outros deuses por seu temperamento agressivo, sua importância nos campos de batalha é inegável. Seus filhos crescem em meio à competição e aos desafios, aprendendo que a guerra exige mais do que força física: exige coragem, resistência e, acima de tudo, determinação para continuar lutando quando tudo parece perdido.",
+            caracteristicas: "Os filhos de Ares são conhecidos pelo espírito competitivo, pela coragem e pela disposição para enfrentar qualquer adversário. Podem ser impulsivos e temperamentais, mas também demonstram grande lealdade aos companheiros. Quando encontram uma causa pela qual vale a pena lutar, tornam-se adversários difíceis de deter. A verdadeira força de um guerreiro não está em procurar conflitos, mas em saber por quem e pelo que lutar.",
+            semideuses: [
+                {nome: "Clarisse La Rue", texto: "Antiga conselheira do chalé, destacou-se durante a guerra contra Cronos. Apesar de sua rivalidade inicial com Percy, demonstrou coragem e liderança ao defender o acampamento."}
+            ]
+        },
+
+        6: {
+            nome: "Atena",
+            titulo: "Senhora da Sabedoria",
+            chalé: "Chalé 6",
+            frase: "Glória a Atena",
+            imagem: "../assets/img/Athena.jpeg",
+            descricao: "Atena é a deusa da sabedoria, da estratégia e das artes manuais. Diferentemente de outros deuses, seus filhos nascem de pensamentos compartilhados com mortais, sendo conhecidos como filhos da mente. Sua influência está presente nas grandes estratégias de guerra, nas construções e nas decisões tomadas com inteligência. Seus descendentes são ensinados a compreender que uma batalha pode ser vencida muito antes do primeiro golpe, desde que exista planejamento.",
+            caracteristicas: "Os filhos de Atena são reconhecidos pela inteligência, pela curiosidade e pela capacidade de encontrar soluções para problemas complexos. Costumam ser observadores, estratégicos e exigentes consigo mesmos. Valorizam o conhecimento e acreditam que a preparação é tão importante quanto a coragem. Entretanto, precisam aprender que nem tudo pode ser resolvido por meio da razão e que confiar nos outros também é uma forma de sabedoria.",
+            semideuses: [
+                {nome: "Annabeth Chase", texto: "Uma das principais personagens de PJO e HDO. Arquiteta do Olimpo, estrategista e integrante dos sete semideuses da Grande Profecia, teve papel fundamental na derrota de Cronos e Gaia."},
+                {nome: "Malcolm Pace", texto: "Filho de Atena e conselheiro do chalé durante os acontecimentos de HDO."}
+            ]
+        },
+
+        7: {
+            nome: "Apolo",
+            titulo: "Senhor da Luz e das Artes",
+            chalé: "Chalé 7",
+            frase: "Honra a Apolo",
+            imagem: "../assets/img/Apollo.jpeg",
+            descricao: "Apolo é o deus do sol, da música, da medicina, da profecia e do arco e flecha. Sua influência abrange tanto as artes quanto o conhecimento necessário para preservar a vida. Seus filhos herdam diferentes talentos, sendo encontrados entre os melhores arqueiros, músicos e curandeiros do acampamento. Embora sejam frequentemente associados à alegria e à criatividade, também demonstram grande coragem quando aqueles que amam precisam de ajuda.",
+            caracteristicas: "Os filhos de Apolo costumam ser criativos, comunicativos e otimistas. Valorizam a expressão artística, o conhecimento e o cuidado com os outros. Muitos possuem grande habilidade com a medicina e demonstram disposição para ajudar os feridos, mesmo em situações perigosas. Sua principal virtude está em compreender que a luz não serve apenas para iluminar o próprio caminho, mas também para guiar aqueles que estão perdidos.",
+            semideuses: [
+                {nome: "Will Solace", texto: "Filho de Apolo e um dos principais curandeiros do acampamento. Tornou-se conselheiro do chalé e teve participação importante em HDO, além de acompanhar Nico em suas jornadas posteriores."},
+                {nome: "Lee Fletcher", texto: "Antigo conselheiro do chalé, morreu durante a batalha contra os exércitos de Cronos."},
+                {nome: "Michael Yew", texto: "Outro antigo conselheiro, participou da defesa de Manhattan durante a guerra contra os Titãs."},
+                {nome: "Kayla Knowles e Austin Lake", texto: "Filhos de Apolo que ajudaram na defesa do acampamento durante HDO."}
+            ]
+        },
+
+        8: {
+            nome: "Ártemis",
+            titulo: "Senhora da Caça",
+            chalé: "Chalé 8",
+            frase: "Precisão a Ártemis",
+            imagem: "../assets/img/artemis.jpeg",
+            descricao: "Ártemis é a deusa da caça, da lua e da natureza selvagem, além de protetora das jovens. Irmã gêmea de Apolo, jurou permanecer eternamente virgem e, portanto, não possui filhos semideuses. Em vez disso, reúne jovens que escolhem abandonar os laços mortais e jurar lealdade a ela, formando as Caçadoras de Ártemis. Embora não sejam suas filhas de sangue, essas jovens são tratadas como uma família.",
+            caracteristicas: "O chalé representa a independência, a disciplina e a união entre aquelas que compartilham os mesmos ideais. As Caçadoras são conhecidas pela determinação, pela habilidade e pela lealdade umas às outras. Valorizam a liberdade e a força feminina, demonstrando que a coragem não depende de reconhecimento ou aprovação. Sua dedicação à deusa é uma escolha que exige compromisso e sacrifícios.",
+            semideuses: [
+                {nome: "Thalia Grace", texto: "Filha de Zeus que se tornou uma das Caçadoras e, posteriormente, tenente de Ártemis. Sua trajetória demonstra a importância da escolha e da lealdade."},
+                {nome: "Zoë Nightshade", texto: "Antiga tenente de Ártemis, teve papel fundamental na missão de resgatar a deusa durante A Maldição do Titã. Sua história revela a importância da honra e do sacrifício."},
+                {nome: "Bianca di Angelo", texto: "Filha de Hades que se juntou às Caçadoras, mas sacrificou a própria vida durante a missão de A Maldição do Titã."}
+            ]
+        },
+
+        9: {
+            nome: "Hefesto",
+            titulo: "Senhor da Forja",
+            chalé: "Chalé 9",
+            frase: "Força a Hefesto",
+            imagem: "../assets/img/hefesto.jpeg",
+            descricao: "Hefesto é o deus do fogo, da metalurgia e dos artesãos. Responsável por criar algumas das armas e construções mais extraordinárias do Olimpo, demonstra que a inteligência e a criatividade podem ser tão poderosas quanto a força de um guerreiro. Seus filhos herdam o talento para construir, consertar e transformar materiais comuns em verdadeiras obras de engenharia.",
+            caracteristicas: "Os filhos de Hefesto são criativos, persistentes e habilidosos com as mãos. Não costumam desistir diante de um problema e encontram satisfação em construir algo que antes não existia. Valorizam o trabalho, a dedicação e a capacidade de transformar erros em aprendizado. São também conhecidos por sua lealdade e por demonstrarem afeto por meio de suas criações.",
+            semideuses: [
+                {nome: "Charles Beckendorf", texto: "Um dos maiores ferreiros do Acampamento, Charles foi essencial na preparação para a guerra contra Cronos. Durante uma missão ao lado de Percy, sacrificou-se para destruir a Princesa Andrômeda, provando que sua coragem era tão grandiosa quanto sua habilidade com as forjas."},
+                {nome: "Leo Valdez", texto: "Filho de Hefesto e integrante dos sete semideuses da Grande Profecia. Sua inteligência e criatividade foram fundamentais para a construção do Argo II e para a derrota de Gaia."},
+                {nome: "Jake Mason", texto: "Outro filho de Hefesto que assumiu a liderança do chalé após a morte de Beckendorf."}
+            ]
+        },
+
+        10: {
+            nome: "Afrodite",
+            titulo: "Senhora do Amor",
+            chalé: "Chalé 10",
+            frase: "Graça a Afrodite",
+            imagem: "../assets/img/aphrodite.jpeg",
+            descricao: "Afrodite é a deusa do amor, da beleza e do desejo. Sua influência ultrapassa a aparência física, alcançando os sentimentos, os relacionamentos e as decisões tomadas em nome daqueles que amamos. Seus filhos são frequentemente subestimados por sua preocupação com a beleza e a vida social, mas a história demonstra que o amor pode ser tão poderoso quanto qualquer arma. Afinal, sentimentos são capazes de unir exércitos e também provocar guerras.",
+            caracteristicas: "Os filhos de Afrodite costumam ser carismáticos, comunicativos e atentos aos sentimentos das pessoas ao seu redor. Valorizam a amizade, os relacionamentos e a expressão individual. Muitos possuem grande capacidade de persuasão e compreensão emocional. Entretanto, não confundam sensibilidade com fraqueza: amar alguém também exige coragem, e proteger aquilo que se ama pode exigir os maiores sacrifícios.",
+            semideuses: [
+                {nome: "Silena Beauregard", texto: "Silena foi uma das campistas mais queridas do Acampamento, mas escondeu por muito tempo um segredo que a ligava às forças de Cronos. Consumida pela culpa, assumiu a armadura de Clarisse para conduzir os filhos de Ares à batalha. Encontrou na última luta a coragem para enfrentar seus erros, pagando com a própria vida por sua redenção."},
+                {nome: "Piper McLean", texto: "Filha de Afrodite e integrante dos sete semideuses da Grande Profecia. Demonstrou que a influência de sua mãe vai muito além da aparência, destacando-se pela coragem, pela inteligência emocional e pela capacidade de convencer até mesmo adversários poderosos."},
+                {nome: "Drew Tanaka", texto: "Antiga conselheira do chalé durante HDO."}
+            ]
+        },
+
+        11: {
+            nome: "Hermes",
+            titulo: "Mensageiro dos Deuses",
+            chalé: "Chalé 11",
+            frase: "Proteção Divina a Hermes",
+            imagem: "../assets/img/hermes.jpeg",
+            descricao: "Hermes é o mensageiro dos deuses e protetor dos viajantes, comerciantes, ladrões e daqueles que cruzam fronteiras. Seu chalé possui uma história particularmente importante: antes da construção dos chalés das divindades menores, recebia todos os semideuses que ainda não haviam sido reconhecidos por seus pais. Por isso, durante muito tempo, tornou-se o lar de jovens que precisavam conviver com a incerteza sobre sua própria origem. Essa história também está ligada a uma das maiores tragédias do acampamento: a revolta de Luke Castellan.",
+            caracteristicas: "Os filhos de Hermes costumam ser espertos, adaptáveis e comunicativos. Possuem facilidade para encontrar soluções inesperadas e não se deixam intimidar facilmente por obstáculos. Valorizam a liberdade, a amizade e a capacidade de se adaptar às circunstâncias. São conhecidos pelas brincadeiras e travessuras, mas também demonstram grande solidariedade com aqueles que não possuem um lugar próprio para chamar de lar.",
+            semideuses: [
+                {nome: "Luke Castellan", texto: "Foi um dos semideuses mais habilidosos de sua geração e, por muito tempo, um dos maiores heróis do Acampamento. Ferido pelo abandono dos deuses e pelo sofrimento de sua mãe, acabou se aliando a Cronos e liderando a rebelião contra o Olimpo. No fim, porém, recuperou sua consciência e sacrificou a própria vida para destruir o Titã, cumprindo a Grande Profecia."},
+                {nome: "Connor e Travis Stoll", texto: "Irmãos conhecidos por suas travessuras, inteligência e habilidade para encontrar oportunidades. Tornaram-se importantes lideranças entre os campistas durante a guerra contra os Titãs."},
+                {nome: "Chris Rodriguez", texto: "Filho de Hermes que, após ser encontrado no labirinto, foi resgatado por Clarisse e passou a lutar ao lado dos campistas."}
+            ]
+        },
+
+        12: {
+            nome: "Dionísio",
+            titulo: "Senhor das Festividades",
+            chalé: "Chalé 12",
+            frase: "Liberdade a Dionísio",
+            imagem: "../assets/img/Dionysus.jpeg",
+            descricao: "Dionísio é o deus do vinho, das festas, do teatro e do êxtase. Embora seja conhecido por sua personalidade descontraída, é uma divindade antiga e poderosa, capaz de despertar tanto alegria quanto loucura. Atualmente, cumpre uma punição imposta por Zeus, sendo obrigado a administrar o Acampamento Meio-Sangue. Seus filhos possuem uma ligação especial com a natureza e com a celebração da vida.",
+            caracteristicas: "Os filhos de Dionísio são associados à descontração, à criatividade e à liberdade. Costumam valorizar os momentos de alegria e a convivência com os outros, compreendendo a importância de aproveitar a vida mesmo diante das dificuldades. Também demonstram uma natureza imprevisível, que pode surpreender aqueles que os julgam apenas por sua aparência despreocupada.",
+            semideuses: [
+                {nome: "Castor e Pollux", texto: "Irmãos gêmeos e filhos de Dionísio. Durante a guerra contra Cronos, Castor morreu em combate, deixando Pollux profundamente abalado. Sua história demonstra que até mesmo os momentos de maior alegria podem ser marcados por perdas e sacrifícios."}
+            ]
+        },
+
+        13: {
+            nome: "Hades",
+            titulo: "Senhor do Submundo",
+            chalé: "Chalé 13",
+            frase: "Eternidade a Hades",
+            imagem: "../assets/img/hades.jpeg",
+            descricao: "Hades é o deus do Submundo, senhor dos mortos e das riquezas subterrâneas. Irmão de Zeus e Poseidon, também faz parte dos Três Grandes. Diferentemente de seus irmãos, não quebrou o juramento feito após a Segunda Guerra Mundial: Nico e Bianca já haviam nascido antes do acordo, embora tenham sido mantidos escondidos durante décadas no Hotel e Cassino Lótus. Seu chalé foi construído após a guerra contra Cronos, quando Percy exigiu que os deuses reconhecessem seus filhos e que Hades também tivesse um lugar no acampamento.",
+            caracteristicas: "Os filhos de Hades costumam ser reservados, determinados e independentes. Muitas vezes são julgados pela natureza de seu pai, mas carregam consigo uma compreensão profunda sobre perda, responsabilidade e superação. Sua trajetória ensina que a escuridão não representa necessariamente maldade e que até mesmo aqueles que parecem mais distantes podem possuir uma lealdade extraordinária. São semideuses que conhecem o peso de permanecer de pé quando não há ninguém ao seu lado.",
+            semideuses: [
+                {nome: "Nico di Angelo", texto: "Marcado pela perda de sua irmã Bianca e pelo peso de pertencer ao Submundo, Nico percorreu um caminho de solidão e sofrimento. Ainda assim, tornou-se peça fundamental na guerra contra Cronos e nos acontecimentos que ameaçaram o mundo em seguida. Por trás de sua aparência sombria, havia um semideus cuja coragem ajudaria a decidir o destino de muitos."},
+                {nome: "Bianca di Angelo", texto: "Irmã mais velha de Nico, tornou-se Caçadora de Ártemis e sacrificou a própria vida durante uma missão para recuperar uma das estátuas de Hades, deixando uma marca profunda na trajetória do irmão."}
+            ]
+        },
+
+        14: {
+            nome: "Íris",
+            titulo: "Mensageira do Arco-Íris",
+            chalé: "Chalé 14",
+            frase: "Esperança a Íris",
+            imagem: "../assets/img/iris.jpeg",
+            descricao: "Íris é a deusa do arco-íris e uma das mensageiras dos deuses, responsável por estabelecer a comunicação entre o Olimpo e o mundo mortal. Sua presença está associada à ligação entre diferentes lugares e pessoas, sendo frequentemente lembrada pelo serviço de mensagens conhecido como Íris-Mensagem. Seus filhos representam essa capacidade de aproximar aqueles que estão distantes.",
+            caracteristicas: "Os filhos de Íris costumam ser comunicativos, criativos e sociáveis. Valorizam a amizade, a expressão artística e a capacidade de compreender diferentes perspectivas. São conhecidos por sua facilidade em estabelecer conexões e por encontrar maneiras de aproximar pessoas que, de outra forma, permaneceriam distantes. Sua maior virtude está em reconhecer que uma mensagem, no momento certo, pode mudar o destino de alguém.",
+            semideuses: [
+                {nome: "Butch Walker", texto: "Filho de Íris e conselheiro do chalé. Participou dos acontecimentos de HDO e ajudou a demonstrar a importância dos filhos das divindades menores no acampamento."}
+            ]
+        },
+
+        15: {
+            nome: "Hipnos",
+            titulo: "Senhor do Sono",
+            chalé: "Chalé 15",
+            frase: "Serenidade a Hipnos",
+            imagem: "../assets/img/hipnos.jpeg",
+            descricao: "Hipnos é o deus do sono, irmão gêmeo de Tânatos, responsável por conduzir os mortais ao descanso. Seu domínio também alcança os sonhos, por meio dos quais mensagens e presságios podem chegar aos semideuses. Embora seja uma divindade pouco envolvida nos assuntos do Olimpo, sua importância é maior do que muitos imaginam, pois até mesmo os heróis mais poderosos precisam descansar.",
+            caracteristicas: "Os filhos de Hipnos costumam ser tranquilos, pacientes e contemplativos. Valorizam o descanso, a imaginação e a capacidade de observar aquilo que passa despercebido pelos outros. Podem parecer distraídos ou sonolentos, mas possuem uma relação especial com o mundo dos sonhos e com os pensamentos mais profundos. Sua maior virtude está em compreender que nem toda batalha precisa ser enfrentada com pressa.",
+            semideuses: [
+                {nome: "Clovis", texto: "Filho de Hipnos e conselheiro do chalé. Teve participação importante em O Herói Perdido, auxiliando Jason e seus companheiros por meio de seus conhecimentos sobre os deuses e os sonhos."}
+            ]
+        },
+
+        16: {
+            nome: "Nêmesis",
+            titulo: "Senhora da Retribuição",
+            chalé: "Chalé 16",
+            frase: "Justiça a Nêmesis",
+            imagem: "../assets/img/nemesis.jpeg",
+            descricao: "Nêmesis é a deusa da retribuição e do equilíbrio, responsável por lembrar aos mortais e imortais que toda ação possui consequências. Sua função é impedir que alguém se considere superior aos demais e abuse da própria sorte ou posição. Seu filho mais conhecido, Ethan Nakamura, teve participação decisiva na guerra contra Cronos, embora inicialmente tenha lutado ao lado do Titã.",
+            caracteristicas: "Os filhos de Nêmesis costumam valorizar a justiça, a responsabilidade e o equilíbrio. São determinados e não esquecem facilmente as injustiças que presenciam, mas precisam compreender que a busca por retribuição não deve se transformar em vingança cega. Sua história ensina que reconhecer os próprios erros e buscar reparar aquilo que foi prejudicado também é uma forma de justiça.",
+            semideuses: [
+                {nome: "Ethan Nakamura", texto: "Movido pelo ressentimento de pertencer a uma linhagem divina frequentemente esquecida, Ethan acreditava que os filhos dos deuses menores mereciam reconhecimento. Aliou-se a Cronos na esperança de mudar a ordem do Olimpo, mas, ao perceber o verdadeiro destino que aguardava o mundo, tentou deter o Titã e sacrificou a própria vida. Seu último desejo ajudou Percy a lutar por justiça para os deuses menores."}
+            ]
+        },
+
+        17: {
+            nome: "Nike",
+            titulo: "Senhora da Vitória",
+            chalé: "Chalé 17",
+            frase: "Triunfo a Nike",
+            imagem: "../assets/img/nike.jpeg",
+            descricao: "Nike é a deusa da vitória e representa as conquistas alcançadas em batalhas, competições e desafios. Frequentemente retratada com asas e uma coroa de louros, simboliza o reconhecimento daqueles que superam seus adversários. Seus filhos herdam esse espírito competitivo e compreendem que alcançar a vitória exige esforço, disciplina e dedicação.",
+            caracteristicas: "Os filhos de Nike são competitivos, ambiciosos e determinados. Não gostam de perder e costumam estabelecer objetivos elevados para si mesmos. Valorizam o esforço, a superação e a busca pela excelência, sendo difíceis de intimidar diante de desafios. Entretanto, precisam aprender que vencer não significa necessariamente derrotar alguém: às vezes, a maior conquista é superar as próprias limitações.",
+            semideuses: [
+                {nome: "Holly Victor", texto: "Filha de Nike e integrante do Acampamento Júpiter durante HDO."},
+                {nome: "Laurel Victor", texto: "Irmã de Holly e também filha da deusa. Ambas representam o espírito competitivo característico de sua linhagem divina."}
+            ]
+        },
+
+        18: {
+            nome: "Hebe",
+            titulo: "Senhora da Juventude",
+            chalé: "Chalé 18",
+            frase: "Vitalidade a Hebe",
+            imagem: "../assets/img/hebe.jpeg",
+            descricao: "Hebe é a deusa da juventude e antiga copeira dos deuses do Olimpo, responsável por servir néctar e ambrosia aos imortais. Sua presença está associada à vitalidade, à renovação e à hospitalidade. Embora seja uma das divindades menores, sua função entre os olímpicos demonstra que até mesmo os serviços mais simples possuem grande importância para manter uma comunidade unida.",
+            caracteristicas: "Os filhos de Hebe costumam ser acolhedores, prestativos e sociáveis. Valorizam a convivência, a hospitalidade e o bem-estar daqueles que estão ao seu redor. São conhecidos por sua disposição em ajudar e por transformar ambientes comuns em lugares mais agradáveis. Sua maior virtude está em compreender que cuidar dos outros também é uma forma de demonstrar força.",
+            semideuses: [
+                {nome: "Paolo Montes", texto: "Filho de Hebe e integrante do Acampamento Júpiter. Participou dos acontecimentos de HDO e demonstrou coragem durante os conflitos envolvendo os semideuses gregos e romanos."}
+            ]
+        },
+
+        19: {
+            nome: "Tique",
+            titulo: "Senhora da Fortuna",
+            chalé: "Chalé 19",
+            frase: "Fortuna a Tique",
+            imagem: "../assets/img/tique.jpeg",
+            descricao: "Tique é a deusa da sorte, da fortuna e dos acontecimentos inesperados. Sua influência está presente tanto nas grandes conquistas quanto nas pequenas oportunidades que surgem ao longo da vida. Embora os mortais costumem atribuir seus sucessos ao acaso, os filhos de Tique aprendem que a sorte pode favorecer aqueles que sabem reconhecer uma oportunidade quando ela aparece.",
+            caracteristicas: "Os filhos de Tique costumam ser espontâneos, adaptáveis e imprevisíveis. Valorizam a criatividade e a capacidade de aproveitar oportunidades, mesmo quando as circunstâncias parecem desfavoráveis. Possuem uma relação especial com o acaso e costumam encarar os desafios com otimismo. Contudo, precisam compreender que a sorte não substitui o esforço e que nem sempre será possível depender dela.",
+            semideuses: [
+                {nome: "Chiara Benvenuti", texto: "Filha de Tique e integrante do Acampamento Júpiter durante HDO. Sua presença demonstra que os descendentes das divindades menores também possuem um lugar importante entre os semideuses."}
+            ]
+        },
+
+        20: {
+            nome: "Hécate",
+            titulo: "Senhora da Magia",
+            chalé: "Chalé 20",
+            frase: "Mistério a Hécate",
+            imagem: "../assets/img/hecate.jpeg",
+            descricao: "Hécate é a deusa da magia, da feitiçaria, das encruzilhadas e dos caminhos ocultos. Sua influência está presente nos limites entre diferentes mundos, sendo frequentemente representada com tochas que iluminam caminhos desconhecidos. Seus filhos possuem uma ligação especial com a Névoa, a força mágica responsável por esconder dos mortais a verdadeira natureza do mundo mitológico.",
+            caracteristicas: "Os filhos de Hécate costumam ser curiosos, estudiosos e determinados. Valorizam o conhecimento, a paciência e a capacidade de compreender aquilo que permanece oculto aos demais. São conhecidos por sua criatividade e pela disposição em explorar caminhos desconhecidos, mas precisam aprender que todo conhecimento exige responsabilidade. Afinal, a magia pode ser uma grande aliada, desde que utilizada com sabedoria.",
+            semideuses: [
+                {nome: "Lou Ellen Blackstone", texto: "Filha de Hécate e conselheira do chalé. Participou da defesa do Acampamento Meio-Sangue durante os acontecimentos de HDO, demonstrando a importância dos filhos das divindades menores na proteção de seus companheiros."}
+            ]
+        }
+    }
+
+
+    const abas = document.querySelectorAll('.aba')
+    const paineis = document.querySelectorAll('.painel')
+
+    // Mostra a aba de índice "n" e esconde as outras
+    function mostrarAba(n, focar) {
+        abas.forEach((aba, i) => {
+            const selecionada = i === n
+
+            aba.setAttribute('aria-selected', selecionada)   // usado pelo CSS e por leitores de tela
+            aba.tabIndex = selecionada ? 0 : -1               // só a aba ativa entra na ordem do Tab
+            paineis[i].classList.toggle('ativo', selecionada) // mostra ou esconde o painel
+        })
+
+        if (focar) {
+            abas[n].focus()
+        }
+    }
+
+    abas.forEach((aba, i) => {
+        // clique do mouse
+        aba.addEventListener('click', () => mostrarAba(i, false))
+
+        // setas do teclado
+        aba.addEventListener('keydown', (evento) => {
+            if (evento.key === 'ArrowRight') {
+                mostrarAba((i + 1) % abas.length, true)
+            }
+            if (evento.key === 'ArrowLeft') {
+                mostrarAba((i - 1 + abas.length) % abas.length, true)
+            }
+        })
+    })
+
+    // ---------- PREENCHER A PÁGINA ----------
+    function preencherPagina() {
+        // lê o número do chalé na URL: chales-info.html?chale=6
+        const parametros = new URLSearchParams(window.location.search)
+        const id = Number(parametros.get('chale')) || 6   // 6 = chalé usado se não vier nada na URL
+
+        const dados = chales[id]
+
+        // se o chalé ainda não foi escrito no objeto
+        if (!dados) {
+            document.getElementById('nomeDivindade').innerText = 'Em construção'
+            document.getElementById('fraseChale').innerText = 'Este chalé ainda não foi preenchido.'
+            return
+        }
+
+        document.title = dados.nome + ' - Acampamento Meio-Sangue'
+
+        document.getElementById('nomeDivindade').innerText = dados.nome
+        document.getElementById('numeroChale').innerText = dados.chalé
+        document.getElementById('fraseChale').innerText = dados.frase
+        document.getElementById('descricaoChale').innerText = dados.descricao
+        document.getElementById('caracteristicasChale').innerText = dados.caracteristicas
+        const lista = document.getElementById('semideusChale')
+        lista.innerHTML = ''   // limpa a lista antes de preencher
+
+        dados.semideuses.forEach(semideus => {
+            const item = document.createElement('li')
+
+            if (semideus.nome) {
+                const nome = document.createElement('strong')
+                nome.innerText = semideus.nome
+                item.appendChild(nome)
+                item.append(': ' + semideus.texto)
+            } else {
+                item.innerText = semideus.texto   // itens sem nome, como a nota do chalé da Hera
+            }
+
+            lista.appendChild(item)
+        })
+
+        const imagem = document.getElementById('imagemDeus')
+        imagem.src = dados.imagem
+        imagem.alt = dados.nome
+    }
+
+    preencherPagina()
+</script>

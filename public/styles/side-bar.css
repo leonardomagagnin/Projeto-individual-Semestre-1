@@ -4,6 +4,8 @@
     box-sizing: border-box;
     --cor-primaria: #002752;
     --cor-secundaria: #FCBE56;
+    --cor-tecearia: #F3E4C8;
+    --cor-mar: #03477f;
 }
 
 body {
@@ -13,30 +15,86 @@ body {
     height: 100vh;
 }
 
-header {
-    padding: 12px 36px;
+.lado-esquerdo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;                   /* substitui o height: 100% */
+    width: 260px;
+
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
     justify-content: flex-start;
-    background-color: #002752;
-    position: sticky;
-    top: 0px;
-    z-index: 1000;
+
+    background: linear-gradient(180deg, var(--cor-primaria) 0%, var(--cor-mar) 100%);
+    border-right: solid 5px var(--cor-secundaria);
+    color: white;
+
+    padding: 26px 0 20px;        /* sem espaço nas laterais */
+    overflow: hidden;            /* usado na etapa 5, para as ondas */
+
+}
+
+.container-header {
+    display: flex;
+    flex-direction: column;      /* avatar em cima, texto embaixo */
+    align-items: center;         /* centraliza os dois */
+    gap: 12px;
+
+    padding: 0 16px 22px;
+}
+
+.avatar {
+    width: 74px;
+    height: 74px;
+    flex: none;
+
+    display: grid;
+    place-items: center;         /* centraliza o tridente no círculo */
+
+    border: 3px solid var(--cor-secundaria);
+    border-radius: 50%;          /* deixa redondo */
+    background: rgba(0, 0, 0, .18);
+    color: var(--cor-secundaria);   /* o SVG usa currentColor, então herda o dourado */
+}
+
+.avatar svg {
+    width: 34px;
+    height: 34px;
+}
+
+#statusSemideus {
+    font-family: 'Cinzel', Georgia, serif;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: .06em;
+    color: #cfd9e6;
+    text-align: center;
 }
 
 .sobre-usuario {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 5px;
 }
 
 .sobre-usuario h2 {
     color: var(--cor-secundaria);
-    font-size: 34px;
+    font-size: 30px;
+    font-weight: normal;
+}
+
+#nomeUsuario {
+    color: var(--cor-secundaria);
+    font-size: 30px;
+    font-weight: normal;
+    font-family: 'Caesar Dressing', cursive;
 }
 
 .sobre-usuario span {
     color: white;
+    font-family: 'Alegreya', serif;
 }
 
 
@@ -45,55 +103,98 @@ header {
     flex-direction: row;
 }
 
-.lado-esquerdo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    background-color: var(--cor-primaria);
-    position: fixed;
-
-    color: white;
-    border-right: solid 5px var(--cor-secundaria);
-
-    padding: 20px 15px;
-    width: 230px;
-    height: 100%;
-}
-
 
 
 .areas-section {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 6px;
 
-    height: 200px;
+    margin-right: 18px;          /* deixa um respiro na borda direita, onde a pílula termina */
 }
 
 .areas {
     display: flex;
     flex-direction: row;
     align-items: center;
-
-    padding: 10px 15px;
     gap: 12px;
 
-    cursor: pointer;
-}
-
-.areas img {
-    height: 22px;
-    width: 22px;
+    padding: 12px 20px;
+    border-radius: 0 999px 999px 0;   /* reto na esquerda, arredondado na direita */
 
     color: white;
+    text-decoration: none;            /* tira o sublinhado do link */
+    font-size: 17px;
+    line-height: 1.15;
+    font-weight: normal;
+    cursor: pointer;
+
+    transition: background .2s, color .2s;
 }
 
+.areas:hover {
+    background: rgba(255, 255, 255, .12);
+}
+
+.areas.ativa {
+    background: var(--cor-secundaria);   /* dourado */
+    color: var(--cor-primaria);          /* texto e ícone em azul-marinho */
+}
+
+.areas:focus-visible {
+    outline: 3px solid var(--cor-secundaria);
+    outline-offset: 2px;
+}
+
+.areas-icon {
+    display: flex;
+    flex: none;                  /* o ícone não é espremido quando o texto é longo */
+}
+
+.areas-icon svg {
+    width: 24px;
+    height: 24px;
+}
 
 .direcionadores {
+    margin-top: auto;                 /* empurra o rodapé para o fim da sidebar */
+
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+
+    padding: 50px 16px 22px;          /* os 50px de cima dão espaço para as ondas */
+
+    background:
+        linear-gradient(rgba(255, 255, 255, .09), rgba(255, 255, 255, .09)) 0 24px / 100% calc(100% - 24px) no-repeat,
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='24' viewBox='0 0 60 24'%3E%3Cpath d='M0 12Q15 0 30 12T60 12V24H0Z' fill='%23ffffff' fill-opacity='.09'/%3E%3C/svg%3E") repeat-x 0 0 / 60px 24px;
 }
 
+.direcionadores button {
+    width: 100%;
+    max-width: 200px;
+    padding: 11px 15px;
+
+    border: none;
+    border-bottom: solid 3px #d98f1c;     /* efeito de relevo, em dourado mais escuro */
+    border-radius: 999px;
+
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);           /* azul-marinho em vez de branco */
+    font-family: 'Caesar Dressing', cursive;
+    font-size: 16px;
+
+    cursor: pointer;
+    transition: transform .2s, background-color .2s;
+}
+
+.direcionadores button:hover {
+    transform: scale(1.03);
+    background-color: #ffd58a;
+}
+
+.direcionadores button:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 3px;
+}
