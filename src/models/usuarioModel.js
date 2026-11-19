@@ -44,11 +44,20 @@ function percentReclamados() {
                     FROM usuario;`;
     return database.executar(instrucaoSql);
 }
+
+function usuariosNovos() {
+    var instrucaoSql = `SELECT COUNT(*) AS usuariosNovosNoMes
+                    FROM usuario
+                    WHERE MONTH(dt_cadastro) = MONTH(CURRENT_DATE())
+                    AND YEAR(dt_cadastro) = YEAR(CURRENT_DATE());`;
+    return database.executar(instrucaoSql);
+}
 module.exports = {
     autenticar,
     cadastrar,
     contarUsuarios,
     usuarioPorChale,
     reclamarUsuario,
-    percentReclamados
+    percentReclamados,
+    usuariosNovos
 };

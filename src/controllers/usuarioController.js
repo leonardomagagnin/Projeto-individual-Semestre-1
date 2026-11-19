@@ -156,11 +156,31 @@ function percentReclamados(req, res) {
     )
 }
 
+function usuariosNovos(req, res) {
+    usuarioModel.usuariosNovos()
+    .then(
+        function (resultadoQuant) {
+            res.json(resultadoQuant)
+        }
+    )
+     .catch(
+        function (erro) {
+                console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar a contagem! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+        }
+    )
+}
+
 module.exports = {
     autenticar,
     cadastrar,
     contarUsuarios,
     usuarioPorChale,
     reclamarUsuario,
-    percentReclamados
+    percentReclamados,
+    usuariosNovos
 }

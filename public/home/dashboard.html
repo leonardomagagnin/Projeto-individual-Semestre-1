@@ -74,21 +74,27 @@
                     <div class="kpi-texto">
                         <h2 id="totalUsuarios">10</h2>
                         <p>Semideuses Registrados</p>
-                        <span id="semideusesNovos">+<span>X</span> novos este mês</span>
+                        <span id="semideusesNovos">+<span id="usuariosNovosNoMes">X</span> no útlimo mês</span>
                     </div>
                 </div>
 
                 <div class="card-kpi">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#0a2a5c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-5 9 5zM5 9v8M9.5 9v8M14.5 9v8M19 9v8M3 20h18"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none"
+                        stroke="#0a2a5c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 9l9-5 9 5zM5 9v8M9.5 9v8M14.5 9v8M19 9v8M3 20h18" />
+                    </svg>
                     <div class="kpi-texto">
-                        <h2 id="totalChales"><span id="chalesOcupados">X</span> de 20</h2>
+                        <h2 id="totalChales"><span id="chalePopulado">X</span> de 20</h2>
                         <p>Chalés ocupados</p>
-                        <span><span>X</span> ainda vazios</span>
+                        <span><span id="chaleSemSemideuses">X</span> ainda vazios</span>
                     </div>
                 </div>
 
                 <div class="card-kpi">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#0a2a5c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none"
+                        stroke="#0a2a5c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M3 11l9-7 9 7M5 10v10h14V10M10 20v-6h4v6" />
+                    </svg>
                     <div class="kpi-texto">
                         <h2 id="chalePopuloso">Hermes</h2>
                         <p>Chalé Mais Populado</p>
@@ -96,7 +102,10 @@
                 </div>
 
                 <div class="card-kpi">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#0a2a5c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 2.5 1.5 2.5C10 9 11 6 12 3z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none"
+                        stroke="#0a2a5c" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 3c1 3.5 5 5.5 5 10a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 2.5 1.5 2.5C10 9 11 6 12 3z" />
+                    </svg>
                     <div class="kpi-texto">
                         <h2 id="semideusReclamado">4</h2>
                         <p>Semideuses não reclamados</p>
@@ -139,13 +148,25 @@
             console.log(erro);
         });
 
-    fetch('/chales/contarChales')
+    fetch('/usuarios/usuariosNovos')
         .then(function (resposta) {
             return resposta.json();
         })
         .then(function (dados) {
             console.log(dados)
-            document.getElementById("totalChales").innerText = dados[0].total
+            document.getElementById("usuariosNovosNoMes").innerText = dados[0].usuariosNovosNoMes
+        })
+        .catch(function (erro) {
+            console.log(erro);
+        });
+
+    fetch('/chales/chalePopulado')
+        .then(function (resposta) {
+            return resposta.json();
+        })
+        .then(function (dados) {
+            console.log(dados)
+            document.getElementById("chalePopulado").innerText = dados[0].chalesOcupados
         })
         .catch(function (erro) {
             console.log(erro);
@@ -162,6 +183,19 @@
         .catch(function (erro) {
             console.log(erro);
         });
+
+    fetch('/chales/chaleSemSemideuses')
+        .then(function (resposta) {
+            return resposta.json();
+        })
+        .then(function (dados) {
+            console.log(dados)
+            document.getElementById("chaleSemSemideuses").innerText = dados[0].total
+        })
+        .catch(function (erro) {
+            console.log(erro);
+        });
+
 
 
 
@@ -193,18 +227,16 @@
                     }]
                 },
                 options: {
-                indexAxis: 'y',                 // é isso que deixa horizontal
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { display: false }  // tira a legenda vazia (label: '')
-                },
-                scales: {
-                    x: {
-                        beginAtZero: true,
-                        ticks: { precision: 0 } // só números inteiros
+                    indexAxis: 'y',                 // é isso que deixa horizontal
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {display: false}  // tira a legenda vazia (label: '')
+                    },
+                    scales: {
+                        x: {beginAtZero: true, ticks: {precision: 0}},
+                        y: {ticks: {autoSkip: false}}
                     }
                 }
-            }
             })
         })
         .catch(function (erro) {
@@ -220,6 +252,8 @@
         .then(function (dados) {
             let reclamados = Number(dados[0].reclamados);
             let naoReclamados = Number(dados[0].naoReclamados);
+
+            document.getElementById("semideusReclamado").innerText = naoReclamados;
 
             console.log(dados);
 

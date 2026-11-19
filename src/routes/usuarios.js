@@ -27,4 +27,8 @@ router.post("/reclamarUsuario", function(req, res) {
 router.get("/percentReclamados", function(req, res) {
     usuarioController.percentReclamados(req, res);
 });
+
+router.get("/usuariosNovos", function(req, res) {
+    usuarioController.usuariosNovos(req, res);
+})
 module.exports = router;

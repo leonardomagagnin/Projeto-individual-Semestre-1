@@ -1,8 +1,8 @@
 var chalesModel = require("../models/chalesModel");
 
 
-function contarChales(req, res) {
-    chalesModel.contarChales()
+function chalePopulado(req, res) {
+    chalesModel.chalePopulado()
     .then(
         function (resultadoContagem) {
             res.json(resultadoContagem)
@@ -37,8 +37,27 @@ function chaleMaisPopuloso(req, res) {
     )
 }
 
+function chaleSemSemideuses(req, res) {
+    chalesModel.chaleSemSemideuses()
+    .then(
+        function (resultadoContagem) {
+            res.json(resultadoContagem)
+        }
+    ).catch(
+        function (erro) {
+                console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar a contagem! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+        }
+    )
+}
+
 
 module.exports = {
-    contarChales,
-    chaleMaisPopuloso
+    chalePopulado,
+    chaleMaisPopuloso,
+    chaleSemSemideuses
 }
