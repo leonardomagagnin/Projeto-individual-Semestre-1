@@ -12,6 +12,17 @@
     --tinta-suave: #3d4f6b;
 }
 
+body {
+    background-color: var(--cor-tecearia);
+}
+
+.tituloSessao {
+    display: inline-block;
+    font-family: 'Caesar Dressing', cursive;
+    font-size: 1.15rem;
+    color: var(--cor-secundaria);
+    border-bottom: 3px solid var(--cor-secundaria);
+}
 
 header {
     position: sticky;
@@ -22,7 +33,10 @@ header {
     border-bottom: solid 3px var(--cor-primaria);
 }
 
-
+header a {
+    text-decoration: none;
+    color: var(--cor-primaria);
+}
 
 .container-header {
     display: flex;
@@ -43,13 +57,15 @@ header {
     font-family: var(--fonte-titulo);
     font-size: 1.4rem;
     color: var(--cor-primaria);
+    font-family: 'Caesar Dressing', cursive;
 }
 
 .marca-simbolo {
     width: 42px;
     height: 42px;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid var(--cor-primaria);
     border-radius: 50%;
     font-size: 1.5rem;
@@ -63,68 +79,62 @@ nav {
     color: var(--cor-primaria);
 }
 
-nav ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 1.5rem;
-    color: white;
+nav a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--cor-secundaria-escura);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
 }
 
-nav ul li {
-    border-radius: 16px;
-    font-weight: 600;
-    font-size: 14px;
-    transition: 0.2s;
-}
 
 .botoes-nav {
     display: flex;
     gap: 12px;
+    font-family: 'Caesar Dressing', cursive;
 }
 
-.nav-cadastro {
+.btn-cadastrar {
     background-color: #fcbe56;
     color: #002752;
     padding-top: 2px;
+
+    border-radius: 20px;
+    border-bottom: solid 3px var(--cor-secundaria-escura);
+    padding: 10px 15px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: 0.2s;
+    
 }
 
-.nav-login {
+.btn-entrar {
     border: solid 1px #fcbe56;
     padding-top: 2px;
-}
+    padding: 10px 15px;
+    font-weight: normal;
 
-nav ul a {
+    border-radius: 20px;
+    border: solid 2px var(--cor-primaria);
+    cursor: pointer;
     transition: 0.2s;
 }
 
-
-nav ul li:hover {
-    transform: translateY(-2px);
+.btn-entrar:hover,
+.btn-cadastrar:hover {
+    transform: scale(1.02);
 }
 
-nav ul a:hover {
-    transform: translateY(-2px);
-    color: #fcbe56;
+
+.main {
+    padding: 80px 0;
 }
 
-main {
+.container-main {
     display: flex;
-    justify-content: center;
-
-
-    background-image: linear-gradient(to right, transparent 35%, #002752 75%, #002752 100%),
-        url(../assets/img/entrada-acampamento.jpeg);
-
-    background-size: 75% 100%;
-    background-position: flex-start;
-    background-repeat: no-repeat;
-
-    height: 700px;
-    color: white;
-    position: relative;
-
-
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .main-conteudo {
@@ -135,169 +145,243 @@ main {
     z-index: 1;
 }
 
-.container-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    width: 75%;
-    height: fit-content;
-    align-self: center;
-
+#conteudoTopo {
+    font-size: 1rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--tinta-suave);
 }
 
-.container-main p {
-    font-weight: bold;
-    font-size: 30px;
-    margin-bottom: -4px;
-}
-
-.container-main span {
-    font-size: 16px;
-    margin-top: 20px;
-}
-
-.container-main h1 {
+.main-conteudo h1 {
     font-family: 'Caesar Dressing', cursive;
-    font-size: 65px;
-    font-weight: bold;
-    margin: -5px;
-
-    color: #FCBE56;
+    font-size: 5.5rem;
+    line-height: 1.05;
+    color: var(--cor-primaria);
+    margin: 12px 0 22px;
 }
 
-.container-transicao {
-    height: 100px;
-    background-color: linear-gradient(to top, transparent 35%, #002752 75%, #002752 100%);
+.main-conteudo h1 span {
+    background: linear-gradient(transparent 62%, var(--cor-secundaria) 62%);
 }
 
-.container-sobre {
+#textoIntro {
+    max-width: 30em;
+    font-size: 1.2rem;
+    color: var(--tinta-suave);
+    margin-bottom: 34px;
+}
+
+.main-btns {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-family: 'Caesar Dressing', cursive;
+}
+
+.main-imagem {
+    position: relative;
+
+}
+
+.main-imagem img {
+    width: 60%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border: 4px solid var(--cor-primaria);
+    border-radius: 20px;
+    box-shadow: 14px 14px 0 var(--cor-secundaria);
+}
+
+#btn-descobrir {
+    padding-top: 2px;
     padding: 15px 20px;
-    color: white;
-}
+    font-weight: normal;
+    font-size: 16px;
 
-.sobre-titulo {
-    margin: 30px;
-    font-weight: bold;
-    font-size: 30px;
-}
+    border-radius: 20px;
+    border: none;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    cursor: pointer;
+    transition: 0.2s;
 
-.sobre-conteudo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    width: 100%;
-    padding: 10px 15px;
-}
-
-.sobre-descricao h2 {
     font-family: 'Caesar Dressing', cursive;
-    color: #FCBE56;
-    font-size: 50px;
-
-    display: flex;
-    align-self: center;
-    padding: 10px 15px;
 }
 
-.sobre-texto p {
-    font-size: 20px;
-    width: 784px;
+#btn-conhecer {
+    padding-top: 2px;
+    padding: 15px 20px;
+    font-weight: normal;
+    background-color: transparent;
+    font-size: 16px;
+
+    border-radius: 20px;
+    border: solid 2px var(--cor-primaria);
+    cursor: pointer;
+    transition: 0.2s;
+
+    font-family: 'Caesar Dressing', cursive;
 }
 
-.sobre-conteudo img {
-    width: 100%;
-    height: 700px;
-    box-sizing: border-box;
+#btn-descobrir:hover,
+#btn-conhecer:hover {
+    transform: scale(1.02);
+}
+.selo {
+    position: absolute;
+    left: -34px;
+    bottom: 34px;
+    width: 110px;
+    height: 110px;
+    display: grid;
+    place-items: center;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    border: 4px solid var(--cor-primaria);
+    border-radius: 50%;
+    font-family: var(--fonte-titulo);
+    font-size: 3rem;
+    outline: 3px dashed rgba(0, 39, 82, 0.45);
+    /* anel tracejado por dentro */
+    outline-offset: -12px;
 }
 
-.sobre-texto {
-    width: 70%;
+.meandro {
+    height: 22px;
+    background: url("../assets/img/meandro.svg") repeat-x;
+    background-size: 22px 22px;
+}
+
+.sobre-section {
+    text-align: center;
+    background-color: var(--cor-primaria);
+    padding: 80px 0;
+}
+
+.tituloSessao {
+    
+}
+#quoteLivro {
+    max-width: 15em;
+    margin: 22px auto 28px;
+    font-size: 4rem;
+    line-height: 1.05;
+    color: var(--cor-secundaria);
+}
+
+#infoSobre {
+    max-width: 42em;
+    margin: 0 auto 60px;
+    font-size: 1.15rem;
+    color: var(--cor-tecearia);
 }
 
 
 .card-sobre {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    gap: 36px;
+    text-align: left;
 }
 
 .card-missao,
 .card-alvo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    width: 500px;
-    height: 200px;
-    margin: 20px;
-
-    padding: 10px 15px;
-    background-color: #013369;
-    box-sizing: border-box;
-
-    border: none;
-    border-bottom: solid 3px #FCBE56;
-    border-right: solid 3px #FCBE56;
+    flex: 1;
+    padding: 36px;
+    background-color: var(--papel);
+    color: #14100a;
     border-radius: 16px;
-    color: #f8f0df;
+    box-shadow: 8px 8px 0 var(--cor-secundaria);
+}
+
+.card-missao h3,
+.card-alvo h3 {
+    font-size: 2rem;
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
 }
 
 
 .container-origem {
-    display: flex;
-    flex-direction: row;
-    padding: 15px 20px;
-
-    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 72px;
+    align-items: center;
 }
 
-.origem-texto {
-    width: 60%;
-    padding: 10px 15px;
+.container-origem img {
+    width: 100%;
+    max-height: 560px;
+    object-fit: cover;
+    border: 4px solid var(--cor-primaria);
+    border-radius: 20px;
+    box-shadow: 12px 12px 0 var(--cor-secundaria);
 }
 
-.origem-titulo p {
-    font-weight: bold;
-    font-size: 45px;
-    margin-bottom: -5px;
+.container-origem p {
+    font-size: 1.1rem;
 }
 
-.origem-conteudo p {
-    font-size: 23px;
+.container-origem p * p {
+    margin-top: 16px;
 }
 
-.origem-img {
-    width: 30%;
-    height: 600px;
+.plataforma-section {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria-escura);
+}
 
-    background-image: url("../assets/img/reclamado.jpeg");
-    border-radius: 16px;
-    border-bottom: solid 3px #FCBE56;
-    border-right: solid 3px #FCBE56;
+.plataforma-section #tituloSessao {
+    border-bottom-color: var(--cor-primaria);
 }
 
 .container-plataforma {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 745px;
-    padding: 10px 15px;
-}
-
-.container-plataforma h1 {
-    font-size: 50px;
-    color: #fcbe56;
-    margin: 1px;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 56px;
+    align-items: center;
 }
 
 .container-plataforma p {
-    font-size: 23px;
-    color: white;
+    font-size: 1.1rem;
     margin-bottom: 30px;
+}
+
+.passos {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.passos li {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 22px;
+    background-color: var(--papel);
+    border: 3px solid var(--cor-primaria);
+    border-radius: 14px;
+}
+
+.numero {
+    flex: none;
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    font-family: var(--fonte-titulo);
+    font-size: 1.4rem;
+}
+
+.passos strong {
+    display: block;
+    font-family: var(--fonte-titulo);
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: var(--cor-primaria);
 }
 
 .container-plataforma button {
@@ -320,133 +404,108 @@ main {
     background-color: #c6a45c;
 }
 
-.container-chale {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    margin-bottom: 50px;
+.cabecalho-personagens {
+    max-width: 36em;
+    margin: 0 auto 64px;
+    text-align: center;
+    color: var(--tinta-suave);
 }
 
-
-.container-chale h1 {
-    display: flex;
-    align-self: flex-start;
-
-    font-size: 40px;
-    color: #fcbe56;
-
-    padding: 10px 15px;
+.fichas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 32px;
 }
 
-.card-linha {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+.ficha {
+    position: relative;
+    /* para a tachinha ficar presa ao card */
+    padding-bottom: 26px;
+    background-color: var(--papel);
+    border: 4px solid var(--cor-primaria);
+    border-radius: 16px;
+    box-shadow: 8px 8px 0 var(--cor-secundaria);
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
+/* tachinha */
+.ficha::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    width: 26px;
+    height: 26px;
+    transform: translateX(-50%);
+    background-color: var(--cor-secundaria);
+    border: 4px solid var(--cor-primaria);
+    border-radius: 50%;
+    box-shadow: 0 3px 0 var(--cor-secundaria-escura);
+}
 
-    width: 300px;
-    height: 400px;
-    padding: 10px 15px;
-    box-sizing: border-box;
-
-    margin: 10px;
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    border-radius: 20px;
-    border-bottom: solid 7px #fcbe56;
-    border-right: solid 7px #fcbe56;
-
-    transition: 0.3s;
-
+.ficha img {
+    width: 100%;
+    aspect-ratio: 4 / 4.2;
     object-fit: cover;
-    filter: brightness(65%);
-    transition: 0.4s ease-in-out;
-    cursor: pointer;
+    border-bottom: 4px solid var(--cor-primaria);
+    border-radius: 12px 12px 0 0;
 }
 
-.card:hover {
-    transform: scale(1.02);
-    filter: brightness(90%);
+.ficha-corpo {
+    padding: 22px 24px 0;
 }
 
-.card h2 {
-    font-size: 30px;
-    font-weight: bold;
-    margin: -5px;
-
-
-    color: #f8f0df;
-    -webkit-text-stroke: 1px #c6a45c;
-    text-shadow: 2px 2px 4px #000;
+.ficha-tag {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--tinta-suave);
 }
 
-.card p {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
+.ficha h3 {
+    font-size: 2.1rem;
+    line-height: 1.05;
+    color: var(--cor-primaria);
+    margin: 2px 0 10px;
 }
 
-.card#card-zeus {
-    background-image: url(../assets/img/Zeus.jpeg);
+.ficha-descricao {
+    font-size: 0.95rem;
+    margin-bottom: 14px;
 }
 
-.card#card-hera {
-    background-image: url(../assets/img/hera.jpeg);
+.sobremim-section {
+    background-color: var(--cor-primaria);
 }
 
-.card#card-poseidon {
-    background-image: url(../assets/img/poseidon.jpeg);
+.container-sobremim {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 64px;
+    align-items: center;
 }
 
-.card#card-demeter {
-    background-image: url(../assets/img/persefone.jpeg);
+.container-sobremim img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 4px solid var(--cor-secundaria);
+    border-radius: 20px;
+    box-shadow: 12px 12px 0 rgba(252, 190, 86, 0.3);
 }
 
-.card#card-ares {
-    background-image: url(../assets/img/ares.jpeg);
+.container-sobremim p {
+    font-size: 1.08rem;
+    margin-bottom: 26px;
+    color: var(--cor-tecearia);
 }
 
-.card#card-atena {
-    background-image: url(../assets/img/Athena.jpeg);
+.eu-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 
-.card#card-apollo {
-    background-image: url(../assets/img/Apollo.jpeg);
-}
-
-.card#card-artemis {
-    background-image: url(../assets/img/artemis.jpeg);
-}
-
-.card#card-hefesto {
-    background-image: url(../assets/img/hefesto.jpeg);
-}
-
-.card#card-afrodite {
-    background-image: url(../assets/img/aphrodite.jpeg);
-}
-
-.card#card-hermes {
-    background-image: url(../assets/img/hermes.jpeg);
-}
-
-.card#card-dionisio {
-    background-image: url(../assets/img/Dionysus.jpeg);
-}
-
-.card#card-hades {
-    background-image: url(../assets/img/hades.jpeg);
-}
 
 .footer {
     background-color: #002752;
