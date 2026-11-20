@@ -15,5 +15,9 @@ router.get("/chaleSemSemideuses", function(req, res) {
     chalesController.chaleSemSemideuses(req, res);
 });
 
+router.get("/chaleAtual", function(req, res) {
+    chalesController.chaleAtual(req, res);
+});
+
 
 module.exports = router;

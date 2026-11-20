@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Alegreya:wght@400;500&family=Cinzel:wght@600&display=swap">
+
 
     <link rel="stylesheet" href="../styles/side-bar.css">
     <link rel="stylesheet" href="../styles/index.css">
@@ -74,7 +77,7 @@
             </div>
 
             <div class="direcionadores">
-                <div class="logout"><button>Sair</button></div>
+                <div class="logout"><button onclick="window.location.href='../login.html'">Sair</button></div>
             </div>
 
         </div>
@@ -83,10 +86,46 @@
                 <h1>Seja Bem-Vindo ao Acampamento Meio-Sangue, Semideus!</h1>
             </div>
 
-            <div class="card-chale">
-                <div class="simbolo">Simbolo</div>
-                <p>Chalé Atual</p>
-                <h2>Hermes</h2>
+            <div class="meandro"></div>
+
+            <div class="card-chale" id="cardChale">
+                <div class="texto-chale">
+                    <p class="rotulo-chale">Chalé Atual</p>
+                    <h2 id="nomeChale">Hermes</h2>
+                    <p class="dominio-chale" id="fraseChale">Viajantes, mensageiros e ladrões.</p>
+
+                    <div class="acoes-chale">
+                        <a href="chales.html" class="botao">Conhecer este chalé</a>
+                    </div>
+                </div>
+
+                <div class="selo-chale">
+                    <div class="simbolo">
+                        <svg id="iconeChale" viewBox="0 0 100 100"></svg>
+                    </div>
+                    <span class="numero-chale">Nº <span id="numeroChale">11</span></span>
+                </div>
+            </div>
+
+            <div class="pag-info">
+                <div class="texto-info">
+                    <h1>Oráculo de Delfos</h1>
+                    <p>Responda o quiz e descubra a qual chalé você pertence</p>
+                </div>
+
+                <div class="divisor"></div>
+
+                <div class="texto-info">
+                    <h1>Chalés</h1>
+                    <p>Conheça os 20 chalés do acampamento</p>
+                </div>
+
+                <div class="divisor"></div>
+
+                <div class="texto-info">
+                    <h1>Casa Grande</h1>
+                    <p>Acompanhe os registros e números do acampamento</p>
+                </div>
             </div>
 
 
@@ -96,6 +135,24 @@
 
 </html>
 <script>
+    var idUsuario = sessionStorage.getItem("ID_USUARIO");
+
+    fetch(`/chales/chaleAtual?idServer=${idUsuario}`)
+        .then(function (resposta) {
+            return resposta.json();
+        })
+        .then(function (dados) {
+            console.log(dados)
+            document.getElementById("nomeChale").innerText = dados[0].chale
+            document.getElementById("fraseChale").innerText = dados[0].frase
+            document.getElementById("numeroChale").innerText = dados[0].numero
+        })
+        .catch(function (erro) {
+            console.log(erro);
+        });
+    
+
+
     // preenche nome do usuário e altera status de semideus quando disponível
     (function () {
         var nome = sessionStorage.getItem('NOME_USUARIO');

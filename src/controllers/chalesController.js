@@ -55,9 +55,28 @@ function chaleSemSemideuses(req, res) {
     )
 }
 
+function chaleAtual(req, res) {
+    var id = req.query.idServer;
 
+    chalesModel.chaleAtual(id)
+    .then(
+        function (resultado) {
+            res.json(resultado)
+        }
+    ).catch(
+        function (erro) {
+                console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar a busca! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+        }
+    )
+}
 module.exports = {
     chalePopulado,
     chaleMaisPopuloso,
-    chaleSemSemideuses
+    chaleSemSemideuses,
+    chaleAtual
 }

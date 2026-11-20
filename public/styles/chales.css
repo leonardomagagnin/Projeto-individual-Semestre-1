@@ -61,8 +61,8 @@ body {
 }
 
 .card-chale img {
-    width: 240px;
-    height: 240px;
+    width: 220px;
+    height: 220px;
 
     border-radius: 20px;
     border-bottom: solid 3px var(--cor-primaria);
