@@ -11,219 +11,216 @@
     <link rel="stylesheet" href="styles/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Alegreya:wght@400;500&family=Cinzel:wght@600&display=swap">
+
     <title>Acapamento Meio-Sangue | Home</title>
 </head>
 
 <body>
     <header>
         <div class="container-header">
-            <a href="#main-section"><img src="../assets/img/logo-header.png" alt="logo-header"></a>
+            <a href="#main-section" class="marca"><span class="marca-simbolo">Ψ</span>Acampamento Meio-Sangue</a>
             <nav>
-                <ul>
-                    <li><a href="#sobre-section">Sobre</a></li>
-                    <li><a href="#origem-section">Origem</a></li>
-                    <li><a href="#plataforma-section">Plataforma</a></li>
-                    <li><a href="#personagens-section">Personagens</a></li>
-                    <li><a href="#sobremim-section">Sobre Mim</a></li>
-                    <li class="btn nav-login"><a href="login.html">Entrar</a></li>
-                    <li class="btn nav-cadastro"><a href="cadastro.html">Cadastrar</a></li>
-                </ul>
+                <a href="#sobre-section">Sobre</a>
+                <a href="#origem-section">Origem</a>
+                <a href="#plataforma-section">Plataforma</a>
+                <a href="#personagens-section">Personagens</a>
+                <a href="#sobremim-section">Sobre Mim</a>
             </nav>
+
+            <div class="botoes-nav">
+                <a class="btn-entrar nav" href="login.html">Entrar</a></li>
+                <a class="btn-cadastrar nav" href="cadastro.html">Cadastrar</a>
+            </div>
         </div>
     </header>
 
-    <main>
-        <div class="container-main" id="main-section">
+    <main id="main-section" class="main">
+        <div class="container-main">
             <div class="main-conteudo">
-                <p>Seja bem-vindo ao</p>
-                <h1>Acampamento <br>Meio-Sangue</h1>
-                <span>Um lugar cheio de aventuras e mistérios para aqueles que conseguem enxergar além da Névoa</span>
+                <p id="conteudoTopo">Seja bem-vindo ao</p>
+                <h1>Acampamento <span>Meio-Sangue</span></h1>
+                <p id="textoIntro">Um lugar cheio de aventuras e mistérios para aqueles que conseguem enxergar além da
+                    Névoa</p>
+
+                <div class="main-btns">
+                    <button id="btn-descobrir" onclick="window.location.href='cadastro.html'">Descobrir meu chalé</button>
+                    <button id="btn-conhecer" onclick="window.location.href='login.html'">Conhecer o acampamento</button>
+                </div>
             </div>
-            <div class="container-transicao"></div>
+
+            <div class="main-imagem">
+                <img src="assets/img/entrada-acampamento.jpeg" alt="Entrada do Acampamento Meio-Sangue">
+                <div class="selo">Ψ</div>
+            </div>
         </div>
     </main>
 
+    <div class="meandro"></div>
+
     <section class="sobre-section" id="sobre-section">
         <div class="container-sobre">
-            <div class="sobre-titulo">
-                <p>Sobre o Acampamento Meio-Sangue</p>
+            <span class="tituloSessao">Sobre o Acampamento Meio-Sangue</span>
+            <p id="quote-livro">"Olhe eu não queria ser um meio-sangue"</p>
+            <p id="infoSobre">Inspirado na obra de Rick Riordan, buscamos nos conectar com o nosso usuário de modo
+                mágico.
+                Através do processo de “Reclamação divina”, guiamos o usuário em uma jornada de
+                autoconhecimento
+                e reflexão sobre suas principais virtudes e valores.</p>
+
+            <div class="card-sobre">
+                <div class="card">
+                    <h2>Nossa Missão</h2>
+                    <p> Nossa missão é criar um ambiente interativo e imersivo que permita ao usuário se
+                        sentir
+                        parte da obra e estimular sua imaginação,</p>
+                </div>
+
+                <div class="card">
+                    <h2>Público Alvo</h2>
+                    <p>Esse site é destinado a todos aqueles que sempre sonharam em ser os herois de suas
+                        próprias histórias de fantasia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="origem-section" id="origem-section">
+        <div class="container-origem">
+            <img src="assets/img/reclamado.jpeg" alt="Percy sendo reclamado">
+
+            <div class="textoOrigem">
+                <span class="tituloSessao">Origem</span>
+                <h2>Como Surgiu?</h2>
+
+                <p>Esse projeto surgiu da sufocante vontade de um garoto de 13 anos de fugir para um mundo fantasioso
+                    que o tirasse de sua realidade por alguns momentos, um lugar onde ele poderia ser o que quisesse sem
+                    se sentir tão diferente e deslocado o tempo todo.</p>
+                <p>Diante da narrativa cativante e dos personagens cheios de personalidade, encontrou-se um conforto que
+                    não parecia possível naquele momento. As narrativas únicas sobre cada um dos semideuses despertam
+                    reflexões acerca de nós e do mundo à nossa volta.</p>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="plataforma-section" id="plataforma-section">
+        <div class="container-plataforma">
+            <div>
+                <span class="tituloSessao">Plataforma</span>
+                <h2>Descubra Seu Chalé</h2>
+                <p>Essa plataforma oferece um quiz de 15 perguntas que auxiliam os usuários a descobrirem a quais chalés
+                    os
+                    mesmos pertencem, revelando seu parentesco divino no processo. Ao final, será possível visualizar
+                    uma
+                    dashboard interativa com informações sobre os demais chalés, revelando conexões e similaridades
+                    entre os
+                    perfis.</p>
+                <button onclick="window.location.href='cadastro.html'">Descobrir Meu Chalé</button>
             </div>
 
-            <div class="sobre-conteudo">
+            <ol class="passos">
+                <li><span class="numero">1</span>
+                    <div><strong>Responda o quiz</strong>15 perguntas sobre suas virtudes e valores.</div>
+                </li>
+                <li><span class="numero">2</span>
+                    <div><strong>Receba a Reclamação divina</strong>Descubra seu chalé e seu parentesco divino.</div>
+                </li>
+                <li><span class="numero">3</span>
+                    <div><strong>Explore a dashboard</strong>Veja os demais chalés e as conexões entre os perfis.</div>
+                </li>
+            </ol>
 
-                <div class="sobre-img">
-                    <img src="../assets/img/Percy_Jackson_Render.webp" alt="Percy_Jackson_Render">
-                </div>/
 
-                <div class="sobre-descricao">
-                    <h2>"Olhe eu não queria ser um meio-sangue"</h2>
-                    <div class="sobre-texto">
-                        <p>Inspirado na obra de Rick Riordan, buscamos nos conectar com o nosso usuário de modo
-                            mágico.
-                            Através do processo de “Reclamação divina”, guiamos o usuário em uma jornada de
-                            autoconhecimento
-                            e reflexão sobre suas principais virtudes e valores.</p>
+
+        </div>
+    </section>
+
+    <section class="personagens-section" id="personagens-section">
+        <div class="container-personagens">
+            <div class="cabecalho-personagens">
+                <span class="tituloSessao">Fichas do acampamento</span>
+                <h2>Personagens Importantes</h2>
+                <p>Conheça quem vive a história que inspira esta plataforma.</p>
+            </div>
+
+            <div class="fichas">
+                <article class="ficha">
+                    <img src="assets/personagens/percy.jpeg" alt="Percy Jackson">
+                    <div class="ficha-corpo">
+                        <span class="ficha-tag">Filho de Poseidon</span>
+                        <h3 class="titulo">Percy Jackson</h3>
+                        <p class="ficha-descricao">O protagonista da saga. Descobre ser um semideus, aprende a dominar a
+                            água e enfrenta monstros e deuses. Corajoso e leal, nunca abandona os amigos.</p>
                     </div>
+                </article>
 
-                    <div class="card-sobre">
-                        <div class="card-missao">
-                            <h2>Nossa Missão</h2>
-                            <p> Nossa missão é criar um ambiente interativo e imersivo que permita ao usuário se
-                                sentir
-                                parte da obra e estimular sua imaginação,</p>
-                        </div>
-
-                        <div class="card-alvo">
-                            <h2>Público Alvo</h2>
-                            <p>Esse site é destinado a todos aqueles que sempre sonharam em ser os herois de suas
-                                próprias histórias de fantasia.</p>
-                        </div>
+                <article class="ficha">
+                    <img src="assets/personagens/anne-chase.jpeg" alt="Annabeth Chase">
+                    <div class="ficha-corpo">
+                        <span class="ficha-tag">Filha de Atena</span>
+                        <h3 class="titulo">Annabeth Chase</h3>
+                        <p class="ficha-descricao">A mente estratégica do grupo. Inteligente, determinada e apaixonada
+                            por arquitetura, ela transforma qualquer problema em um plano.</p>
                     </div>
-                </div>
+                </article>
 
+                <article class="ficha">
+                    <img src="assets/personagens/groover.jpeg" alt="Groover Underwood">
+                    <div class="ficha-corpo">
+                        <span class="ficha-tag">Sátiro</span>
+                        <h3 class="titulo">Groover Underwood</h3>
+                        <p class="ficha-descricao">OSátiro e melhor amigo de Percy. Protetor dos semideuses e defensor
+                            da natureza, tem um coração enorme e uma lealdade que não vacila.</p>
+                    </div>
+                </article>
 
-
+                <article class="ficha">
+                    <img src="assets/personagens/nico.jpeg" alt="Nico di Angelo">
+                    <div class="ficha-corpo">
+                        <span class="ficha-tag">Filho de Hades</span>
+                        <h3 class="titulo">Nico di Angelo</h3>
+                        <p class="ficha-descricao">OSátiro e melhor amigo de Percy. Protetor dos semideuses e defensor
+                            da natureza, tem um coração enorme e uma lealdade que não vacila.</p>
+                    </div>
+                </article>
 
             </div>
         </div>
     </section>
-    <section class="origem-section">
-        <div class="container-origem" id="origem-section">
-            <div class="origem-texto">
-                <div class="origem-titulo">
-                    <p>Como Surgiu?</p>
-                </div>
-                <div class="origem-conteudo">
-                    <p>Esse projeto surgiu da sufocante vontade de um garoto de 13 anos de fugir para um mundo
-                        fantasioso
-                        que o tirá-se de sua realidade por alguns momentos, um lugar onde ele poderia ser o que quiser
-                        sem
-                        se sentir tão diferente e deslocado o tempo todo. Diante da narrativa cativante e dos
-                        personagens
-                        cheios de personalidade, foi-se encontrado um conforto que não parecia possível naquele momento.
-                        As
-                        narrativas únicas sobre cada um dos semideuses despertam reflexões acerca de nós e do mundo a
-                        nossa
-                        volta.</p>
-                </div>
-            </div>
-            <div class="origem-img">
-            </div>
-        </div>
-    </section>
 
-    <section class="personagens-section">
-        <div class="container-plataforma" id="personagens-section">
-            <h1>Descubra Seu Chalé</h1>
-            <p>Essa plataforma oferece um quiz de 15 perguntas que auxiliam os usuários a descobrirem a quais chalés os
-                mesmos pertencem, revelando seu parentesco divino no processo. Ao final, será possível visualizar uma
-                dashboard interativa com informações sobre os demais chalés, revelando conexões e similaridades entre os
-                perfis.</p>
-            <button onclick="cadastro()">Saiba Mais</button>
-        </div>
-    </section>
+    <section class="sobremim-section" id="sobremim-section">
+        <div class="container-sobremim">
+            <img src="assets/img autor/img-leo.jpeg" alt="Foto do autor do projeto">
 
-    <section class="chales-section">
-        <div class="container-chale" id="chales-section">
-            <h1>Principais Chalés do <br>Acampamento Meio-Sangue</h1>
-
-            <div class="card-linha">
-                <div class="card" id="card-zeus">
-                    <p>Chalé 1</p>
-                    <h2>Zeus</h2>
-                    <p>Deus dos Céus</p>
-                </div>
-                <div class="card" id="card-hera">
-                    <p>Chalé 2</p>
-                    <h2>Hera</h2>
-                    <p>Deusa da Família</p>
-                </div>
-            </div>
-
-            <div class="card-linha">
-                <div class="card" id="card-poseidon">
-                    <p>Chalé 3</p>
-                    <h2>Poseidon</h2>
-                    <p>Deus dos Mares</p>
-                </div>
-                <div class="card" id="card-demeter">
-                    <p>Chalé 4</p>
-                    <h2>Deméter</h2>
-                    <p>Deusa da Agricultura</p>
-                </div>
-                <div class="card" id="card-ares">
-                    <p>Chalé 5</p>
-                    <h2>Ares</h2>
-                    <p>Deus da Guerra</p>
-                </div>
-                <div class="card" id="card-atena">
-                    <p>Chalé 6</p>
-                    <h2>Atena</h2>
-                    <p>Deusa da Sabedoria</p>
-                </div>
-            </div>
-
-            <div class="card-linha">
-                <div class="card" id="card-apollo">
-                    <p>Chalé 7</p>
-                    <h2>Apollo</h2>
-                    <p>Deus do Sol e da Medicina</p>
-                </div>
-                <div class="card" id="card-artemis">
-                    <p>Chalé 8</p>
-                    <h2>Ártemis</h2>
-                    <p>Deusa da Lua e da Caça</p>
-                </div>
-                <div class="card" id="card-hefesto">
-                    <p>Chalé 9</p>
-                    <h2>Hefesto</h2>
-                    <p>Deus do Fogo e da Forja</p>
-                </div>
-                <div class="card" id="card-afrodite">
-                    <p>Chalé 10</p>
-                    <h2>Afrodite</h2>
-                    <p>Deusa do Amor e da Beleza</p>
-                </div>
-            </div>
-
-            <div class="card-linha">
-                <div class="card" id="card-hermes">
-                    <p>Chalé 11</p>
-                    <h2>Hermes</h2>
-                    <p>Deus Mensageiro</p>
-                </div>
-                <div class="card" id="card-dionisio">
-                    <p>Chalé 12</p>
-                    <h2>Dionísio</h2>
-                    <p>Deus da Festa e do Vinho</p>
-                </div>
-                <div class="card" id="card-hades">
-                    <p>Chalé 13</p>
-                    <h2>Hades</h2>
-                    <p>Deus do Submundo</p>
+            <div class="sobremim-texto">
+                <span class="tituloSessao">Sobre mim</span>
+                <h2>Leonardo Bezerra Magagnin</h2>
+                <p>Estudante do 1º semestre de Análise e Desenvolvimento de Sistemas na SPTech. O Acampamento
+                    Meio-Sangue é o meu projeto individual do semestre: uma forma de unir um universo que me marcou à
+                    tecnologia que estou aprendendo a construir.</p>
+                <div class="eu-links">
+                    <a class="btn-github"
+                        href="https://github.com/leonardomagagnin/Projeto-individual-Semestre-1.git">GitHub</a>
+                    <a class="btn-linkedin" href="https://www.linkedin.com/in/leonardo-m-a65087316">LinkedIn</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="footer">
+    <footer class="footer-section">
         <div class="footer-conteudo">
-            <img src="../assets/img/logo-header.png" alt="logo-footer">
+            <a href="#main-section" class="marca"><span class="marca-simbolo">Ψ</span>Acampamento Meio-Sangue</a>
             <nav>
-                <ul>
-                    <li><a href="#sobre-section">Sobre</a></li>
-                    <li><a href="#origem-section">Origem</a></li>
-                    <li><a href="#plataforma-section">Plataforma</a></li>
-                    <li><a href="#personagens-section">Personagens</a></li>
-                    <li><a href="#sobremim-section">Sobre Mim</a></li>
-                </ul>
+                <a href="#sobre-section">Sobre</a>
+                <a href="#origem-section">Origem</a>
+                <a href="#plataforma-section">Plataforma</a>
+                <a href="#personagens-section">Personagens</a>
+                <a href="#sobremim-section">Sobre Mim</a>
             </nav>
         </div>
 
-    </div>
+    </footer>
 </body>
-
 </html>

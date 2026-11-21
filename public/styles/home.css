@@ -1,116 +1,148 @@
 * {
+    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
-    font-family: 'Poppins';
+    --cor-primaria: #002752;
+    --cor-secundaria: #FCBE56;
+    --cor-tecearia: #F3E4C8;
+    --cor-primaria-escura: #021f42;
+    --cor-secundaria-escura: #d9962f;
+    --papel: #fbf3e1;
+    --tinta-suave: #3d4f6b;
 }
 
-
 body {
-    background-color: #002752;
+    background-color: var(--cor-tecearia);
+    font-family: 'Alegreya', serif;
+}
+
+.tituloSessao {
+    display: inline-block;
+    font-family: 'Caesar Dressing', cursive;
+    font-size: 18px;
+    color: var(--cor-secundaria);
+    border-bottom: 3px solid var(--cor-secundaria);
 }
 
 header {
-    padding: 12px 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #002752;
     position: sticky;
     top: 0px;
-    z-index: 1000;
+    z-index: 10;
+
+    background-color: var(--cor-tecearia);
+    border-bottom: solid 3px var(--cor-primaria);
 }
 
-header img {
-    width: 100%;
-    height: 50px;
-    object-fit: contain;
-    padding: 10px 10px;
+header a {
+    text-decoration: none;
+    color: var(--cor-primaria);
 }
 
 .container-header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    width: 100%;
-    max-width: 1440px;
-    align-items: center;
-}
 
-a {
-    font-family: 'Caesar Dressing', cursive;
-    text-decoration: none;
-    font-style: none;
-    color: white;
-}
-
-
-nav ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
     gap: 24px;
-    color: white;
+    width: 95%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 14px 0;
 }
 
-nav ul li {
-    border-radius: 16px;
-    font-weight: 600;
-    font-size: 14px;
-    transition: 0.2s;
-}
-
-.btn {
+.marca {
     display: flex;
-    justify-content: center;
     align-items: center;
-    width: 100px;
-    height: 24px;
-    cursor: pointer;
+    gap: 12px;
+    font-size: 22px;
+    color: var(--cor-primaria);
+    font-family: 'Caesar Dressing', cursive;
 }
 
-.nav-cadastro {
+.marca-simbolo {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--cor-primaria);
+    border-radius: 50%;
+    font-size: 24px;
+}
+
+
+nav {
+    display: flex;
+    gap: 26px;
+    font-family: 'Caesar Dressing', cursive;
+    color: var(--cor-primaria);
+}
+
+nav a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--cor-secundaria-escura);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
+}
+
+
+.botoes-nav {
+    display: flex;
+    gap: 12px;
+    font-family: 'Caesar Dressing', cursive;
+}
+
+.btn-cadastrar {
     background-color: #fcbe56;
     color: #002752;
     padding-top: 2px;
+
+    border-radius: 20px;
+    border-bottom: solid 3px var(--cor-secundaria-escura);
+    padding: 10px 15px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: 0.2s;
+    
 }
 
-.nav-login {
+.btn-entrar {
     border: solid 1px #fcbe56;
     padding-top: 2px;
-}
+    padding: 10px 15px;
+    font-weight: normal;
 
-nav ul a {
+    border-radius: 20px;
+    border: solid 2px var(--cor-primaria);
+    cursor: pointer;
     transition: 0.2s;
 }
 
-
-nav ul li:hover {
-    transform: translateY(-2px);
+.btn-entrar:hover,
+.btn-cadastrar:hover {
+    transform: scale(1.02);
 }
 
-nav ul a:hover {
-    transform: translateY(-2px);
-    color: #fcbe56;
-}
-
+section,
 main {
+    min-height: calc(100vh - 90px);   /* altura da tela menos o cabeçalho */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: center;          /* centraliza o conteúdo na vertical */
+    padding: 60px 0;
+}
 
+.main {
+    padding: 80px 0;
+}
 
-    background-image: linear-gradient(to right, transparent 35%, #002752 75%, #002752 100%),
-        url(../assets/img/entrada-acampamento.jpeg);
-
-    background-size: 75% 100%;
-    background-position:flex-start;
-    background-repeat: no-repeat;
-
-    height: 700px;
-    color: white;
-    position: relative;
-    
-
+.container-main {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .main-conteudo {
@@ -121,167 +153,305 @@ main {
     z-index: 1;
 }
 
-.container-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    width: 75%;
-    height: fit-content;
-    align-self: center;
-    
-}
-.container-main p {
-    font-weight: bold;
-    font-size: 30px;
-    margin-bottom: -4px;
-}
-
-.container-main span {
+#conteudoTopo {
     font-size: 16px;
-    margin-top: 20px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--tinta-suave);
 }
 
-.container-main h1 {
+.main-conteudo h1 {
     font-family: 'Caesar Dressing', cursive;
-    font-size: 65px;
-    font-weight: bold;
-    margin: -5px;
-
-    color: #FCBE56;
+    font-size: 88px;
+    line-height: 1.05;
+    color: var(--cor-primaria);
+    margin: 12px 0 22px;
+    transition: 0.4s;
 }
 
-.container-transicao {
-    height: 100px;
-    background-color: linear-gradient(to top, transparent 35%, #002752 75%, #002752 100%);
+.main-conteudo h1:hover {
+    transform: translateY(-4px);
+}
+.main-conteudo h1 span {
+    background: linear-gradient(transparent 62%, var(--cor-secundaria) 62%);
+}
+
+#textoIntro {
+    max-width: 30em;
+    font-size: 19px;
+    color: var(--tinta-suave);
+    margin-bottom: 34px;
+}
+
+.main-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-family: 'Caesar Dressing', cursive;
+}
+
+.main-imagem {
+    position: relative;
+
+}
+
+.main-imagem img {
+    width: 60%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border: 4px solid var(--cor-primaria);
+    border-radius: 20px;
+    box-shadow: 14px 14px 0 var(--cor-secundaria);
+}
+
+#btn-descobrir {
+    padding-top: 2px;
+    padding: 15px 20px;
+    font-weight: normal;
+    font-size: 16px;
+
+    border-radius: 20px;
+    border: none;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    cursor: pointer;
+    transition: 0.2s;
+
+    font-family: 'Caesar Dressing', cursive;
+}
+
+#btn-conhecer {
+    padding-top: 2px;
+    padding: 15px 20px;
+    font-weight: normal;
+    background-color: transparent;
+    font-size: 16px;
+
+    border-radius: 20px;
+    border: solid 2px var(--cor-primaria);
+    cursor: pointer;
+    transition: 0.2s;
+
+    font-family: 'Caesar Dressing', cursive;
+}
+
+#btn-descobrir:hover,
+#btn-conhecer:hover {
+    transform: scale(1.02);
+}
+.selo {
+    position: absolute;
+    left: -34px;
+    bottom: 34px;
+    width: 110px;
+    height: 110px;
+    display: grid;
+    place-items: center;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    border: 4px solid var(--cor-primaria);
+    border-radius: 50%;
+    font-size: 48px;
+    outline: 3px dashed rgba(0, 39, 82, 0.45);
+    outline-offset: -12px;
+}
+
+.meandro {
+    height: 22px;
+    background: url("../assets/img/meandro.svg") repeat-x;
+    background-size: 22px 22px;
+}
+
+.sobre-section {
+    text-align: center;
+    background-color: var(--cor-primaria);
+    padding: 80px 0;
 }
 
 .container-sobre {
-    display: flex;
-    flex-direction: column;
-    padding: 15px 20px;
-    color: white;
+    width: 90%;
+    max-width: 1120px;
+    margin: 0 auto;
 }
 
-.sobre-titulo {
-    margin: 30px;
-    font-weight: bold;
-    font-size: 30px;
-}
-
-.sobre-conteudo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    width: 100%;
-    padding: 10px 15px;
-}
-
-.sobre-descricao h2 {
+#quote-livro {
+    max-width: 15em;
+    margin: 22px auto 28px;
+    font-size: 64px;
+    font-weight: normal;
+    line-height: 1.05;
+    text-align: center;
+    color: var(--cor-secundaria);
     font-family: 'Caesar Dressing', cursive;
-    color: #FCBE56;
-    font-size: 50px;
-    
-    display: flex;
-    align-self: center;
-    padding: 10px 15px;
 }
 
-.sobre-texto p {
-    font-size: 20px;
-    width: 784px;
-}
-
-.sobre-conteudo img {
-    width: 100%;
-    height: 700px;
-    box-sizing: border-box;
-}
-
-.sobre-texto {
-    width: 70%;
+#infoSobre {
+    max-width: 42em;
+    margin: 0 auto 60px;
+    font-size: 18px;
+    color: var(--cor-tecearia);
 }
 
 
 .card-sobre {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    text-align: left;
 }
 
-.card-missao, .card-alvo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 
-    width: 500px;
-    height: 200px;
-    margin: 20px;
-
-    padding: 10px 15px;
-    background-color: #013369;
-    box-sizing: border-box;
-
-    border: none;
-    border-bottom:solid 3px #FCBE56;
-    border-right: solid 3px #FCBE56;
+.card {
+    flex: none;
+    width: 530px;
+    padding: 36px;
+    background-color: var(--papel);
+    color: #14100a;
     border-radius: 16px;
-    color: #f8f0df;
+    box-shadow: 8px 8px 0 var(--cor-secundaria);
+    width: 300px;
+}
+
+.card h2{
+    font-size: 32px;
+    font-weight: normal;
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
+    font-family: 'Caesar Dressing', cursive;
 }
 
 
 .container-origem {
     display: flex;
     flex-direction: row;
-    padding: 15px 20px;
+    gap: 72px;
+    align-items: center;
 
-    color: white;
+    width: 90%;
+    max-width: 1120px;
+    margin: 0 auto;
 }
 
-.origem-texto {
-    width: 60%;
-    padding: 10px 15px;
+.textoOrigem {
+    display: flex;
+    flex-direction: column;
+    flex: 1.2;
 }
 
-.origem-titulo p {
-    font-weight: bold;
-    font-size: 45px;
-    margin-bottom: -5px;
+.textoOrigem .tituloSessao {
+    display: inline-block;
+    font-family: 'Caesar Dressing', cursive;
+    font-size: 18px;
+    color: var(--cor-primaria);
+    border-bottom: 3px solid var(--cor-secundaria);
 }
 
-.origem-conteudo p {
-    font-size: 23px;
+.textoOrigem h2 {
+    font-family: 'Caesar Dressing', cursive;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 1.1;
+    color: var(--cor-primaria);
+    margin: 14px 0 20px;
 }
 
-.origem-img {
-    width: 30%;
-    height: 600px;
+.container-origem img {
+    flex: 1;
+    width: 100%;
+    max-height: 560px;
+    object-fit: cover;
+    border: 4px solid var(--cor-primaria);
+    border-radius: 20px;
+    box-shadow: 12px 12px 0 var(--cor-secundaria);
+}
 
-    background-image: url("../assets/img/reclamado.jpeg");
-    border-radius: 16px;
-    border-bottom: solid 3px #FCBE56;
-    border-right: solid 3px #FCBE56;
+.container-origem p {
+    font-size: 18px;
+}
+
+.container-origem p * p {
+    margin-top: 16px;
+}
+
+.plataforma-section {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria-escura);
+}
+
+.plataforma-section .tituloSessao {
+    color: var(--cor-primaria);
+    border-bottom-color: var(--cor-primaria);
 }
 
 .container-plataforma {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 745px;
-    padding: 10px 15px;
+    flex-direction: row;
+    gap: 56px;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    flex: none;
 }
 
-.container-plataforma h1 {
-    font-size: 50px;
-    color: #fcbe56;
-    margin: 1px;
+.container-plataforma h2 {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 1.1;
+    font-family: 'Caesar Dressing', cursive;
+    color: var(--cor-primaria);
+    margin: 14px 0 20px;
 }
 
 .container-plataforma p {
-    font-size: 23px;
-    color: white;
+    font-size: 18px;
     margin-bottom: 30px;
+    max-width: 600px;
+}
+
+.passos {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1.1; 
+    flex: none;
+}
+
+.passos li {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 22px;
+    background-color: var(--papel);
+    border: 3px solid var(--cor-primaria);
+    border-radius: 14px;
+
+    transition: 0.2s;
+}
+
+.passos li:hover {
+    transform: scale(1.02);
+}
+
+.numero {
+    flex: none;
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    font-family: 'Caesar Dressing', cursive;
+    font-size: 22px;
+}
+
+.passos strong {
+    display: block;
+    font-family: 'Caesar Dressing', cursive;
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--cor-primaria);
 }
 
 .container-plataforma button {
@@ -301,149 +471,195 @@ main {
 
 .container-plataforma button:hover {
     transform: scale(1.02);
-    background-color: #c6a45c;
 }
 
-.container-chale {
+.cabecalho-personagens {
+    max-width: 36em;
+    margin: 0 auto 64px;
+    text-align: center;
+    color: var(--tinta-suave);
+}
+
+.cabecalho-personagens h2 {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 1.1;
+    font-family: 'Caesar Dressing', cursive;
+    color: var(--cor-primaria);
+    margin: 14px 0 20px;
+
+}
+
+.cabecalho-personagens .tituloSessao {
+    display: inline-block;
+    font-family: 'Caesar Dressing', cursive;
+    font-size: 18px;
+    color: var(--cor-primaria);
+    border-bottom: 3px solid var(--cor-secundaria);
+}
+.fichas {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    margin-bottom: 50px;
+    flex-direction: row;
+    gap: 40px 32px;
 }
 
-
-.container-chale h1 {
-    display: flex;
-    align-self: flex-start;
-
-    font-size: 40px;
-    color: #fcbe56;
-
-    padding: 10px 15px;
+.ficha {
+    position: relative;
+    /* para a tachinha ficar presa ao card */
+    padding-bottom: 26px;
+    background-color: var(--papel);
+    border: 4px solid var(--cor-primaria);
+    border-radius: 16px;
+    box-shadow: 8px 8px 0 var(--cor-secundaria);
+    
 }
 
-.card-linha {
+/* tachinha */
+.ficha::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    width: 26px;
+    height: 26px;
+    transform: translateX(-50%);
+    background-color: var(--cor-secundaria);
+    border: 4px solid var(--cor-primaria);
+    border-radius: 50%;
+    box-shadow: 0 3px 0 var(--cor-secundaria-escura);
+}
+
+.ficha img {
+    width: 100%;
+    object-fit: cover;
+    border-bottom: 4px solid var(--cor-primaria);
+    border-radius: 12px 12px 0 0;
+}
+
+.ficha-corpo {
+    padding: 22px 24px 0;
+}
+
+.ficha-tag {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--tinta-suave);
+}
+
+.ficha h3 {
+    font-size: 34px;
+    line-height: 1.05;
+    color: var(--cor-primaria);
+    margin: 2px 0 10px;
+}
+
+.ficha-descricao {
+    font-size: 15px;
+    margin-bottom: 14px;
+}
+
+.sobremim-section {
+    background-color: var(--cor-primaria);
+}
+
+.container-sobremim {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 90%;
+    max-width: 1120px;
+    margin: 0 auto;
+    gap: 46px;
 }
 
-.card {
+.sobremim-texto {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
+}
 
-    width: 300px;
-    height: 400px;
-    padding: 10px 15px;
-    box-sizing: border-box;
+.container-sobremim img {
+    flex: 1;
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    aspect-ratio: 1;
+    border: 4px solid var(--cor-secundaria);
+    border-radius: 20px;
+    box-shadow: 12px 12px 0 rgba(252, 190, 86, 0.3);
+}
 
-    margin: 10px;
+.sobremim-texto h2 {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 1.1;
+    font-family: 'Caesar Dressing', cursive;
+    color: var(--cor-secundaria);
+    margin: 14px 0 20px;
+}
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.container-sobremim p {
+    font-size: 17px;
+    margin-bottom: 26px;
+    color: var(--cor-tecearia);
+}
+
+.eu-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.eu-links a {
+    text-decoration: none;
+    font-family: 'Caesar Dressing', cursive;
+}
+
+.btn-github {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    padding-top: 2px;
 
     border-radius: 20px;
-    border-bottom: solid 7px #fcbe56;
-    border-right: solid 7px #fcbe56;
-
-    transition: 0.3s;
-
-    object-fit: cover;
-    filter: brightness(65%);
-    transition: 0.4s ease-in-out;
+    border-bottom: solid 3px var(--cor-secundaria-escura);
+    padding: 10px;
+    font-weight: normal;
     cursor: pointer;
+    transition: 0.2s;
+    
 }
 
-.card:hover {
-    transform: scale(1.02);
-    filter: brightness(90%);
+.btn-linkedin {
+    border: solid 3px var(--cor-tecearia);
+    padding-top: 2px;
+    padding: 10px 15px;
+    font-weight: normal;
+    color: var(--cor-tecearia);
+
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-.card h2 {
-    font-size: 30px;
-    font-weight: bold;
-    margin: -5px;
-
-
-    color: #f8f0df;
-    -webkit-text-stroke: 1px #c6a45c;
-    text-shadow: 2px 2px 4px #000;
+.btn-linkedin:hover,
+.btn-github:hover {
+     transform: translateY(-2px);
 }
 
-.card p {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-}
 
-.card#card-zeus {
-    background-image: url(../assets/img/Zeus.jpeg);
-}
-
-.card#card-hera {
-    background-image: url(../assets/img/hera.jpeg);
-}
-
-.card#card-poseidon {
-    background-image: url(../assets/img/poseidon.jpeg);
-}
-
-.card#card-demeter {
-    background-image: url(../assets/img/persefone.jpeg);
-}
-
-.card#card-ares {
-    background-image: url(../assets/img/ares.jpeg);
-}
-
-.card#card-atena {
-    background-image: url(../assets/img/Athena.jpeg);
-}
-
-.card#card-apollo {
-    background-image: url(../assets/img/Apollo.jpeg);
-}
-
-.card#card-artemis {
-    background-image: url(../assets/img/artemis.jpeg);
-}
-
-.card#card-hefesto {
-    background-image: url(../assets/img/hefesto.jpeg);
-}
-
-.card#card-afrodite {
-    background-image: url(../assets/img/aphrodite.jpeg);
-}
-
-.card#card-hermes {
-    background-image: url(../assets/img/hermes.jpeg);
-}
-
-.card#card-dionisio {
-    background-image: url(../assets/img/Dionysus.jpeg);
-}
-
-.card#card-hades {
-    background-image: url(../assets/img/hades.jpeg);
-}
-
-.footer {
-    background-color: #002752;
-    height: 200px;
-    border-top: solid 1px #FCBE56;
+footer {
+    background-color: var(--cor-primaria-escura );
+    height: 150px;
+    border-top: solid 3px var(--cor-secundaria);
 
 }
 
 .footer-conteudo {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: space-around;
+    align-items: center;
 
     width: 100%;
     max-width: 1440px;
@@ -455,13 +671,35 @@ main {
     box-sizing: border-box;
 }
 
-.footer-conteudo img {
-    width: 180px;
-    height: auto;
+footer .marca-simbolo {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--cor-secundaria);
+    color: var(--cor-secundaria);
+    border-radius: 50%;
+    font-size: 24px;
+
+}
+
+footer .marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 22px;
+    color: var(--cor-tecearia);
+    font-family: 'Caesar Dressing', cursive;
 }
 
 .footer-conteudo nav {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--cor-tecearia);
 }
