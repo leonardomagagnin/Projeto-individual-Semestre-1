@@ -14,12 +14,13 @@
 
 body {
     background-color: var(--cor-tecearia);
+    font-family: 'Alegreya', serif;
 }
 
 .tituloSessao {
     display: inline-block;
     font-family: 'Caesar Dressing', cursive;
-    font-size: 1.15rem;
+    font-size: 18px;
     color: var(--cor-secundaria);
     border-bottom: 3px solid var(--cor-secundaria);
 }
@@ -54,8 +55,7 @@ header a {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-family: var(--fonte-titulo);
-    font-size: 1.4rem;
+    font-size: 22px;
     color: var(--cor-primaria);
     font-family: 'Caesar Dressing', cursive;
 }
@@ -68,7 +68,7 @@ header a {
     justify-content: center;
     border: 2px solid var(--cor-primaria);
     border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 24px;
 }
 
 
@@ -124,6 +124,14 @@ nav a:hover {
     transform: scale(1.02);
 }
 
+section,
+main {
+    min-height: calc(100vh - 90px);   /* altura da tela menos o cabeçalho */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;          /* centraliza o conteúdo na vertical */
+    padding: 60px 0;
+}
 
 .main {
     padding: 80px 0;
@@ -146,7 +154,7 @@ nav a:hover {
 }
 
 #conteudoTopo {
-    font-size: 1rem;
+    font-size: 16px;
     letter-spacing: 0.24em;
     text-transform: uppercase;
     color: var(--tinta-suave);
@@ -154,19 +162,23 @@ nav a:hover {
 
 .main-conteudo h1 {
     font-family: 'Caesar Dressing', cursive;
-    font-size: 5.5rem;
+    font-size: 88px;
     line-height: 1.05;
     color: var(--cor-primaria);
     margin: 12px 0 22px;
+    transition: 0.4s;
 }
 
+.main-conteudo h1:hover {
+    transform: translateY(-4px);
+}
 .main-conteudo h1 span {
     background: linear-gradient(transparent 62%, var(--cor-secundaria) 62%);
 }
 
 #textoIntro {
     max-width: 30em;
-    font-size: 1.2rem;
+    font-size: 19px;
     color: var(--tinta-suave);
     margin-bottom: 34px;
 }
@@ -239,10 +251,8 @@ nav a:hover {
     color: var(--cor-primaria);
     border: 4px solid var(--cor-primaria);
     border-radius: 50%;
-    font-family: var(--fonte-titulo);
-    font-size: 3rem;
+    font-size: 48px;
     outline: 3px dashed rgba(0, 39, 82, 0.45);
-    /* anel tracejado por dentro */
     outline-offset: -12px;
 }
 
@@ -258,57 +268,95 @@ nav a:hover {
     padding: 80px 0;
 }
 
-.tituloSessao {
-    
+.container-sobre {
+    width: 90%;
+    max-width: 1120px;
+    margin: 0 auto;
 }
-#quoteLivro {
+
+#quote-livro {
     max-width: 15em;
     margin: 22px auto 28px;
-    font-size: 4rem;
+    font-size: 64px;
+    font-weight: normal;
     line-height: 1.05;
+    text-align: center;
     color: var(--cor-secundaria);
+    font-family: 'Caesar Dressing', cursive;
 }
 
 #infoSobre {
     max-width: 42em;
     margin: 0 auto 60px;
-    font-size: 1.15rem;
+    font-size: 18px;
     color: var(--cor-tecearia);
 }
 
 
 .card-sobre {
     display: flex;
+    justify-content: center;
     gap: 36px;
     text-align: left;
 }
 
-.card-missao,
-.card-alvo {
-    flex: 1;
+
+.card {
+    flex: none;
+    width: 530px;
     padding: 36px;
     background-color: var(--papel);
     color: #14100a;
     border-radius: 16px;
     box-shadow: 8px 8px 0 var(--cor-secundaria);
+    width: 300px;
 }
 
-.card-missao h3,
-.card-alvo h3 {
-    font-size: 2rem;
+.card h2{
+    font-size: 32px;
+    font-weight: normal;
     color: var(--cor-primaria);
     margin-bottom: 10px;
+    font-family: 'Caesar Dressing', cursive;
 }
 
 
 .container-origem {
-    display: grid;
-    grid-template-columns: 1fr 1.2fr;
+    display: flex;
+    flex-direction: row;
     gap: 72px;
     align-items: center;
+
+    width: 90%;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.textoOrigem {
+    display: flex;
+    flex-direction: column;
+    flex: 1.2;
+}
+
+.textoOrigem .tituloSessao {
+    display: inline-block;
+    font-family: 'Caesar Dressing', cursive;
+    font-size: 18px;
+    color: var(--cor-primaria);
+    border-bottom: 3px solid var(--cor-secundaria);
+}
+
+.textoOrigem h2 {
+    font-family: 'Caesar Dressing', cursive;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 1.1;
+    color: var(--cor-primaria);
+    margin: 14px 0 20px;
 }
 
 .container-origem img {
+    flex: 1;
     width: 100%;
     max-height: 560px;
     object-fit: cover;
@@ -318,7 +366,7 @@ nav a:hover {
 }
 
 .container-origem p {
-    font-size: 1.1rem;
+    font-size: 18px;
 }
 
 .container-origem p * p {
@@ -330,20 +378,34 @@ nav a:hover {
     color: var(--cor-primaria-escura);
 }
 
-.plataforma-section #tituloSessao {
+.plataforma-section .tituloSessao {
+    color: var(--cor-primaria);
     border-bottom-color: var(--cor-primaria);
 }
 
 .container-plataforma {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
+    display: flex;
+    flex-direction: row;
     gap: 56px;
     align-items: center;
+    justify-content: center;
+    flex: 1;
+    flex: none;
+}
+
+.container-plataforma h2 {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 1.1;
+    font-family: 'Caesar Dressing', cursive;
+    color: var(--cor-primaria);
+    margin: 14px 0 20px;
 }
 
 .container-plataforma p {
-    font-size: 1.1rem;
+    font-size: 18px;
     margin-bottom: 30px;
+    max-width: 600px;
 }
 
 .passos {
@@ -351,6 +413,8 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    flex: 1.1; 
+    flex: none;
 }
 
 .passos li {
@@ -361,6 +425,12 @@ nav a:hover {
     background-color: var(--papel);
     border: 3px solid var(--cor-primaria);
     border-radius: 14px;
+
+    transition: 0.2s;
+}
+
+.passos li:hover {
+    transform: scale(1.02);
 }
 
 .numero {
@@ -372,15 +442,15 @@ nav a:hover {
     border-radius: 50%;
     background-color: var(--cor-primaria);
     color: var(--cor-secundaria);
-    font-family: var(--fonte-titulo);
-    font-size: 1.4rem;
+    font-family: 'Caesar Dressing', cursive;
+    font-size: 22px;
 }
 
 .passos strong {
     display: block;
-    font-family: var(--fonte-titulo);
+    font-family: 'Caesar Dressing', cursive;
     font-weight: 400;
-    font-size: 1.25rem;
+    font-size: 20px;
     color: var(--cor-primaria);
 }
 
@@ -401,7 +471,6 @@ nav a:hover {
 
 .container-plataforma button:hover {
     transform: scale(1.02);
-    background-color: #c6a45c;
 }
 
 .cabecalho-personagens {
@@ -411,9 +480,26 @@ nav a:hover {
     color: var(--tinta-suave);
 }
 
+.cabecalho-personagens h2 {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 1.1;
+    font-family: 'Caesar Dressing', cursive;
+    color: var(--cor-primaria);
+    margin: 14px 0 20px;
+
+}
+
+.cabecalho-personagens .tituloSessao {
+    display: inline-block;
+    font-family: 'Caesar Dressing', cursive;
+    font-size: 18px;
+    color: var(--cor-primaria);
+    border-bottom: 3px solid var(--cor-secundaria);
+}
 .fichas {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-direction: row;
     gap: 40px 32px;
 }
 
@@ -425,6 +511,7 @@ nav a:hover {
     border: 4px solid var(--cor-primaria);
     border-radius: 16px;
     box-shadow: 8px 8px 0 var(--cor-secundaria);
+    
 }
 
 /* tachinha */
@@ -444,7 +531,6 @@ nav a:hover {
 
 .ficha img {
     width: 100%;
-    aspect-ratio: 4 / 4.2;
     object-fit: cover;
     border-bottom: 4px solid var(--cor-primaria);
     border-radius: 12px 12px 0 0;
@@ -455,7 +541,7 @@ nav a:hover {
 }
 
 .ficha-tag {
-    font-size: 0.8rem;
+    font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -463,14 +549,14 @@ nav a:hover {
 }
 
 .ficha h3 {
-    font-size: 2.1rem;
+    font-size: 34px;
     line-height: 1.05;
     color: var(--cor-primaria);
     margin: 2px 0 10px;
 }
 
 .ficha-descricao {
-    font-size: 0.95rem;
+    font-size: 15px;
     margin-bottom: 14px;
 }
 
@@ -479,23 +565,42 @@ nav a:hover {
 }
 
 .container-sobremim {
-    display: grid;
-    grid-template-columns: 320px 1fr;
-    gap: 64px;
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    width: 90%;
+    max-width: 1120px;
+    margin: 0 auto;
+    gap: 46px;
+}
+
+.sobremim-texto {
+    display: flex;
+    flex-direction: column;
 }
 
 .container-sobremim img {
+    flex: 1;
     width: 100%;
-    aspect-ratio: 1;
+    max-height: 400px;
     object-fit: cover;
+    aspect-ratio: 1;
     border: 4px solid var(--cor-secundaria);
     border-radius: 20px;
     box-shadow: 12px 12px 0 rgba(252, 190, 86, 0.3);
 }
 
+.sobremim-texto h2 {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 1.1;
+    font-family: 'Caesar Dressing', cursive;
+    color: var(--cor-secundaria);
+    margin: 14px 0 20px;
+}
+
 .container-sobremim p {
-    font-size: 1.08rem;
+    font-size: 17px;
     margin-bottom: 26px;
     color: var(--cor-tecearia);
 }
@@ -506,19 +611,55 @@ nav a:hover {
     gap: 12px;
 }
 
+.eu-links a {
+    text-decoration: none;
+    font-family: 'Caesar Dressing', cursive;
+}
 
-.footer {
-    background-color: #002752;
-    height: 200px;
-    border-top: solid 1px #FCBE56;
+.btn-github {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    padding-top: 2px;
+
+    border-radius: 20px;
+    border-bottom: solid 3px var(--cor-secundaria-escura);
+    padding: 10px;
+    font-weight: normal;
+    cursor: pointer;
+    transition: 0.2s;
+    
+}
+
+.btn-linkedin {
+    border: solid 3px var(--cor-tecearia);
+    padding-top: 2px;
+    padding: 10px 15px;
+    font-weight: normal;
+    color: var(--cor-tecearia);
+
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-linkedin:hover,
+.btn-github:hover {
+     transform: translateY(-2px);
+}
+
+
+footer {
+    background-color: var(--cor-primaria-escura );
+    height: 150px;
+    border-top: solid 3px var(--cor-secundaria);
 
 }
 
 .footer-conteudo {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: space-around;
+    align-items: center;
 
     width: 100%;
     max-width: 1440px;
@@ -530,13 +671,35 @@ nav a:hover {
     box-sizing: border-box;
 }
 
-.footer-conteudo img {
-    width: 180px;
-    height: auto;
+footer .marca-simbolo {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--cor-secundaria);
+    color: var(--cor-secundaria);
+    border-radius: 50%;
+    font-size: 24px;
+
+}
+
+footer .marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 22px;
+    color: var(--cor-tecearia);
+    font-family: 'Caesar Dressing', cursive;
 }
 
 .footer-conteudo nav {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--cor-tecearia);
 }

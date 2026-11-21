@@ -49,7 +49,7 @@ nav ul {
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 1.5rem;
+    gap: 24px;
     color: white;
 }
 

@@ -11,9 +11,10 @@
     <link rel="stylesheet" href="styles/home copy.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Alegreya:wght@400;500&family=Cinzel:wght@600&display=swap">
+
     <title>Acapamento Meio-Sangue | Home</title>
 </head>
 
@@ -45,8 +46,8 @@
                     Névoa</p>
 
                 <div class="main-btns">
-                    <button id="btn-descobrir">Descobrir meu chalé</button>
-                    <button id="btn-conhecer">Conhecer o acampamento</button>
+                    <button id="btn-descobrir" onclick="window.location.href='cadastro.html'">Descobrir meu chalé</button>
+                    <button id="btn-conhecer" onclick="window.location.href='login.html'">Conhecer o acampamento</button>
                 </div>
             </div>
 
@@ -70,14 +71,14 @@
                 e reflexão sobre suas principais virtudes e valores.</p>
 
             <div class="card-sobre">
-                <div class="card-missao">
+                <div class="card">
                     <h2>Nossa Missão</h2>
                     <p> Nossa missão é criar um ambiente interativo e imersivo que permita ao usuário se
                         sentir
                         parte da obra e estimular sua imaginação,</p>
                 </div>
 
-                <div class="card-alvo">
+                <div class="card">
                     <h2>Público Alvo</h2>
                     <p>Esse site é destinado a todos aqueles que sempre sonharam em ser os herois de suas
                         próprias histórias de fantasia.</p>
@@ -89,16 +90,18 @@
         <div class="container-origem">
             <img src="assets/img/reclamado.jpeg" alt="Percy sendo reclamado">
 
-            <span class="tituloSessao">Origem</span>
-            <h2>Como Surgiu?</h2>
+            <div class="textoOrigem">
+                <span class="tituloSessao">Origem</span>
+                <h2>Como Surgiu?</h2>
 
-            <p>Esse projeto surgiu da sufocante vontade de um garoto de 13 anos de fugir para um mundo fantasioso
-                que o tirasse de sua realidade por alguns momentos, um lugar onde ele poderia ser o que quisesse sem
-                se sentir tão diferente e deslocado o tempo todo.</p>
-            <p>Diante da narrativa cativante e dos personagens cheios de personalidade, encontrou-se um conforto que
-                não parecia possível naquele momento. As narrativas únicas sobre cada um dos semideuses despertam
-                reflexões acerca de nós e do mundo à nossa volta.</p>
+                <p>Esse projeto surgiu da sufocante vontade de um garoto de 13 anos de fugir para um mundo fantasioso
+                    que o tirasse de sua realidade por alguns momentos, um lugar onde ele poderia ser o que quisesse sem
+                    se sentir tão diferente e deslocado o tempo todo.</p>
+                <p>Diante da narrativa cativante e dos personagens cheios de personalidade, encontrou-se um conforto que
+                    não parecia possível naquele momento. As narrativas únicas sobre cada um dos semideuses despertam
+                    reflexões acerca de nós e do mundo à nossa volta.</p>
 
+            </div>
         </div>
     </section>
 
@@ -114,7 +117,7 @@
                     dashboard interativa com informações sobre os demais chalés, revelando conexões e similaridades
                     entre os
                     perfis.</p>
-                <button onclick="cadastro()">Descobrir Meu Chalé</button>
+                <button onclick="window.location.href='cadastro.html'">Descobrir Meu Chalé</button>
             </div>
 
             <ol class="passos">
@@ -144,7 +147,7 @@
 
             <div class="fichas">
                 <article class="ficha">
-                    <img src="img/percy.png" alt="Percy Jackson">
+                    <img src="assets/personagens/percy.jpeg" alt="Percy Jackson">
                     <div class="ficha-corpo">
                         <span class="ficha-tag">Filho de Poseidon</span>
                         <h3 class="titulo">Percy Jackson</h3>
@@ -154,7 +157,7 @@
                 </article>
 
                 <article class="ficha">
-                    <img src="img/percy.png" alt="Percy Jackson">
+                    <img src="assets/personagens/anne-chase.jpeg" alt="Annabeth Chase">
                     <div class="ficha-corpo">
                         <span class="ficha-tag">Filha de Atena</span>
                         <h3 class="titulo">Annabeth Chase</h3>
@@ -164,20 +167,20 @@
                 </article>
 
                 <article class="ficha">
-                    <img src="img/percy.png" alt="Percy Jackson">
+                    <img src="assets/personagens/groover.jpeg" alt="Groover Underwood">
                     <div class="ficha-corpo">
-                        <span class="ficha-tag">Groover Underwood</span>
-                        <h3 class="titulo">Sátiro</h3>
+                        <span class="ficha-tag">Sátiro</span>
+                        <h3 class="titulo">Groover Underwood</h3>
                         <p class="ficha-descricao">OSátiro e melhor amigo de Percy. Protetor dos semideuses e defensor
                             da natureza, tem um coração enorme e uma lealdade que não vacila.</p>
                     </div>
                 </article>
 
                 <article class="ficha">
-                    <img src="img/percy.png" alt="Percy Jackson">
+                    <img src="assets/personagens/nico.jpeg" alt="Nico di Angelo">
                     <div class="ficha-corpo">
-                        <span class="ficha-tag">Nico di Angelo</span>
-                        <h3 class="titulo">Filho de Hades</h3>
+                        <span class="ficha-tag">Filho de Hades</span>
+                        <h3 class="titulo">Nico di Angelo</h3>
                         <p class="ficha-descricao">OSátiro e melhor amigo de Percy. Protetor dos semideuses e defensor
                             da natureza, tem um coração enorme e uma lealdade que não vacila.</p>
                     </div>
@@ -189,38 +192,36 @@
 
     <section class="sobremim-section" id="sobremim-section">
         <div class="container-sobremim">
-            <img src="img/eu.jpg" alt="Foto do autor do projeto">
+            <img src="assets/img autor/img-leo.jpeg" alt="Foto do autor do projeto">
 
-            <div>
+            <div class="sobremim-texto">
                 <span class="tituloSessao">Sobre mim</span>
                 <h2>Leonardo Bezerra Magagnin</h2>
                 <p>Estudante do 1º semestre de Análise e Desenvolvimento de Sistemas na SPTech. O Acampamento
                     Meio-Sangue é o meu projeto individual do semestre: uma forma de unir um universo que me marcou à
                     tecnologia que estou aprendendo a construir.</p>
                 <div class="eu-links">
-                    <a class="botao botao-ouro" href="#">GitHub</a>
-                    <a class="botao botao-linha" href="#">LinkedIn</a>
-                    <a class="botao botao-linha" href="#">E-mail</a>
+                    <a class="btn-github"
+                        href="https://github.com/leonardomagagnin/Projeto-individual-Semestre-1.git">GitHub</a>
+                    <a class="btn-linkedin" href="https://www.linkedin.com/in/leonardo-m-a65087316">LinkedIn</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="footer">
+    <footer class="footer-section">
         <div class="footer-conteudo">
-            <img src="../assets/img/logo-header.png" alt="logo-footer">
+            <a href="#main-section" class="marca"><span class="marca-simbolo">Ψ</span>Acampamento Meio-Sangue</a>
             <nav>
-                <ul>
-                    <li><a href="#sobre-section">Sobre</a></li>
-                    <li><a href="#origem-section">Origem</a></li>
-                    <li><a href="#plataforma-section">Plataforma</a></li>
-                    <li><a href="#personagens-section">Personagens</a></li>
-                    <li><a href="#sobremim-section">Sobre Mim</a></li>
-                </ul>
+                <a href="#sobre-section">Sobre</a>
+                <a href="#origem-section">Origem</a>
+                <a href="#plataforma-section">Plataforma</a>
+                <a href="#personagens-section">Personagens</a>
+                <a href="#sobremim-section">Sobre Mim</a>
             </nav>
         </div>
 
-    </div>
+    </footer>
 </body>
 
 </html>
